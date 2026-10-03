@@ -1,0 +1,398 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -scheme SpecQR-Package -configuration Release -destination "generic/platform=iOS Simulator" -derivedDataPath .build-xcode-simulator-release -parallel-testing-enabled NO -jobs 2 ARCHS=arm64 CODE_SIGNING_ALLOWED=NO build-for-testing
+
+Build settings from command line:
+    ARCHS = arm64
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+2026-10-03 17:35:59.521 xcodebuild[78311:8208827] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+
+
+Resolved source packages:
+  SpecQR: $PACKAGE_ROOT
+
+Build Preparation
+Build task concurrency set to 2 via user default IDEBuildOperationMaxNumberOfConcurrentCompileTasks
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (5 targets)
+    Target 'specqr-cli-product' in project 'SpecQR'
+        ➜ Explicit dependency on target 'SpecQR' in project 'SpecQR'
+    Target 'SpecQR-product' in project 'SpecQR'
+        ➜ Explicit dependency on target 'SpecQR' in project 'SpecQR'
+    Target 'SpecQRTests-product' in project 'SpecQR'
+        ➜ Explicit dependency on target 'SpecQR_SpecQRTests' in project 'SpecQR'
+        ➜ Explicit dependency on target 'SpecQR' in project 'SpecQR'
+    Target 'SpecQR' in project 'SpecQR' (no dependencies)
+    Target 'SpecQR_SpecQRTests' in project 'SpecQR' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 29108a9e108075c0cdb5ff33f4964101
+Build description path: $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/XCBuildData/29108a9e108075c0cdb5ff33f4964101.xcbuilddata
+CreateBuildDirectory $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-create-build-directory $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules
+
+CreateBuildDirectory $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-create-build-directory $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex
+
+CreateBuildDirectory $PACKAGE_ROOT/.build-xcode-simulator-release/CompilationCache.noindex
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-create-build-directory $PACKAGE_ROOT/.build-xcode-simulator-release/CompilationCache.noindex
+
+CreateBuildDirectory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-create-build-directory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products
+
+CreateBuildDirectory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-create-build-directory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk $PACKAGE_ROOT/.build-xcode-simulator-release/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -o $PACKAGE_ROOT/.build-xcode-simulator-release/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache
+
+CreateBuildDirectory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-create-build-directory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator
+
+CreateBuildDirectory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-create-build-directory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/PackageFrameworks
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-create-build-directory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/PackageFrameworks
+
+CreateBuildDirectory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/PrecompiledHeaders
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-create-build-directory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/PrecompiledHeaders
+
+CreateBuildDirectory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-create-build-directory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphonesimulator
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-create-build-directory $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphonesimulator
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/specqr-cli.DependencyStaticMetadataFileList (in target 'specqr-cli-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/specqr-cli.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/specqr-cli.DependencyMetadataFileList (in target 'specqr-cli-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/specqr-cli.DependencyMetadataFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr-cli_const_extract_protocols.json (in target 'specqr-cli-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr-cli_const_extract_protocols.json
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr-cli.SwiftFileList (in target 'specqr-cli-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr-cli.SwiftFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr-cli.LinkFileList (in target 'specqr-cli-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr-cli.LinkFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr-cli-OutputFileMap.json (in target 'specqr-cli-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr-cli-OutputFileMap.json
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR_SpecQRTests-b.build/empty-SpecQR_SpecQRTests.plist (in target 'SpecQR_SpecQRTests' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR_SpecQRTests-b.build/empty-SpecQR_SpecQRTests.plist
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR_SpecQRTests-b.build/SpecQR_SpecQRTests.DependencyStaticMetadataFileList (in target 'SpecQR_SpecQRTests' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR_SpecQRTests-b.build/SpecQR_SpecQRTests.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR_SpecQRTests-b.build/SpecQR_SpecQRTests.DependencyMetadataFileList (in target 'SpecQR_SpecQRTests' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR_SpecQRTests-b.build/SpecQR_SpecQRTests.DependencyMetadataFileList
+
+MkDir $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR_SpecQRTests.bundle (in target 'SpecQR_SpecQRTests' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    /bin/mkdir -p $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR_SpecQRTests.bundle
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/empty-SpecQRTests.plist (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/empty-SpecQRTests.plist
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/SpecQRTests.DependencyStaticMetadataFileList (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/SpecQRTests.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/SpecQRTests.DependencyMetadataFileList (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/SpecQRTests.DependencyMetadataFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests_const_extract_protocols.json (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests_const_extract_protocols.json
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.SwiftFileList (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.SwiftFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.SwiftConstValuesFileList (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.SwiftConstValuesFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.LinkFileList (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.LinkFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests-OutputFileMap.json (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests-OutputFileMap.json
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/DerivedSources/resource_bundle_accessor.swift (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/DerivedSources/resource_bundle_accessor.swift
+
+MkDir $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQRTests.xctest (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    /bin/mkdir -p $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQRTests.xctest
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/SpecQR.modulemap (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/SpecQR.modulemap
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/SpecQR.DependencyStaticMetadataFileList (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/SpecQR.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/SpecQR.DependencyMetadataFileList (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/SpecQR.DependencyMetadataFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR_const_extract_protocols.json (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR_const_extract_protocols.json
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.SwiftFileList (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.SwiftFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.SwiftConstValuesFileList (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.SwiftConstValuesFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.LinkFileList (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.LinkFileList
+
+WriteAuxiliaryFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-OutputFileMap.json (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    write-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-OutputFileMap.json
+
+Copy $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/SpecQR.modulemap $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/SpecQR.modulemap (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/SpecQR.modulemap $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
+
+ProcessInfoPlistFile $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR_SpecQRTests.bundle/Info.plist $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR_SpecQRTests-b.build/empty-SpecQR_SpecQRTests.plist (in target 'SpecQR_SpecQRTests' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-infoPlistUtility $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR_SpecQRTests-b.build/empty-SpecQR_SpecQRTests.plist -producttype com.apple.product-type.bundle -expandbuildsettings -format binary -platform iphonesimulator -o $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR_SpecQRTests.bundle/Info.plist
+
+CpResource $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR_SpecQRTests.bundle/Fixtures $PACKAGE_ROOT/Tests/SpecQRTests/Fixtures (in target 'SpecQR_SpecQRTests' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks $PACKAGE_ROOT/Tests/SpecQRTests/Fixtures $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR_SpecQRTests.bundle
+
+RegisterExecutionPolicyException $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR_SpecQRTests.bundle (in target 'SpecQR_SpecQRTests' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-RegisterExecutionPolicyException $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR_SpecQRTests.bundle
+
+Touch $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR_SpecQRTests.bundle (in target 'SpecQR_SpecQRTests' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    /usr/bin/touch -c $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR_SpecQRTests.bundle
+
+SwiftDriver SpecQR normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SpecQR -O -whole-module-optimization @$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.SwiftFileList -DSWIFT_PACKAGE -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios16.0-simulator -g -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -swift-version 6 -I $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -num-threads 10 -Xcc -ivfsstatcache -Xcc $PACKAGE_ROOT/.build-xcode-simulator-release/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex -sdk-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name specqr_swift -emit-const-values -const-gather-protocols-list $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR_const_extract_protocols.json -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/include -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/DerivedSources-normal/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/DerivedSources/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -emit-objc-header -emit-objc-header-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-Swift.h -working-directory $PACKAGE_ROOT/.swiftpm/xcode -no-emit-module-separately-wmo
+
+SwiftDriver\ Compilation SpecQR normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SpecQR -O -whole-module-optimization @$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.SwiftFileList -DSWIFT_PACKAGE -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios16.0-simulator -g -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -swift-version 6 -I $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -num-threads 10 -Xcc -ivfsstatcache -Xcc $PACKAGE_ROOT/.build-xcode-simulator-release/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex -sdk-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name specqr_swift -emit-const-values -const-gather-protocols-list $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR_const_extract_protocols.json -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/include -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/DerivedSources-normal/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/DerivedSources/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -emit-objc-header -emit-objc-header-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-Swift.h -working-directory $PACKAGE_ROOT/.swiftpm/xcode -no-emit-module-separately-wmo
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_stddef-AQ1WTOJYGF4XYK7D67W06FVPY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_AvailabilityInternal-A1LQSHAY50DS5ODVXFFGJGQ85.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_stdarg-9BVDSZ689KDIUTZI8TL4QQE5W.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_SwiftConcurrencyShims-BLJ59C52RT2WSG71V30AIJBCP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_stdbool-YIGVWEG6PHBINO35WL8G85JM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/ptrcheck-DCLT86NEINFLJAJKSILDDUA50.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_float-6LHSFTVO5FFEK4AJEV8DSIAEI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/SwiftShims-91ZES4IRSIC4X2ZPLQ65Y3MG7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/ptrauth-5IT96MXD3913O278BEZ7W45HR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_DarwinFoundation1-12TR5Y8KA4ICG3R3HBO6VZHAY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_limits-CDLHF57D0TXVKDQAVJQF02VLD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_DarwinFoundation2-3AHD7E98BADEM6NCRJ4U0EL7R.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_stdint-6ZKPEW4H6A9JF4BZ0710AGXON.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/sys_types-DENQGDNSUIAHU65U7YA8OYPF5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/string_h-1VP7CU8P3WFC23T0YEMFBV88P.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_DarwinFoundation3-1X1LPXQ2FHK7SVMRVXXH5DVJV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_inttypes-C6ZRL981G2UXKQFWHJGV5NEG2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/Darwin-28M7FSBA8532393IJMNXWMWJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/ObjectiveC-C9EK6QXRH05I2915BXQNZ4OY2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/os_object-17725S0DJ48NS8OLSD6RJ0ELG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/os_workgroup-8AJ24BQM5VKUIL69PTW8UOM2W.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/Dispatch-16RIOY0G1MKCHGWH6VQC3Y7EU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/XPC-5YZ7UU5ESTV2DQ6ZECEE2GOBU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/CoreFoundation-Y2O6YTV7SIQFH25ID40NILQQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/Security-11HFXDQ85P8M4CZR9A2B370RW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/CFNetwork-CDV0PQJSH4OXZWOI2SISTUFHT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/CoreGraphics-9UVXHXUKGZP88GJLJ4KYHNKO7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/Foundation-BIJJMUEPH0TSBEF5ED8DY9EDB.pcm
+
+SwiftCompile normal arm64 Compiling\ Matrix.swift,\ ReedSolomon.swift,\ SpecQR.swift,\ Tables.swift,\ Types.swift,\ KanjiMap.swift,\ Optimizer.swift,\ Segments.swift,\ GS1Dictionary.swift,\ GS1DigitalLink.swift,\ GS1Elements.swift,\ GS1Types.swift,\ AppleGraphics.swift,\ Rendering.swift,\ ScanDiagnostics.swift,\ StructuredAppendGeneration.swift,\ StructuredAppendMerge.swift,\ StructuredAppendTypes.swift $PACKAGE_ROOT/Sources/SpecQR/Core/Matrix.swift $PACKAGE_ROOT/Sources/SpecQR/Core/ReedSolomon.swift $PACKAGE_ROOT/Sources/SpecQR/Core/SpecQR.swift $PACKAGE_ROOT/Sources/SpecQR/Core/Tables.swift $PACKAGE_ROOT/Sources/SpecQR/Core/Types.swift $PACKAGE_ROOT/Sources/SpecQR/Encoding/KanjiMap.swift $PACKAGE_ROOT/Sources/SpecQR/Encoding/Optimizer.swift $PACKAGE_ROOT/Sources/SpecQR/Encoding/Segments.swift $PACKAGE_ROOT/Sources/SpecQR/GS1/GS1Dictionary.swift $PACKAGE_ROOT/Sources/SpecQR/GS1/GS1DigitalLink.swift $PACKAGE_ROOT/Sources/SpecQR/GS1/GS1Elements.swift $PACKAGE_ROOT/Sources/SpecQR/GS1/GS1Types.swift $PACKAGE_ROOT/Sources/SpecQR/Render/AppleGraphics.swift $PACKAGE_ROOT/Sources/SpecQR/Render/Rendering.swift $PACKAGE_ROOT/Sources/SpecQR/Render/ScanDiagnostics.swift $PACKAGE_ROOT/Sources/SpecQR/StructuredAppend/StructuredAppendGeneration.swift $PACKAGE_ROOT/Sources/SpecQR/StructuredAppend/StructuredAppendMerge.swift $PACKAGE_ROOT/Sources/SpecQR/StructuredAppend/StructuredAppendTypes.swift /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/Dispatch.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/ObjectiveC.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/XPC.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/Darwin.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/System.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/Swift.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/CoreGraphics.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/_DarwinFoundation1.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/Foundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/_Builtin_float.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/_DarwinFoundation2.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/Observation.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/CoreFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/_Concurrency.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/_DarwinFoundation3.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/_StringProcessing.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/Combine.swiftmodule/arm64-apple-ios-simulator.swiftmodule $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_stdint-6ZKPEW4H6A9JF4BZ0710AGXON.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/ObjectiveC-C9EK6QXRH05I2915BXQNZ4OY2.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/CFNetwork-CDV0PQJSH4OXZWOI2SISTUFHT.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_DarwinFoundation1-12TR5Y8KA4ICG3R3HBO6VZHAY.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/ptrauth-5IT96MXD3913O278BEZ7W45HR.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_limits-CDLHF57D0TXVKDQAVJQF02VLD.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_stdbool-YIGVWEG6PHBINO35WL8G85JM.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/Dispatch-16RIOY0G1MKCHGWH6VQC3Y7EU.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_DarwinFoundation2-3AHD7E98BADEM6NCRJ4U0EL7R.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/sys_types-DENQGDNSUIAHU65U7YA8OYPF5.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_DarwinFoundation3-1X1LPXQ2FHK7SVMRVXXH5DVJV.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/SwiftShims-91ZES4IRSIC4X2ZPLQ65Y3MG7.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_float-6LHSFTVO5FFEK4AJEV8DSIAEI.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/XPC-5YZ7UU5ESTV2DQ6ZECEE2GOBU.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_stddef-AQ1WTOJYGF4XYK7D67W06FVPY.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/os_object-17725S0DJ48NS8OLSD6RJ0ELG.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_AvailabilityInternal-A1LQSHAY50DS5ODVXFFGJGQ85.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/string_h-1VP7CU8P3WFC23T0YEMFBV88P.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_SwiftConcurrencyShims-BLJ59C52RT2WSG71V30AIJBCP.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_inttypes-C6ZRL981G2UXKQFWHJGV5NEG2.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/Darwin-28M7FSBA8532393IJMNXWMWJ.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/CoreGraphics-9UVXHXUKGZP88GJLJ4KYHNKO7.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/ptrcheck-DCLT86NEINFLJAJKSILDDUA50.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/os_workgroup-8AJ24BQM5VKUIL69PTW8UOM2W.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/Security-11HFXDQ85P8M4CZR9A2B370RW.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_stdarg-9BVDSZ689KDIUTZI8TL4QQE5W.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/Foundation-BIJJMUEPH0TSBEF5ED8DY9EDB.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/CoreFoundation-Y2O6YTV7SIQFH25ID40NILQQ.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-dependencies-1.json (in target 'SpecQR' from project 'SpecQR')
+
+SwiftCompile normal arm64 (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Matrix.swift, ReedSolomon.swift, SpecQR.swift, Tables.swift, Types.swift, KanjiMap.swift, Optimizer.swift, Segments.swift, GS1Dictionary.swift, GS1DigitalLink.swift, GS1Elements.swift, GS1Types.swift, AppleGraphics.swift, Rendering.swift, ScanDiagnostics.swift, StructuredAppendGeneration.swift, StructuredAppendMerge.swift, StructuredAppendTypes.swift (in target 'SpecQR' from project 'SpecQR')
+
+SwiftDriver\ Compilation\ Requirements SpecQR normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SpecQR -O -whole-module-optimization @$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.SwiftFileList -DSWIFT_PACKAGE -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios16.0-simulator -g -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -swift-version 6 -I $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -num-threads 10 -Xcc -ivfsstatcache -Xcc $PACKAGE_ROOT/.build-xcode-simulator-release/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex -sdk-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name specqr_swift -emit-const-values -const-gather-protocols-list $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR_const_extract_protocols.json -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/include -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/DerivedSources-normal/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/DerivedSources/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/DerivedSources -Xcc -DSWIFT_PACKAGE -emit-objc-header -emit-objc-header-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-Swift.h -working-directory $PACKAGE_ROOT/.swiftpm/xcode -no-emit-module-separately-wmo
+
+SwiftMergeGeneratedHeaders $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/SpecQR-Swift.h $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-Swift.h (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-swiftHeaderTool -arch arm64 $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR-Swift.h -o $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/SpecQR-Swift.h
+
+Copy $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.swiftmodule/arm64-apple-ios-simulator.swiftmodule $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.swiftmodule (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.swiftmodule $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.swiftmodule/arm64-apple-ios-simulator.swiftdoc $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.swiftdoc (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.swiftdoc $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.swiftmodule/arm64-apple-ios-simulator.abi.json $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.abi.json (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.abi.json $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Ld $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.o normal (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios16.0-simulator -r -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -Os -Xlinker -no_warn_duplicate_libraries -F$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphonesimulator -F$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -filelist $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.LinkFileList -nostdlib -Xlinker -object_path_lto -Xlinker $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR_lto.o -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.swiftmodule -o $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.o
+
+SwiftDriver specqr-cli normal arm64 com.apple.xcode.tools.swift.compiler (in target 'specqr-cli-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name specqr_cli -O -whole-module-optimization @$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr-cli.SwiftFileList -DSWIFT_PACKAGE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios16.0-simulator -g -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -swift-version 6 -I $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/PackageFrameworks -F $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -num-threads 10 -Xcc -ivfsstatcache -Xcc $PACKAGE_ROOT/.build-xcode-simulator-release/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr-cli-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex -sdk-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr_cli.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr_cli-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name specqr_swift -emit-const-values -const-gather-protocols-list $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr-cli_const_extract_protocols.json -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/include -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/DerivedSources-normal/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/DerivedSources/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -working-directory $PACKAGE_ROOT/.swiftpm/xcode -no-emit-module-separately-wmo
+
+SwiftDriver SpecQRTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SpecQRTests -O -whole-module-optimization @$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.SwiftFileList -DSWIFT_PACKAGE -DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -swift-version 6 -I $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/PackageFrameworks -F $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -num-threads 10 -Xcc -ivfsstatcache -Xcc $PACKAGE_ROOT/.build-xcode-simulator-release/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex -sdk-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file $PACKAGE_ROOT/.build-xcode-simulator-release/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name specqr_swift -emit-const-values -const-gather-protocols-list $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests_const_extract_protocols.json -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/include -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/DerivedSources-normal/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/DerivedSources/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQRTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -working-directory $PACKAGE_ROOT/.swiftpm/xcode -no-emit-module-separately-wmo
+$PACKAGE_ROOT/Tests/SpecQRTests/ApplePlatformTests.swift:5:21: error: Unable to resolve Swift module dependency to a compatible module: 'SpecQR' (in target 'SpecQRTests-product' from project 'SpecQR')
+    note: Found incompatible module '$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.swiftmodule/arm64-apple-ios-simulator.swiftmodule': module built without '-enable-testing'
+    note: Found incompatible module '$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.swiftmodule/arm64-apple-ios-simulator.swiftmodule': built for incompatible target
+    $PACKAGE_ROOT/Tests/SpecQRTests/ConcurrencyTests.swift:4:18: note: Also imported here
+    $PACKAGE_ROOT/Tests/SpecQRTests/CoreTests.swift:3:18: note: Also imported here
+    $PACKAGE_ROOT/Tests/SpecQRTests/DocumentationExamplesTests.swift:2:8: note: Also imported here
+    $PACKAGE_ROOT/Tests/SpecQRTests/GS1Tests.swift:4:18: note: Also imported here
+    $PACKAGE_ROOT/Tests/SpecQRTests/MatrixTests.swift:3:18: note: Also imported here
+    $PACKAGE_ROOT/Tests/SpecQRTests/RenderingTests.swift:4:18: note: Also imported here
+    $PACKAGE_ROOT/Tests/SpecQRTests/StructuredAppendTests.swift:4:18: note: Also imported here
+$PACKAGE_ROOT/Tests/SpecQRTests/ApplePlatformTests.swift:5:21: note: Found incompatible module '$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.swiftmodule/arm64-apple-ios-simulator.swiftmodule': module built without '-enable-testing'
+   @testable import SpecQR
+                    ^ (in target 'SpecQRTests-product' from project 'SpecQR')
+$PACKAGE_ROOT/Tests/SpecQRTests/ApplePlatformTests.swift:5:21: note: Found incompatible module '$PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.swiftmodule/arm64-apple-ios-simulator.swiftmodule': built for incompatible target
+   @testable import SpecQR
+                    ^ (in target 'SpecQRTests-product' from project 'SpecQR')
+$PACKAGE_ROOT/Tests/SpecQRTests/ConcurrencyTests.swift:4:18: note: Also imported here
+@testable import SpecQR
+                 ^ (in target 'SpecQRTests-product' from project 'SpecQR')
+$PACKAGE_ROOT/Tests/SpecQRTests/CoreTests.swift:3:18: note: Also imported here
+@testable import SpecQR
+                 ^ (in target 'SpecQRTests-product' from project 'SpecQR')
+$PACKAGE_ROOT/Tests/SpecQRTests/DocumentationExamplesTests.swift:2:8: note: Also imported here
+import SpecQR
+       ^ (in target 'SpecQRTests-product' from project 'SpecQR')
+$PACKAGE_ROOT/Tests/SpecQRTests/GS1Tests.swift:4:18: note: Also imported here
+@testable import SpecQR
+                 ^ (in target 'SpecQRTests-product' from project 'SpecQR')
+$PACKAGE_ROOT/Tests/SpecQRTests/MatrixTests.swift:3:18: note: Also imported here
+@testable import SpecQR
+                 ^ (in target 'SpecQRTests-product' from project 'SpecQR')
+$PACKAGE_ROOT/Tests/SpecQRTests/RenderingTests.swift:4:18: note: Also imported here
+@testable import SpecQR
+                 ^ (in target 'SpecQRTests-product' from project 'SpecQR')
+$PACKAGE_ROOT/Tests/SpecQRTests/StructuredAppendTests.swift:4:18: note: Also imported here
+@testable import SpecQR
+                 ^ (in target 'SpecQRTests-product' from project 'SpecQR')
+
+ExtractAppIntentsMetadata (in target 'SpecQR' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name SpecQR --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk --xcode-version 27A266a --platform-family iOS --deployment-target 16.0 --bundle-identifier specqr-swift.SpecQR --output $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.appintents --target-triple arm64-apple-ios16.0-simulator --binary-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.o --dependency-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR_dependency_info.dat --stringsdata-file $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.SwiftFileList --metadata-file-list $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/SpecQR.DependencyMetadataFileList --static-metadata-file-list $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/SpecQR.DependencyStaticMetadataFileList --swift-const-vals-list $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/SpecQR-t.build/Objects-normal/arm64/SpecQR.SwiftConstValuesFileList --force --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-10-03 17:36:07.651 appintentsmetadataprocessor[78370:8209228] Starting appintentsmetadataprocessor export
+2026-10-03 17:36:07.688 appintentsmetadataprocessor[78370:8209228] Extracted no relevant App Intents symbols, skipping writing output
+
+SwiftCompile normal arm64 Compiling\ main.swift $PACKAGE_ROOT/Sources/specqr-cli/main.swift /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/CoreGraphics.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/Dispatch.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/Foundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQR.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/Darwin.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/System.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/Combine.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/_Builtin_float.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/XPC.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/Observation.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/ObjectiveC.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/Swift.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/CoreFoundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/_DarwinFoundation1.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/_StringProcessing.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/_DarwinFoundation2.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/_DarwinFoundation3.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/27.0/_Concurrency.swiftmodule/arm64-apple-ios-simulator.swiftmodule $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_stddef-AQ1WTOJYGF4XYK7D67W06FVPY.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/CFNetwork-CDV0PQJSH4OXZWOI2SISTUFHT.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/Foundation-BIJJMUEPH0TSBEF5ED8DY9EDB.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/ptrauth-5IT96MXD3913O278BEZ7W45HR.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/ptrcheck-DCLT86NEINFLJAJKSILDDUA50.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_DarwinFoundation1-12TR5Y8KA4ICG3R3HBO6VZHAY.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/CoreGraphics-9UVXHXUKGZP88GJLJ4KYHNKO7.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/Security-11HFXDQ85P8M4CZR9A2B370RW.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_inttypes-C6ZRL981G2UXKQFWHJGV5NEG2.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/XPC-5YZ7UU5ESTV2DQ6ZECEE2GOBU.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_SwiftConcurrencyShims-BLJ59C52RT2WSG71V30AIJBCP.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_DarwinFoundation2-3AHD7E98BADEM6NCRJ4U0EL7R.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/SwiftShims-91ZES4IRSIC4X2ZPLQ65Y3MG7.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/CoreFoundation-Y2O6YTV7SIQFH25ID40NILQQ.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/string_h-1VP7CU8P3WFC23T0YEMFBV88P.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_AvailabilityInternal-A1LQSHAY50DS5ODVXFFGJGQ85.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_limits-CDLHF57D0TXVKDQAVJQF02VLD.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/Dispatch-16RIOY0G1MKCHGWH6VQC3Y7EU.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/os_workgroup-8AJ24BQM5VKUIL69PTW8UOM2W.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/sys_types-DENQGDNSUIAHU65U7YA8OYPF5.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/Darwin-28M7FSBA8532393IJMNXWMWJ.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/os_object-17725S0DJ48NS8OLSD6RJ0ELG.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/ObjectiveC-C9EK6QXRH05I2915BXQNZ4OY2.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_stdint-6ZKPEW4H6A9JF4BZ0710AGXON.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_stdbool-YIGVWEG6PHBINO35WL8G85JM.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_stdarg-9BVDSZ689KDIUTZI8TL4QQE5W.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_DarwinFoundation3-1X1LPXQ2FHK7SVMRVXXH5DVJV.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules/_Builtin_float-6LHSFTVO5FFEK4AJEV8DSIAEI.pcm $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SpecQR.build/Release-iphonesimulator/specqr-cli-p.build/Objects-normal/arm64/specqr_cli-dependencies-1.json (in target 'specqr-cli-product' from project 'SpecQR')
+
+SwiftCompile normal arm64 (in target 'specqr-cli-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    
+
+PruneExplicitPrecompiledModules $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules $PACKAGE_ROOT/.build-xcode-simulator-release/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules $PACKAGE_ROOT/.build-xcode-simulator-release/SDKExplicitPrecompiledModules
+
+** TEST BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver SpecQRTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SpecQRTests-product' from project 'SpecQR')
+	Building workspace SpecQR for testing with scheme SpecQR-Package
+(2 failures)

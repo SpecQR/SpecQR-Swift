@@ -1,0 +1,45 @@
+Working directory: isolated SpecQR-Swift candidate on this Mac.
+All paths below are relative to that package except installed toolchain paths.
+
+Common root SwiftPM arguments used for builds and original test attempts:
+CLANG_MODULE_CACHE_PATH="$PWD/.build-apple/clang-cache"
+--scratch-path .build-apple --cache-path .build-apple/cache
+--config-path .build-apple/config --security-path .build-apple/security
+--disable-sandbox -j 2
+
+swift test [common arguments]
+swift test -c release [common arguments]
+Both original XCTest attempts were blocked at import XCTest.
+
+swift build -c debug [common arguments]
+swift build -c release [common arguments]
+
+swift run --package-path Examples/Basic --scratch-path "$PWD/.build-apple-consumer"
+  --cache-path "$PWD/.build-apple/cache" --config-path "$PWD/.build-apple/config"
+  --security-path "$PWD/.build-apple/security" --disable-sandbox -j 2 -c debug
+The same consumer command was run with -c release.
+
+SPECQR_APPLE_BUILD_DIR="$PWD/.build-apple-validation"
+SPECQR_APPLE_CACHE_DIR="$PWD/.build-apple"
+./Scripts/verify-apple.sh debug
+./Scripts/verify-apple.sh release
+Both genuine Swift Testing runs exited 0.
+
+swift build --build-system native --triple x86_64-apple-macosx13.0 --target SpecQR
+  --scratch-path .build-apple-intel --cache-path .build-apple/cache
+  --config-path .build-apple/config --security-path .build-apple/security
+  --disable-sandbox -j 2 -c release
+This is a cross-compile, not execution on Intel hardware.
+
+.build-apple/out/Products/Debug/specqr-cli 'HELLO WORLD'
+.build-apple/out/Products/Release/specqr-cli 'HELLO WORLD'
+Both exited 0 and produced SVG with a QR path; see cli-smoke.json.
+
+xcrun swift-format lint --strict Examples/Basic/Package.swift
+  Sources/SpecQR/Render/Rendering.swift Scripts/apple-validation/Package.swift
+  Scripts/apple-validation/Tests/SpecQRAppleValidationTests/*.swift
+bash -n Scripts/verify-apple.sh
+
+Initial sandbox/cache and CLT Testing discovery failures were retained in the
+diagnostic logs. Native developer-tool execution was authorized, with build
+storage kept inside the isolated task. No SDK/toolchain installation occurred.

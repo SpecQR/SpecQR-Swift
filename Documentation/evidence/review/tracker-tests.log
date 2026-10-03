@@ -1,0 +1,15 @@
+Building for production...
+[Pre-planning 1 / 183]
+[7 / 12] SpecQRTests-product
+[11 / 11] SpecQRTests-product
+[15 / 20] SpecQRTests-test-runner
+[18 / 18] SpecQRTests-test-runner
+Build complete! (6.03 secs)
+Test Suite 'Selected tests' started at 2026-10-03 15:48:31.312
+Test Suite 'ReviewTrackerTests' started at 2026-10-03 15:48:31.313
+Test Case 'ReviewTrackerTests.testCostOnlyTrackerMatchesFullOptimizer' started at 2026-10-03 15:48:31.313
+Test Case 'ReviewTrackerTests.testCostOnlyTrackerMatchesFullOptimizer' passed (0.094 seconds)
+Test Suite 'ReviewTrackerTests' passed at 2026-10-03 15:48:31.407
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.094 (0.094) seconds
+Test Suite 'Selected tests' passed at 2026-10-03 15:48:31.407
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.094 (0.094) seconds

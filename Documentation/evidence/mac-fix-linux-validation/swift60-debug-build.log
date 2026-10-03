@@ -1,0 +1,29 @@
+Building for debugging...
+[0/7] Write sources
+[2/7] Write swift-version--23BFA3BA4937D1DF.txt
+[4/22] Emitting module SpecQR
+[5/26] Compiling SpecQR KanjiMap.swift
+[6/26] Compiling SpecQR Optimizer.swift
+[7/26] Compiling SpecQR Segments.swift
+[8/26] Compiling SpecQR GS1Dictionary.swift
+[9/26] Compiling SpecQR GS1DigitalLink.swift
+[10/26] Compiling SpecQR Matrix.swift
+[11/26] Compiling SpecQR ReedSolomon.swift
+[12/26] Compiling SpecQR SpecQR.swift
+[13/26] Compiling SpecQR Tables.swift
+[14/26] Compiling SpecQR Types.swift
+[15/26] Compiling SpecQR ScanDiagnostics.swift
+[16/26] Compiling SpecQR StructuredAppendGeneration.swift
+[17/26] Compiling SpecQR StructuredAppendMerge.swift
+[18/26] Compiling SpecQR StructuredAppendTypes.swift
+[19/26] Compiling SpecQR GS1Elements.swift
+[20/26] Compiling SpecQR GS1Types.swift
+[21/26] Compiling SpecQR AppleGraphics.swift
+[22/26] Compiling SpecQR Rendering.swift
+[23/27] Wrapping AST for SpecQR for debugging
+[25/29] Emitting module specqr_cli
+[26/29] Compiling specqr_cli main.swift
+[27/30] Wrapping AST for specqr-cli for debugging
+[28/30] Write Objects.LinkFileList
+[29/30] Linking specqr-cli
+Build complete! (6.13s)

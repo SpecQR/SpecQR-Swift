@@ -1,0 +1,14 @@
+Building for production...
+[Planning deferred tasks]
+[24 / 33] SpecQR
+[32 / 35] SpecQRDemo-product
+[35 / 35] SpecQRDemo-product
+Build complete! (13.56 secs)
+warning: safeExec: signal(32, SIG_DFL) failed: Invalid argument
+warning: safeExec: signal(33, SIG_DFL) failed: Invalid argument
+URL: version 2, mask 0, PNG 279136 bytes, SVG 5212 bytes
+Binary: 4 bytes, 44 bits
+GS1: byte mode safely preserves literal percent
+Digital Link: https://example.com/01/09501101530003/10/LOT%25123?17=271231
+Structured Append: 10 symbols, parity 0
+Planning: 128 capacity bits, 0 warnings

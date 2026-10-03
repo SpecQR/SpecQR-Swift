@@ -1,0 +1,27 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -xctestrun .build-xcode-simulator/Build/Products/SpecQR-Package_SpecQR-Package_iphonesimulator27.0-undefined_arch.xctestrun -destination "platform=iOS Simulator,id=[ephemeral identifier omitted]" -parallel-testing-enabled NO -resultBundlePath .build-xcode-simulator/results-debug.xcresult
+
+Writing result bundle at path:
+	$PACKAGE_ROOT/.build-xcode-simulator/results-debug.xcresult
+
+2026-10-03 18:03:54.385560+0900 xctest[79164:8217900] [Default] Error while discovering and preparing to run tests: Error Domain=com.apple.dt.XCTest.XCTFuture Code=1000 "Timed out while preparing execution worker." UserInfo={NSLocalizedDescription=Timed out while preparing execution worker.}
+
+
+*** If you believe this error represents a bug, please attach the result bundle at $PACKAGE_ROOT/.build-xcode-simulator/results-debug.xcresult
+
+2026-10-03 18:03:54.794 xcodebuild[79123:8226331]  IDETestOperationsObserverDebug: Failure collecting diagnostics from simulator: Process exited with error 72:
+ xcrun: error: unable to find utility "simctl", not a developer tool or in PATH
+
+2026-10-03 18:03:54.837 xcodebuild[79123:8217344] [MT] IDETestOperationsObserverDebug: 1365.425 elapsed -- Testing started completed.
+2026-10-03 18:03:54.837 xcodebuild[79123:8217344] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-03 18:03:54.838 xcodebuild[79123:8217344] [MT] IDETestOperationsObserverDebug: 1365.425 sec, +1365.425 sec -- end
+
+Test session results, code coverage, and logs:
+	$PACKAGE_ROOT/.build-xcode-simulator/results-debug.xcresult
+
+Testing failed:
+	xctest (79164) encountered an error (Timed out while preparing execution worker.)
+
+** TEST EXECUTE FAILED **
+
+Testing started

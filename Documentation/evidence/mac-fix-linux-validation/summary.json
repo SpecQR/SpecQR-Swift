@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-03",
+  "scope": "Linux regression for two Mac-discovered fixes",
+  "passed": {
+    "swift60": [
+      "debug build",
+      "debug53XCTest+2SwiftTesting",
+      "release build",
+      "release53XCTest+2SwiftTesting",
+      "independent consumer build/run"
+    ],
+    "swift64": [
+      "debug53XCTest+2SwiftTesting",
+      "release53XCTest+2SwiftTesting",
+      "full external aggregate",
+      "independent consumer build/run",
+      "strict formatter"
+    ]
+  },
+  "changedFiles": [
+    {
+      "path": "Examples/Basic/Package.swift",
+      "sha256": "a98f589fb40bf64b1183ea1bd16a376bf9835637185bda9f2d3e26a3b744f1d4"
+    },
+    {
+      "path": "Sources/SpecQR/Render/Rendering.swift",
+      "sha256": "0fa4745d9cda2ef3fe8a7c69e23989d2853040f8ad95591656bb9a3a2a03b623"
+    }
+  ],
+  "appleSDKOrRuntimeClaim": false,
+  "existingLibraryZIPReplaced": false
+}

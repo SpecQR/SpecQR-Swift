@@ -1,0 +1,205 @@
+Building for debugging...
+[Planning deferred tasks]
+[1 / 20]
+[2 / 21] SpecQR
+[9 / 86]
+[12 / 86]
+[15 / 86]
+[18 / 86]
+[21 / 86]
+[22 / 86]
+[25 / 86]
+[28 / 86]
+[31 / 86]
+[33 / 86]
+[34 / 86]
+[37 / 86]
+[38 / 86]
+[42 / 86]
+[45 / 86]
+[46 / 86]
+[50 / 86]
+[51 / 86]
+[53 / 86]
+[55 / 86]
+[56 / 86]
+[59 / 86] SpecQR
+[63 / 87] SpecQR
+[65 / 87] SpecQR
+[67 / 85] SpecQR
+[69 / 85] SpecQR
+[70 / 85]
+[70 / 85] SpecQR
+$PACKAGE_ROOT/Package.swift: SpecQR: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/Library/Frameworks' not found
+[74 / 85] SpecQRAppleValidationTests-product
+[77 / 146]
+[83 / 146]
+[86 / 146]
+[89 / 146]
+[92 / 146]
+[94 / 146]
+[95 / 146]
+[97 / 146]
+[99 / 146]
+[102 / 146]
+[107 / 146]
+[110 / 146]
+[112 / 146]
+[114 / 146]
+[119 / 146]
+[121 / 146]
+[124 / 146]
+[125 / 146]
+[126 / 146]
+[129 / 146]
+[130 / 146]
+[131 / 146]
+error: SwiftCompile normal arm64 failed with a nonzero exit code. Command line:     cd $PACKAGE_ROOT/Scripts
+    
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift:11:8: error: external macro implementation type 'TestingMacros.SuiteDeclarationMacro' could not be found for macro 'Suite'; plugin for module 'TestingMacros' not found
+  9 | /// an unavailable Apple framework is a build failure, never a silently skipped pass.
+ 10 | @Suite(.serialized)
+ 11 | struct AppleValidationTests {
+    |        `- error: external macro implementation type 'TestingMacros.SuiteDeclarationMacro' could not be found for macro 'Suite'; plugin for module 'TestingMacros' not found
+ 12 |    @Test
+ 13 |    func coreGraphicsPreservesStraightRGBAAndOwnsStorage() throws {
+
+Testing.Suite:1:30: note: 'Suite' declared here
+1 | @attached(peer) public macro Suite(_ traits: any Testing.SuiteTrait...) = #externalMacro(module: "TestingMacros", type: "SuiteDeclarationMacro")
+  |                              `- note: 'Suite' declared here
+
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift:13:9: error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 11 | struct AppleValidationTests {
+ 12 |    @Test
+ 13 |    func coreGraphicsPreservesStraightRGBAAndOwnsStorage() throws {
+    |         `- error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 14 |       let options = QRRenderOptions(margin: 3, scale: 2, foreground: "#12345678", background: "#aBcDeF09")
+ 15 |       let expected = try SpecQR.generate("storage lifetime 123").rgba(options: options)
+
+Testing.Test:1:30: note: 'Test' declared here
+1 | @attached(peer) public macro Test(_ traits: any Testing.TestTrait...) = #externalMacro(module: "TestingMacros", type: "TestDeclarationMacro")
+  |                              `- note: 'Test' declared here
+
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift:40:9: error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 38 | 
+ 39 |    @Test
+ 40 |    func imageIODecodesActualPNGToEveryOriginalPixel() throws {
+    |         `- error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 41 |       let code = try SpecQR.generate("PNG reader: 0123456789 / RGB")
+ 42 |       for margin in [0, 4] {
+
+Testing.Test:1:30: note: 'Test' declared here
+1 | @attached(peer) public macro Test(_ traits: any Testing.TestTrait...) = #externalMacro(module: "TestingMacros", type: "TestDeclarationMacro")
+  |                              `- note: 'Test' declared here
+
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift:58:9: error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 56 | 
+ 57 |    @Test
+ 58 |    func visionDecodesDirectCGImageAndPNGIncludingUTF8() throws {
+    |         `- error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 59 |       let inputs = [
+ 60 |          "SpecQR Apple validation 12345",
+
+Testing.Test:1:30: note: 'Test' declared here
+1 | @attached(peer) public macro Test(_ traits: any Testing.TestTrait...) = #externalMacro(module: "TestingMacros", type: "TestDeclarationMacro")
+  |                              `- note: 'Test' declared here
+
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift:77:9: error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 75 | 
+ 76 |    @Test
+ 77 |    func visionPreservesGS1LiteralPercentAndSeparators() throws {
+    |         `- error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 78 |       let inputs = [
+ 79 |          "10ABC%DEF",
+
+Testing.Test:1:30: note: 'Test' declared here
+1 | @attached(peer) public macro Test(_ traits: any Testing.TestTrait...) = #externalMacro(module: "TestingMacros", type: "TestDeclarationMacro")
+  |                              `- note: 'Test' declared here
+
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift:94:9: error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 92 | 
+ 93 |    @Test
+ 94 |    func coreGraphicsRejectsInvalidOptionsBeforeAllocation() throws {
+    |         `- error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 95 |       let code = try SpecQR.generate("negative rendering")
+ 96 |       let invalid: [QRRenderOptions] = [
+
+Testing.Test:1:30: note: 'Test' declared here
+1 | @attached(peer) public macro Test(_ traits: any Testing.TestTrait...) = #externalMacro(module: "TestingMacros", type: "TestDeclarationMacro")
+  |                              `- note: 'Test' declared here
+
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift:112:9: error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+110 | 
+111 |    @Test
+112 |    func bothFNC1FormsPreservePercentSafetyAcrossPlanningAndGeneration() throws {
+    |         `- error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+113 |       for secondPosition in [false, true] {
+114 |          for optimize in [false, true] {
+
+Testing.Test:1:30: note: 'Test' declared here
+1 | @attached(peer) public macro Test(_ traits: any Testing.TestTrait...) = #externalMacro(module: "TestingMacros", type: "TestDeclarationMacro")
+  |                              `- note: 'Test' declared here
+
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift:145:9: error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+143 | 
+144 |    @Test
+145 |    func structuredAppendHeadersShuffledMergeAndCorruption() throws {
+    |         `- error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+146 |       let bytes = Array(UInt8(0)...UInt8(120)) + [255, 128, 0]
+147 |       let set = try SpecQR.generateStructuredAppend(
+
+Testing.Test:1:30: note: 'Test' declared here
+1 | @attached(peer) public macro Test(_ traits: any Testing.TestTrait...) = #externalMacro(module: "TestingMacros", type: "TestDeclarationMacro")
+  |                              `- note: 'Test' declared here
+
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift:183:9: error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+181 | 
+182 |    @Test
+183 |    func concurrentCoreGraphicsRenderingMaintainsValueIsolation() async throws {
+    |         `- error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+184 |       let inputs = ["HELLO", "漢字123", "https://example.com", "🙂 e\u{0301}"]
+185 |       let expected = try inputs.map { try SpecQR.generate($0) }
+
+Testing.Test:1:30: note: 'Test' declared here
+1 | @attached(peer) public macro Test(_ traits: any Testing.TestTrait...) = #externalMacro(module: "TestingMacros", type: "TestDeclarationMacro")
+  |                              `- note: 'Test' declared here
+
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/CorpusTests.swift:8:8: error: external macro implementation type 'TestingMacros.SuiteDeclarationMacro' could not be found for macro 'Suite'; plugin for module 'TestingMacros' not found
+  6 | // These execute the original fixture corpus; they do not count as an XCTest run.
+  7 | @Suite("Pinned upstream fixture corpus")
+  8 | struct CorpusTests {
+    |        `- error: external macro implementation type 'TestingMacros.SuiteDeclarationMacro' could not be found for macro 'Suite'; plugin for module 'TestingMacros' not found
+  9 |    @Test("All 1,411 GS1 fixtures preserve canonical results and errors")
+ 10 |    func gs1UpstreamCorpus() throws {
+
+Testing.Suite:1:30: note: 'Suite' declared here
+1 | @attached(peer) public macro Suite(_ displayName: _const String? = nil, _ traits: any Testing.SuiteTrait...) = #externalMacro(module: "TestingMacros", type: "SuiteDeclarationMacro")
+  |                              `- note: 'Suite' declared here
+
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/CorpusTests.swift:10:9: error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+  8 | struct CorpusTests {
+  9 |    @Test("All 1,411 GS1 fixtures preserve canonical results and errors")
+ 10 |    func gs1UpstreamCorpus() throws {
+    |         `- error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 11 |       let url = fixtureURL("gs1-upstream.json")
+ 12 |       let root = try #require(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+
+Testing.Test:1:30: note: 'Test' declared here
+1 | @attached(peer) public macro Test(_ displayName: _const String? = nil, _ traits: any Testing.TestTrait...) = #externalMacro(module: "TestingMacros", type: "TestDeclarationMacro")
+  |                              `- note: 'Test' declared here
+
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/CorpusTests.swift:27:9: error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 25 | 
+ 26 |    @Test("All 22 Structured Append fixtures preserve matrices and diagnostics")
+ 27 |    func structuredAppendUpstreamCorpus() throws {
+    |         `- error: external macro implementation type 'TestingMacros.TestDeclarationMacro' could not be found for macro 'Test'; plugin for module 'TestingMacros' not found
+ 28 |       let url = fixtureURL("structured-append-differential.json")
+ 29 |       let fixtures = try JSONDecoder().decode(FixtureFile.self, from: Data(contentsOf: url))
+
+Testing.Test:1:30: note: 'Test' declared here
+1 | @attached(peer) public macro Test(_ displayName: _const String? = nil, _ traits: any Testing.TestTrait...) = #externalMacro(module: "TestingMacros", type: "TestDeclarationMacro")
+  |                              `- note: 'Test' declared here
+Failed frontend command:
+/Library/Developer/CommandLineTools/usr/bin/swift-frontend -frontend -emit-module -experimental-skip-non-inlinable-function-bodies-without-types $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/DerivedSources/test_entry_point.swift $PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift $PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/CorpusTests.swift -target arm64-apple-macos13.0 -module-can-import-version Testing 2078 0 -disable-cross-import-overlay-search -swift-module-cross-import Testing /Library/Developer/CommandLineTools/Library/Developer/Frameworks/Testing.framework/Modules/Testing.swiftcrossimport/AppKit.swiftoverlay -swift-module-cross-import Testing /Library/Developer/CommandLineTools/Library/Developer/Frameworks/Testing.framework/Modules/Testing.swiftcrossimport/CoreGraphics.swiftoverlay -swift-module-cross-import Testing /Library/Developer/CommandLineTools/Library/Developer/Frameworks/Testing.framework/Modules/Testing.swiftcrossimport/CoreImage.swiftoverlay -swift-module-cross-import Testing /Library/Developer/CommandLineTools/Library/Developer/Frameworks/Testing.framework/Modules/Testing.swiftcrossimport/CoreTransferable.swiftoverlay -swift-module-cross-import Testing /Library/Developer/CommandLineTools/Library/Developer/Frameworks/Testing.framework/Modules/Testing.swiftcrossimport/Foundation.swiftoverlay -swift-module-cross-import Vision /Library/Developer/CommandLineTools/SDKs/MacOSX27.0.sdk/System/Library/Frameworks/Vision.framework/Modules/Vision.swiftcrossimport/FoundationModels.swiftoverlay -load-resolved-plugin /Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/libObservationMacros.dylib\#\#ObservationMacros -load-resolved-plugin /Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#\#SwiftMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/SpecQRAppleValidationTests-dependencies-1.json -Xllvm -aarch64-use-tbi -enable-objc-interop -stack-check -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX27.0.sdk -I $PACKAGE_ROOT/.build-apple-validation/out/Products/Debug -Isystem /Library/Developer/CommandLineTools/Developer/usr/lib -F $PACKAGE_ROOT/.build-apple-validation/out/Products/Debug/PackageFrameworks -F $PACKAGE_ROOT/.build-apple-validation/out/Products/Debug -F /Library/Developer/CommandLineTools/Library/Developer/Frameworks -F /Library/Developer/CommandLineTools/Developer/Library/Frameworks -module-cache-path $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SwiftExplicitPrecompiledModules -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=4 -swift-version 6 -Onone -D SWIFT_PACKAGE -D DEBUG -D Xcode -serialize-debugging-options -enable-experimental-feature DebugDescriptionMacro -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file $PACKAGE_ROOT/.build-apple-validation/out/ModuleCache.noindex/Session.modulevalidation -disable-sandbox -Xcc -working-directory -Xcc $PACKAGE_ROOT/Scripts -enable-anonymous-context-mangled-names -file-compilation-dir $PACKAGE_ROOT/Scripts -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc $PACKAGE_ROOT/.build-apple-validation/out/SDKStatCaches.noindex/macosx27.0-26A5419a-a0facfad118c1a7a18f0aad9463f6549ffd68ff603bdaacc80b00cb8898de72d.sdkstatcache -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -Xcc -I$PACKAGE_ROOT/.build-apple-validation/out/Products/Debug/include -Xcc -I$PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/DerivedSources-normal/arm64 -Xcc -I$PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/DerivedSources/arm64 -Xcc -I$PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name SpecQRAppleValidationTests -package-name apple_validation -const-gather-protocols-file $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/SpecQRAppleValidationTests_const_extract_protocols.json -disable-clang-spi -clang-target arm64-apple-macos27.0 -target-sdk-version 27.0 -target-sdk-name macosx27.0 -in-process-plugin-server-path /Library/Developer/CommandLineTools/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -emit-module-doc-path $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/SpecQRAppleValidationTests.swiftdoc -emit-module-source-info-path $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/SpecQRAppleValidationTests.swiftsourceinfo -serialize-diagnostics-path $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/SpecQRAppleValidationTests-primary-emit-module.dia -emit-dependencies-path $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/SpecQRAppleValidationTests-primary-emit-module.d -parse-as-library -o $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/SpecQRAppleValidationTests.swiftmodule -emit-abi-descriptor-path $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/SpecQRAppleValidationTests.abi.json
+error: Build failed
+error: fatalError

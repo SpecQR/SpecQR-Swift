@@ -1,0 +1,26 @@
+# Run from package root. Each exit status is recorded in summary.json.
+export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+export CLANG_MODULE_CACHE_PATH="$PWD/.build-xcode-support/clang-cache"
+xcodebuild -version
+xcodebuild -checkFirstLaunchStatus
+xcodebuild -showsdks
+xcrun swift --version
+xcrun simctl list runtimes
+swift test --scratch-path .build-xcode --cache-path .build-xcode-support/cache --config-path .build-xcode-support/config --security-path .build-xcode-support/security --disable-sandbox -j 2
+swift test --scratch-path .build-xcode --cache-path .build-xcode-support/cache --config-path .build-xcode-support/config --security-path .build-xcode-support/security --disable-sandbox -j 2 -c release
+swift run --package-path Examples/Basic --scratch-path "$PWD/.build-xcode-consumer" --cache-path "$PWD/.build-xcode-support/cache" --config-path "$PWD/.build-xcode-support/config" --security-path "$PWD/.build-xcode-support/security" --disable-sandbox -j 2 -c release
+xcodebuild -list -json
+xcodebuild -scheme SpecQR -showdestinations
+# Product-only scheme has zero test configurations; compile evidence only:
+xcodebuild -scheme SpecQR -destination 'generic/platform=iOS Simulator' -derivedDataPath .build-xcode-simulator -parallel-testing-enabled NO -jobs 2 CODE_SIGNING_ALLOWED=NO build-for-testing
+# Package scheme contains the genuine test target:
+xcodebuild -scheme SpecQR-Package -destination 'generic/platform=iOS Simulator' -derivedDataPath .build-xcode-simulator -parallel-testing-enabled NO -jobs 2 ARCHS=arm64 CODE_SIGNING_ALLOWED=NO build-for-testing
+xcodebuild -scheme SpecQR-Package -configuration Release -destination 'generic/platform=iOS Simulator' -derivedDataPath .build-xcode-simulator-release -parallel-testing-enabled NO -jobs 2 ARCHS=arm64 CODE_SIGNING_ALLOWED=NO build-for-testing
+# Release retry after initial default omitted testability for @testable imports:
+xcodebuild -scheme SpecQR-Package -configuration Release -destination 'generic/platform=iOS Simulator' -derivedDataPath .build-xcode-simulator-release -parallel-testing-enabled NO -jobs 2 ARCHS=arm64 ENABLE_TESTABILITY=YES CODE_SIGNING_ALLOWED=NO build-for-testing
+
+# Final actual simulator executions after test-only decoder configuration:
+xcodebuild -scheme SpecQR-Package -configuration Debug -destination 'platform=iOS Simulator,id=[ephemeral identifier omitted]' -derivedDataPath .build-xcode-simulator -parallel-testing-enabled NO -jobs 2 ARCHS=arm64 CODE_SIGNING_ALLOWED=NO -resultBundlePath .build-xcode-simulator/results-debug-final.xcresult test
+xcodebuild -scheme SpecQR-Package -configuration Release -destination 'platform=iOS Simulator,id=[ephemeral identifier omitted]' -derivedDataPath .build-xcode-simulator-release -parallel-testing-enabled NO -jobs 2 ARCHS=arm64 ENABLE_TESTABILITY=YES CODE_SIGNING_ALLOWED=NO -resultBundlePath .build-xcode-simulator-release/results-release-final.xcresult test
+# Final macOS rechecks: exact commands/exit codes in macos-tests-final-summary.json
+# Initial timeout and failed decoder configurations remain in separate logs/results.

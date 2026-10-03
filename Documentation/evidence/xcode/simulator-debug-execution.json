@@ -1,0 +1,18 @@
+{
+  "command": [
+    "xcodebuild",
+    "test-without-building",
+    "-xctestrun",
+    ".build-xcode-simulator/Build/Products/SpecQR-Package_SpecQR-Package_iphonesimulator27.0-undefined_arch.xctestrun",
+    "-destination",
+    "platform=iOS Simulator,id=[ephemeral identifier omitted]",
+    "-parallel-testing-enabled",
+    "NO",
+    "-resultBundlePath",
+    ".build-xcode-simulator/results-debug-retry.xcresult"
+  ],
+  "exit_code": 65,
+  "elapsed_seconds": 8.779614925384521,
+  "watchdog_timeout": false,
+  "bundle_relocated": false
+}

@@ -1,0 +1,46 @@
+{
+  "validated_at_utc": "2026-10-03T06:59:29.089504+00:00",
+  "toolchain": "Swift 6.0.3 (swift-6.0.3-RELEASE)",
+  "target": "x86_64-unknown-linux-gnu",
+  "distribution": "Official Ubuntu 24.04 x86_64 archive",
+  "host": "Debian GNU/Linux 13 x86_64",
+  "archive_sha256": "33e923609f6d89ee455af0a017ae4941ce16878c4940882cbf6a1656de294e8b",
+  "signature": "Good signature; official release signing key expired after archive signing",
+  "signer_fingerprint": "52BB7E3DE28A71BE22EC05FFEF80A866B47A981F",
+  "source_manifest_sha256": "454f25c62265939ef8997822eef36b5d676781456b0ab5ed4999e7912a2583aa",
+  "sources_match_main_package_at_completion": true,
+  "gates": {
+    "build-debug": {
+      "result": "pass",
+      "warnings": 0,
+      "log": "build-debug.log"
+    },
+    "test-debug": {
+      "result": "pass",
+      "warnings": 0,
+      "log": "test-debug.log",
+      "xctest_executed": 53,
+      "swift_testing_executed": 2,
+      "total_executed": 55,
+      "failures": 0
+    },
+    "build-release": {
+      "result": "pass",
+      "warnings": 0,
+      "log": "build-release.log"
+    },
+    "test-release": {
+      "result": "pass",
+      "warnings": 0,
+      "log": "test-release.log",
+      "xctest_executed": 53,
+      "swift_testing_executed": 2,
+      "total_executed": 55,
+      "failures": 0
+    }
+  },
+  "caveats": [
+    "Apple-platform conditional paths were not compiled or executed.",
+    "Exact Swift 6.0.0 binary was not tested; this validates the Swift 6.0 release line using 6.0.3."
+  ]
+}

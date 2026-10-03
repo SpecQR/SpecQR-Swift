@@ -1,0 +1,422 @@
+$ file $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/AppleGraphics.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/GS1Dictionary.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/GS1DigitalLink.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/GS1Elements.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/GS1Types.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/KanjiMap.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/Matrix.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/Optimizer.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/ReedSolomon.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/Rendering.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/ScanDiagnostics.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/Segments.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/SpecQR.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/StructuredAppendGeneration.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/StructuredAppendMerge.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/StructuredAppendTypes.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/Tables.swift.o $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/Types.swift.o
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/AppleGraphics.swift.o:              Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/GS1Dictionary.swift.o:              Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/GS1DigitalLink.swift.o:             Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/GS1Elements.swift.o:                Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/GS1Types.swift.o:                   Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/KanjiMap.swift.o:                   Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/Matrix.swift.o:                     Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/Optimizer.swift.o:                  Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/ReedSolomon.swift.o:                Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/Rendering.swift.o:                  Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/ScanDiagnostics.swift.o:            Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/Segments.swift.o:                   Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/SpecQR.swift.o:                     Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/StructuredAppendGeneration.swift.o: Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/StructuredAppendMerge.swift.o:      Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/StructuredAppendTypes.swift.o:      Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/Tables.swift.o:                     Mach-O 64-bit object arm64
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/Types.swift.o:                      Mach-O 64-bit object arm64
+$ xcrun otool -l $PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/AppleGraphics.swift.o
+$PACKAGE_ROOT/.build-xcode-sdk/tvos16-arm64/arm64-apple-tvos/release/SpecQR.build/AppleGraphics.swift.o:
+Load command 0
+      cmd LC_SEGMENT_64
+  cmdsize 1592
+  segname 
+   vmaddr 0x0000000000000000
+   vmsize 0x0000000000002702
+  fileoff 2568
+ filesize 9986
+  maxprot 0x00000007
+ initprot 0x00000007
+   nsects 19
+    flags 0x0
+Section
+  sectname __text
+   segname __TEXT
+      addr 0x0000000000000000
+      size 0x0000000000000304
+    offset 2568
+     align 2^2 (4)
+    reloff 12560
+    nreloc 44
+     flags 0x80000400
+ reserved1 0
+ reserved2 0
+Section
+  sectname __const
+   segname __DATA
+      addr 0x0000000000000308
+      size 0x0000000000000030
+    offset 3344
+     align 2^3 (8)
+    reloff 12912
+    nreloc 6
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __cstring
+   segname __TEXT
+      addr 0x0000000000000340
+      size 0x000000000000002c
+    offset 3400
+     align 2^4 (16)
+    reloff 0
+    nreloc 0
+     flags 0x00000002
+ reserved1 0
+ reserved2 0
+Section
+  sectname __data
+   segname __DATA
+      addr 0x0000000000000370
+      size 0x0000000000000008
+    offset 3448
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __const
+   segname __TEXT
+      addr 0x0000000000000378
+      size 0x0000000000000002
+    offset 3456
+     align 2^1 (2)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __swift_modhash
+   segname __LLVM
+      addr 0x000000000000037a
+      size 0x0000000000000010
+    offset 3458
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_imageinfo
+   segname __DATA
+      addr 0x000000000000038a
+      size 0x0000000000000008
+    offset 3474
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x10000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __debug_loc
+   segname __DWARF
+      addr 0x0000000000000392
+      size 0x00000000000001d9
+    offset 3482
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x02000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __debug_abbrev
+   segname __DWARF
+      addr 0x000000000000056b
+      size 0x00000000000001ee
+    offset 3955
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x02000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __debug_info
+   segname __DWARF
+      addr 0x0000000000000759
+      size 0x0000000000000516
+    offset 4449
+     align 2^0 (1)
+    reloff 12960
+    nreloc 15
+     flags 0x02000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __debug_ranges
+   segname __DWARF
+      addr 0x0000000000000c6f
+      size 0x0000000000000160
+    offset 5751
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x02000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __debug_str
+   segname __DWARF
+      addr 0x0000000000000dcf
+      size 0x000000000000126b
+    offset 6103
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x02000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __apple_names
+   segname __DWARF
+      addr 0x000000000000203a
+      size 0x000000000000022c
+    offset 10818
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x02000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __apple_objc
+   segname __DWARF
+      addr 0x0000000000002266
+      size 0x0000000000000024
+    offset 11374
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x02000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __apple_namespac
+   segname __DWARF
+      addr 0x000000000000228a
+      size 0x0000000000000024
+    offset 11410
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x02000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __apple_types
+   segname __DWARF
+      addr 0x00000000000022ae
+      size 0x00000000000001da
+    offset 11446
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x02000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __compact_unwind
+   segname __LD
+      addr 0x0000000000002488
+      size 0x0000000000000080
+    offset 11920
+     align 2^3 (8)
+    reloff 13080
+    nreloc 4
+     flags 0x02000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __eh_frame
+   segname __TEXT
+      addr 0x0000000000002508
+      size 0x0000000000000048
+    offset 12048
+     align 2^3 (8)
+    reloff 13112
+    nreloc 2
+     flags 0x6800000b
+ reserved1 0
+ reserved2 0
+Section
+  sectname __debug_line
+   segname __DWARF
+      addr 0x0000000000002550
+      size 0x00000000000001b2
+    offset 12120
+     align 2^0 (1)
+    reloff 13128
+    nreloc 1
+     flags 0x02000000
+ reserved1 0
+ reserved2 0
+Load command 1
+      cmd LC_BUILD_VERSION
+  cmdsize 24
+ platform 3
+    minos 16.0
+      sdk 27.0
+   ntools 0
+Load command 2
+      cmd LC_LINKER_OPTIMIZATION_HINT
+  cmdsize 16
+  dataoff 13136
+ datasize 56
+Load command 3
+     cmd LC_SYMTAB
+ cmdsize 24
+  symoff 13192
+   nsyms 52
+  stroff 14024
+ strsize 1552
+Load command 4
+            cmd LC_DYSYMTAB
+        cmdsize 80
+      ilocalsym 0
+      nlocalsym 11
+     iextdefsym 11
+     nextdefsym 12
+      iundefsym 23
+      nundefsym 29
+         tocoff 0
+           ntoc 0
+      modtaboff 0
+        nmodtab 0
+   extrefsymoff 0
+    nextrefsyms 0
+ indirectsymoff 0
+  nindirectsyms 0
+      extreloff 0
+        nextrel 0
+      locreloff 0
+        nlocrel 0
+Load command 5
+     cmd LC_LINKER_OPTION
+ cmdsize 32
+   count 1
+  string #1 -lswiftFoundation
+Load command 6
+     cmd LC_LINKER_OPTION
+ cmdsize 40
+   count 2
+  string #1 -framework
+  string #2 Foundation
+Load command 7
+     cmd LC_LINKER_OPTION
+ cmdsize 24
+   count 1
+  string #1 -lswiftCore
+Load command 8
+     cmd LC_LINKER_OPTION
+ cmdsize 40
+   count 1
+  string #1 -lswift_DarwinFoundation3
+Load command 9
+     cmd LC_LINKER_OPTION
+ cmdsize 40
+   count 1
+  string #1 -lswift_DarwinFoundation1
+Load command 10
+     cmd LC_LINKER_OPTION
+ cmdsize 40
+   count 1
+  string #1 -lswift_Builtin_float
+Load command 11
+     cmd LC_LINKER_OPTION
+ cmdsize 40
+   count 1
+  string #1 -lswift_DarwinFoundation2
+Load command 12
+     cmd LC_LINKER_OPTION
+ cmdsize 40
+   count 1
+  string #1 -lswift_StringProcessing
+Load command 13
+     cmd LC_LINKER_OPTION
+ cmdsize 32
+   count 1
+  string #1 -lswift_Concurrency
+Load command 14
+     cmd LC_LINKER_OPTION
+ cmdsize 32
+   count 1
+  string #1 -lswiftSystem
+Load command 15
+     cmd LC_LINKER_OPTION
+ cmdsize 32
+   count 1
+  string #1 -lswiftDarwin
+Load command 16
+     cmd LC_LINKER_OPTION
+ cmdsize 32
+   count 1
+  string #1 -lswiftObservation
+Load command 17
+     cmd LC_LINKER_OPTION
+ cmdsize 32
+   count 1
+  string #1 -lswiftObjectiveC
+Load command 18
+     cmd LC_LINKER_OPTION
+ cmdsize 40
+   count 1
+  string #1 -lswiftCoreFoundation
+Load command 19
+     cmd LC_LINKER_OPTION
+ cmdsize 40
+   count 2
+  string #1 -framework
+  string #2 CoreFoundation
+Load command 20
+     cmd LC_LINKER_OPTION
+ cmdsize 32
+   count 1
+  string #1 -lswiftDispatch
+Load command 21
+     cmd LC_LINKER_OPTION
+ cmdsize 32
+   count 2
+  string #1 -framework
+  string #2 Combine
+Load command 22
+     cmd LC_LINKER_OPTION
+ cmdsize 32
+   count 2
+  string #1 -framework
+  string #2 Security
+Load command 23
+     cmd LC_LINKER_OPTION
+ cmdsize 24
+   count 1
+  string #1 -lswiftXPC
+Load command 24
+     cmd LC_LINKER_OPTION
+ cmdsize 40
+   count 2
+  string #1 -framework
+  string #2 CFNetwork
+Load command 25
+     cmd LC_LINKER_OPTION
+ cmdsize 40
+   count 2
+  string #1 -framework
+  string #2 CoreGraphics
+Load command 26
+     cmd LC_LINKER_OPTION
+ cmdsize 24
+   count 1
+  string #1 -lobjc
+Load command 27
+     cmd LC_LINKER_OPTION
+ cmdsize 40
+   count 1
+  string #1 -lswiftCompatibilityPacks

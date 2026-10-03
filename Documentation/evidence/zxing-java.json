@@ -1,0 +1,21 @@
+{
+  "decoder": "ZXing Java core 3.5.4",
+  "swiftCLISHA256": "0ad362f22e30aba1df68ed76281ec7368e0785e58360f54cf604d70a4ac45899",
+  "decoderSHA256": "71de5d89341b5fcf5dd89da7f44e84d825d0e084cdf3ec77c9abe26b0f0ceb13",
+  "java": "openjdk 21.0.12.1 2026-08-18",
+  "lowLevelSymbols": 371,
+  "structuredAppendHeaders": 135,
+  "highLevelSets": 6,
+  "highLevelSymbols": 48,
+  "pngDetectionDecodes": 419,
+  "matrixDecodes": 419,
+  "damagedSymbolsCorrected": 32,
+  "errorsPerDamagedSymbol": 3,
+  "invalidSymbolsRejected": 1,
+  "assertionsPassed": true,
+  "limitations": [
+    "ZXing Java 3.5.4 does not consume the FNC1-second application indicator; that mode is not claimed as Java-decoder verified.",
+    "Arbitrary ECI assignments are not universally supported by decoders. Tested assignments: 3, 20, 26, 170.",
+    "Synthetic PNG detection and controlled data-module damage are not physical-camera, print, or general damage-tolerance tests."
+  ]
+}

@@ -1,0 +1,292 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -scheme SpecQR-Package -configuration Debug -destination "platform=iOS Simulator,id=[ephemeral identifier omitted]" -derivedDataPath .build-xcode-simulator -parallel-testing-enabled NO -jobs 2 ARCHS=arm64 CODE_SIGNING_ALLOWED=NO -resultBundlePath .build-xcode-simulator/results-debug-cpu.xcresult test
+
+Build settings from command line:
+    ARCHS = arm64
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+2026-10-03 18:11:34.999 xcodebuild[80330:8235470] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+
+
+Resolved source packages:
+  SpecQR: $PACKAGE_ROOT
+
+Writing result bundle at path:
+	$PACKAGE_ROOT/.build-xcode-simulator/results-debug-cpu.xcresult
+
+Build Preparation
+Build task concurrency set to 2 via user default IDEBuildOperationMaxNumberOfConcurrentCompileTasks
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (5 targets)
+    Target 'specqr-cli-product' in project 'SpecQR'
+        ➜ Explicit dependency on target 'SpecQR' in project 'SpecQR'
+    Target 'SpecQR-product' in project 'SpecQR'
+        ➜ Explicit dependency on target 'SpecQR' in project 'SpecQR'
+    Target 'SpecQRTests-product' in project 'SpecQR'
+        ➜ Explicit dependency on target 'SpecQR_SpecQRTests' in project 'SpecQR'
+        ➜ Explicit dependency on target 'SpecQR' in project 'SpecQR'
+    Target 'SpecQR' in project 'SpecQR' (no dependencies)
+    Target 'SpecQR_SpecQRTests' in project 'SpecQR' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 00adfb5ea64bd85fd3b421171b58d6a8
+Build description path: $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/XCBuildData/00adfb5ea64bd85fd3b421171b58d6a8.xcbuilddata
+ProcessInfoPlistFile $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQR_SpecQRTests.bundle/Info.plist $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQR_SpecQRTests-b.build/empty-SpecQR_SpecQRTests.plist (in target 'SpecQR_SpecQRTests' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-infoPlistUtility $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQR_SpecQRTests-b.build/empty-SpecQR_SpecQRTests.plist -producttype com.apple.product-type.bundle -expandbuildsettings -format binary -platform iphonesimulator -o $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQR_SpecQRTests.bundle/Info.plist
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk $PACKAGE_ROOT/.build-xcode-simulator/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -o $PACKAGE_ROOT/.build-xcode-simulator/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache
+
+SwiftDriver SpecQRTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SpecQRTests -Onone @$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path $PACKAGE_ROOT/.build-xcode-simulator/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/PackageFrameworks -F $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc $PACKAGE_ROOT/.build-xcode-simulator/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator/ModuleCache.noindex -sdk-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file $PACKAGE_ROOT/.build-xcode-simulator/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name specqr_swift -emit-const-values -const-gather-protocols-list $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests_const_extract_protocols.json -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/include -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/DerivedSources-normal/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/DerivedSources/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory $PACKAGE_ROOT/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+CpResource $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/SpecQR_SpecQRTests.bundle $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQR_SpecQRTests.bundle (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQR_SpecQRTests.bundle $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest
+
+SwiftCompile normal arm64 Compiling\ ApplePlatformTests.swift $PACKAGE_ROOT/Tests/SpecQRTests/ApplePlatformTests.swift (in target 'SpecQRTests-product' from project 'SpecQR')
+
+SwiftCompile normal arm64 $PACKAGE_ROOT/Tests/SpecQRTests/ApplePlatformTests.swift (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-SwiftPerFileCompile ApplePlatformTests.swift
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ SpecQRTests (in target 'SpecQRTests-product' from project 'SpecQR')
+
+SwiftCompile normal arm64 (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for SpecQRTests (in target 'SpecQRTests-product' from project 'SpecQR')
+
+SwiftDriver\ Compilation\ Requirements SpecQRTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SpecQRTests -Onone @$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path $PACKAGE_ROOT/.build-xcode-simulator/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/PackageFrameworks -F $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc $PACKAGE_ROOT/.build-xcode-simulator/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator/ModuleCache.noindex -sdk-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file $PACKAGE_ROOT/.build-xcode-simulator/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name specqr_swift -emit-const-values -const-gather-protocols-list $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests_const_extract_protocols.json -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/include -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/DerivedSources-normal/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/DerivedSources/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory $PACKAGE_ROOT/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Copy $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.swiftmodule/arm64-apple-ios-simulator.abi.json $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.abi.json (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.abi.json $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.swiftsourceinfo (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.swiftsourceinfo $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling ApplePlatformTests.swift (in target 'SpecQRTests-product' from project 'SpecQR')
+
+SwiftDriver\ Compilation SpecQRTests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT/.swiftpm/xcode
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -parse-as-library -module-name SpecQRTests -Onone @$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path $PACKAGE_ROOT/.build-xcode-simulator/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/PackageFrameworks -F $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc $PACKAGE_ROOT/.build-xcode-simulator/SDKStatCaches.noindex/iphonesimulator27.0-24A430-8dc58220667be655e1bcc261a7455254.sdkstatcache -output-file-map $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator/ModuleCache.noindex -sdk-module-cache-path $PACKAGE_ROOT/.build-xcode-simulator/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file $PACKAGE_ROOT/.build-xcode-simulator/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name specqr_swift -emit-const-values -const-gather-protocols-list $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests_const_extract_protocols.json -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/include -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/DerivedSources-normal/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/DerivedSources/arm64 -Xcc -I$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory $PACKAGE_ROOT/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+Ld $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/SpecQRTests normal (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -Xlinker -bundle -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -Xlinker -no_warn_duplicate_libraries -L$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L$PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F$PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/PackageFrameworks -F$PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator -Fsystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -Fsystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk/Developer/Library/Frameworks @$PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @loader_path/../.. -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/../Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests_lto.o -Xclang-linker -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests_dependency_info.dat -link-objc-runtime -profile-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.swiftmodule -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -o $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/SpecQRTests -no-stdlib-rpath
+
+ExtractAppIntentsMetadata (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name SpecQRTests --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk --xcode-version 27A266a --platform-family iOS --deployment-target 17.0 --bundle-identifier specqr-swift.SpecQRTests --output $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest --target-triple arm64-apple-ios17.0-simulator --binary-file $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/SpecQRTests --dependency-file $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests_dependency_info.dat --stringsdata-file $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.SwiftFileList --metadata-file-list $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/SpecQRTests.DependencyMetadataFileList --static-metadata-file-list $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/SpecQRTests.DependencyStaticMetadataFileList --swift-const-vals-list $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-10-03 18:11:37.694 appintentsmetadataprocessor[80368:8235631] Starting appintentsmetadataprocessor export
+2026-10-03 18:11:37.697 appintentsmetadataprocessor[80368:8235631] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+ProcessInfoPlistFile $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/Info.plist $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/empty-SpecQRTests.plist (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-infoPlistUtility $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/empty-SpecQRTests.plist -producttype com.apple.product-type.bundle.unit-test -expandbuildsettings -format binary -platform iphonesimulator -o $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/Info.plist
+
+CopySwiftLibs $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest (in target 'SpecQRTests-product' from project 'SpecQR')
+    cd $PACKAGE_ROOT
+    builtin-swiftStdLibTool --copy --verbose --scan-executable $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/SpecQRTests --scan-folder $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/Frameworks --scan-folder $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/PlugIns --scan-folder $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/SystemExtensions --scan-folder $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination $PACKAGE_ROOT/.build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SpecQR.build/Debug-iphonesimulator/SpecQRTests-p.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+PruneExplicitPrecompiledModules $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules $PACKAGE_ROOT/.build-xcode-simulator/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules $PACKAGE_ROOT/.build-xcode-simulator/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+Test Suite 'All tests' started at 2026-10-03 18:11:38.651.
+Test Suite 'SpecQRTests.xctest' started at 2026-10-03 18:11:38.651.
+Test Suite 'ApplePlatformTests' started at 2026-10-03 18:11:38.651.
+Test Case '-[SpecQRTests.ApplePlatformTests testCoreGraphicsAndVisionDecode]' started.
+2026-10-03 18:11:38.882211+0900 xctest[80369:8235689] fopen failed for data file: errno = 2 (No such file or directory)
+2026-10-03 18:11:39.395975+0900 xctest[80369:8235689] fopen failed for data file: errno = 2 (No such file or directory)
+$PACKAGE_ROOT/Tests/SpecQRTests/ApplePlatformTests.swift:34: error: -[SpecQRTests.ApplePlatformTests testCoreGraphicsAndVisionDecode] : XCTAssertEqual failed: ("nil") is not equal to ("Optional("SpecQR Apple validation 12345")")
+Test Case '-[SpecQRTests.ApplePlatformTests testCoreGraphicsAndVisionDecode]' failed (1.166 seconds).
+Test Suite 'ApplePlatformTests' failed at 2026-10-03 18:11:39.818.
+	 Executed 1 test, with 1 failure (0 unexpected) in 1.166 (1.167) seconds
+Test Suite 'CoreTests' started at 2026-10-03 18:11:39.818.
+Test Case '-[SpecQRTests.CoreTests testAllVersionCapacitiesAndBlockLengths]' started.
+Test Case '-[SpecQRTests.CoreTests testAllVersionCapacitiesAndBlockLengths]' passed (0.036 seconds).
+Test Case '-[SpecQRTests.CoreTests testAlphanumericGoldenCodewords]' started.
+Test Case '-[SpecQRTests.CoreTests testAlphanumericGoldenCodewords]' passed (0.002 seconds).
+Test Case '-[SpecQRTests.CoreTests testControlConflictsAndOrdering]' started.
+Test Case '-[SpecQRTests.CoreTests testControlConflictsAndOrdering]' passed (0.002 seconds).
+Test Case '-[SpecQRTests.CoreTests testECIDesignatorBoundaries]' started.
+Test Case '-[SpecQRTests.CoreTests testECIDesignatorBoundaries]' passed (0.014 seconds).
+Test Case '-[SpecQRTests.CoreTests testEmptyAndBinaryInput]' started.
+Test Case '-[SpecQRTests.CoreTests testEmptyAndBinaryInput]' passed (0.004 seconds).
+Test Case '-[SpecQRTests.CoreTests testExactCapacityAndOverflow]' started.
+Test Case '-[SpecQRTests.CoreTests testExactCapacityAndOverflow]' passed (0.148 seconds).
+Test Case '-[SpecQRTests.CoreTests testFixedVersionRangeAndBoost]' started.
+Test Case '-[SpecQRTests.CoreTests testFixedVersionRangeAndBoost]' passed (0.008 seconds).
+Test Case '-[SpecQRTests.CoreTests testFNC1AndStructuredAppendHeaderBits]' started.
+Test Case '-[SpecQRTests.CoreTests testFNC1AndStructuredAppendHeaderBits]' passed (0.006 seconds).
+Test Case '-[SpecQRTests.CoreTests testGeneratedObjectsAreValueTypes]' started.
+Test Case '-[SpecQRTests.CoreTests testGeneratedObjectsAreValueTypes]' passed (0.002 seconds).
+Test Case '-[SpecQRTests.CoreTests testHighLevelFNC1SecondAndManualOptionsPercentSafety]' started.
+Test Case '-[SpecQRTests.CoreTests testHighLevelFNC1SecondAndManualOptionsPercentSafety]' passed (0.020 seconds).
+Test Case '-[SpecQRTests.CoreTests testHighLevelGS1PreservesLiteralPercent]' started.
+Test Case '-[SpecQRTests.CoreTests testHighLevelGS1PreservesLiteralPercent]' passed (0.018 seconds).
+Test Case '-[SpecQRTests.CoreTests testInvalidModesAndBounds]' started.
+Test Case '-[SpecQRTests.CoreTests testInvalidModesAndBounds]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testKanjiGoldenAndMapping]' started.
+Test Case '-[SpecQRTests.CoreTests testKanjiGoldenAndMapping]' passed (0.002 seconds).
+Test Case '-[SpecQRTests.CoreTests testMalformedHeaderDiagnosticsDoNotTrap]' started.
+Test Case '-[SpecQRTests.CoreTests testMalformedHeaderDiagnosticsDoNotTrap]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testNumericGoldenCodewords]' started.
+Test Case '-[SpecQRTests.CoreTests testNumericGoldenCodewords]' passed (0.002 seconds).
+Test Case '-[SpecQRTests.CoreTests testOptimizedMixedGolden]' started.
+Test Case '-[SpecQRTests.CoreTests testOptimizedMixedGolden]' passed (0.003 seconds).
+Test Case '-[SpecQRTests.CoreTests testOptimizerNeverWorseThanSingleMode]' started.
+Test Case '-[SpecQRTests.CoreTests testOptimizerNeverWorseThanSingleMode]' passed (0.004 seconds).
+Test Case '-[SpecQRTests.CoreTests testReedSolomonFieldAndSyndromes]' started.
+Test Case '-[SpecQRTests.CoreTests testReedSolomonFieldAndSyndromes]' passed (0.001 seconds).
+Test Case '-[SpecQRTests.CoreTests testUnicodeCountsAndCanonicalEncoding]' started.
+Test Case '-[SpecQRTests.CoreTests testUnicodeCountsAndCanonicalEncoding]' passed (0.002 seconds).
+Test Suite 'CoreTests' passed at 2026-10-03 18:11:40.093.
+	 Executed 19 tests, with 0 failures (0 unexpected) in 0.272 (0.275) seconds
+Test Suite 'DocumentationExamplesTests' started at 2026-10-03 18:11:40.094.
+Test Case '-[SpecQRTests.DocumentationExamplesTests testReadmeGenerationAndPlanning]' started.
+Test Case '-[SpecQRTests.DocumentationExamplesTests testReadmeGenerationAndPlanning]' passed (0.186 seconds).
+Test Case '-[SpecQRTests.DocumentationExamplesTests testReadmeGS1AndStructuredAppend]' started.
+Test Case '-[SpecQRTests.DocumentationExamplesTests testReadmeGS1AndStructuredAppend]' passed (0.157 seconds).
+Test Suite 'DocumentationExamplesTests' passed at 2026-10-03 18:11:40.438.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.344 (0.344) seconds
+Test Suite 'GS1Tests' started at 2026-10-03 18:11:40.438.
+Test Case '-[SpecQRTests.GS1Tests testAllCheckDigitLengthsAndLeadingZeros]' started.
+Test Case '-[SpecQRTests.GS1Tests testAllCheckDigitLengthsAndLeadingZeros]' passed (0.001 seconds).
+Test Case '-[SpecQRTests.GS1Tests testCatalogHasBoundedSupportAndNoImplicitGLNCheckDigit]' started.
+Test Case '-[SpecQRTests.GS1Tests testCatalogHasBoundedSupportAndNoImplicitGLNCheckDigit]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.GS1Tests testDigitalLinkNormalizationPreservesRepeatedUnknowns]' started.
+Test Case '-[SpecQRTests.GS1Tests testDigitalLinkNormalizationPreservesRepeatedUnknowns]' passed (0.001 seconds).
+Test Case '-[SpecQRTests.GS1Tests testDigitalLinkOrderingEscapesAndRoundTrip]' started.
+Test Case '-[SpecQRTests.GS1Tests testDigitalLinkOrderingEscapesAndRoundTrip]' passed (0.001 seconds).
+Test Case '-[SpecQRTests.GS1Tests testHumanReadableRawRoundTripAndMetadata]' started.
+Test Case '-[SpecQRTests.GS1Tests testHumanReadableRawRoundTripAndMetadata]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.GS1Tests testMissingSeparatorHeuristicMatchesUpstream]' started.
+Test Case '-[SpecQRTests.GS1Tests testMissingSeparatorHeuristicMatchesUpstream]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.GS1Tests testOverflowingHexadecimalHostsCannotFallBackToDNS]' started.
+Test Case '-[SpecQRTests.GS1Tests testOverflowingHexadecimalHostsCannotFallBackToDNS]' passed (0.001 seconds).
+Test Case '-[SpecQRTests.GS1Tests testPinnedUpstreamDifferentialFixtures]' started.
+Test Case '-[SpecQRTests.GS1Tests testPinnedUpstreamDifferentialFixtures]' passed (0.061 seconds).
+Test Case '-[SpecQRTests.GS1Tests testStructuredValidationCollectsOrStops]' started.
+Test Case '-[SpecQRTests.GS1Tests testStructuredValidationCollectsOrStops]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.GS1Tests testTypedOptionsAndFoundationURLOverloads]' started.
+Test Case '-[SpecQRTests.GS1Tests testTypedOptionsAndFoundationURLOverloads]' passed (0.001 seconds).
+Test Suite 'GS1Tests' passed at 2026-10-03 18:11:40.506.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.067 (0.069) seconds
+Test Suite 'MatrixTests' started at 2026-10-03 18:11:40.507.
+Test Case '-[SpecQRTests.MatrixTests testAlignmentCentersIncludingVersion32Exception]' started.
+Test Case '-[SpecQRTests.MatrixTests testAlignmentCentersIncludingVersion32Exception]' passed (0.028 seconds).
+Test Case '-[SpecQRTests.MatrixTests testAutomaticSelectionUsesLowestPenalty]' started.
+Test Case '-[SpecQRTests.MatrixTests testAutomaticSelectionUsesLowestPenalty]' passed (0.002 seconds).
+Test Case '-[SpecQRTests.MatrixTests testFinderSeparatorsTimingAndDarkModuleRemainFixed]' started.
+Test Case '-[SpecQRTests.MatrixTests testFinderSeparatorsTimingAndDarkModuleRemainFixed]' passed (0.004 seconds).
+Test Case '-[SpecQRTests.MatrixTests testFormatAndVersionBCHWords]' started.
+Test Case '-[SpecQRTests.MatrixTests testFormatAndVersionBCHWords]' passed (0.002 seconds).
+Test Case '-[SpecQRTests.MatrixTests testPenaltyForUniformAndCheckerboardMatrices]' started.
+Test Case '-[SpecQRTests.MatrixTests testPenaltyForUniformAndCheckerboardMatrices]' passed (0.001 seconds).
+Test Suite 'MatrixTests' passed at 2026-10-03 18:11:40.545.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.037 (0.038) seconds
+Test Suite 'RenderingTests' started at 2026-10-03 18:11:40.545.
+Test Case '-[SpecQRTests.RenderingTests testPlanningWarningsWithoutMatrixAndOverflow]' started.
+Test Case '-[SpecQRTests.RenderingTests testPlanningWarningsWithoutMatrixAndOverflow]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.RenderingTests testPNGStructureCRCAndStoredDeflate]' started.
+Test Case '-[SpecQRTests.RenderingTests testPNGStructureCRCAndStoredDeflate]' passed (0.020 seconds).
+Test Case '-[SpecQRTests.RenderingTests testRasterMatchesEveryModule]' started.
+Test Case '-[SpecQRTests.RenderingTests testRasterMatchesEveryModule]' passed (0.161 seconds).
+Test Case '-[SpecQRTests.RenderingTests testResourceAndColorValidation]' started.
+Test Case '-[SpecQRTests.RenderingTests testResourceAndColorValidation]' passed (0.005 seconds).
+Test Case '-[SpecQRTests.RenderingTests testScanWarningsAndCanvas]' started.
+Test Case '-[SpecQRTests.RenderingTests testScanWarningsAndCanvas]' passed (0.002 seconds).
+Test Case '-[SpecQRTests.RenderingTests testSVGAndURLs]' started.
+Test Case '-[SpecQRTests.RenderingTests testSVGAndURLs]' passed (0.282 seconds).
+Test Suite 'RenderingTests' passed at 2026-10-03 18:11:41.017.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.471 (0.472) seconds
+Test Suite 'StructuredAppendTests' started at 2026-10-03 18:11:41.018.
+Test Case '-[SpecQRTests.StructuredAppendTests testCanonicalJSDifferentialFixtures]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testCanonicalJSDifferentialFixtures]' passed (0.121 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testCanonicalParity]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testCanonicalParity]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testDataSliceGenerationAndValueIsolation]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testDataSliceGenerationAndValueIsolation]' passed (0.002 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testGenerationRejectsUnsupportedOptionsAndSingleSymbol]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testGenerationRejectsUnsupportedOptionsAndSingleSymbol]' passed (0.001 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testIncrementalTrackerMatchesCoreOptimizerAcrossPrefixes]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testIncrementalTrackerMatchesCoreOptimizerAcrossPrefixes]' passed (0.186 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testLargeInputsFailCapacityPreflight]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testLargeInputsFailCapacityPreflight]' passed (0.002 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testManualSummaryAndFullDiagnosticsHaveIdenticalOutput]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testManualSummaryAndFullDiagnosticsHaveIdenticalOutput]' passed (0.003 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testMergeRejectsCorruptionAndInvalidMetadata]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testMergeRejectsCorruptionAndInvalidMetadata]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testMixedSingleAndTooLongVersionsRemainTooLong]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testMixedSingleAndTooLongVersionsRemainTooLong]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testTooLongErrorExplainsTheSplitConstraint]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testTooLongErrorExplainsTheSplitConstraint]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testUnicodeAndBinaryRoundTripThroughMerge]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testUnicodeAndBinaryRoundTripThroughMerge]' passed (0.014 seconds).
+Test Suite 'StructuredAppendTests' passed at 2026-10-03 18:11:41.350.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.330 (0.332) seconds
+Test Suite 'SpecQRTests.xctest' failed at 2026-10-03 18:11:41.350.
+	 Executed 54 tests, with 1 failure (0 unexpected) in 2.687 (2.699) seconds
+Test Suite 'All tests' failed at 2026-10-03 18:11:41.350.
+	 Executed 54 tests, with 1 failure (0 unexpected) in 2.687 (2.699) seconds
+◇ Test run started.
+↳ Testing Library Version: 2084
+↳ Target Platform: arm64-apple-ios17.0-simulator
+◇ Suite ConcurrencyTests started.
+◇ Test testConcurrentDeterministicGenerationAndRendering() started.
+✔ Test testConcurrentDeterministicGenerationAndRendering() passed after 0.660 seconds.
+◇ Test testCopiedMatricesDoNotMutateResults() started.
+✔ Test testCopiedMatricesDoNotMutateResults() passed after 0.001 seconds.
+✔ Suite ConcurrencyTests passed after 0.663 seconds.
+✔ Test run with 2 tests in 1 suite passed after 0.663 seconds.
+2026-10-03 18:11:42.310 xcodebuild[80330:8235474]  IDETestOperationsObserverDebug: Failure collecting diagnostics from simulator: Process exited with error 72:
+ xcrun: error: unable to find utility "simctl", not a developer tool or in PATH
+
+2026-10-03 18:11:42.319 xcodebuild[80330:8235470] [MT] IDETestOperationsObserverDebug: 4.565 elapsed -- Testing started completed.
+2026-10-03 18:11:42.319 xcodebuild[80330:8235470] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-03 18:11:42.319 xcodebuild[80330:8235470] [MT] IDETestOperationsObserverDebug: 4.565 sec, +4.565 sec -- end
+
+Test session results, code coverage, and logs:
+	$PACKAGE_ROOT/.build-xcode-simulator/results-debug-cpu.xcresult
+
+Failing tests:
+	ApplePlatformTests.testCoreGraphicsAndVisionDecode()
+
+** TEST FAILED **
+
+Testing started

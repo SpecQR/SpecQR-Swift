@@ -1,0 +1,368 @@
+Building for debugging...
+[Using on-disk description]
+[3 / 19] SpecQR
+[12 / 20] SpecQRTests-product
+[16 / 24] SpecQRTests-product
+[19 / 24] SpecQRTests-product
+[25 / 28] SpecQRTests-test-runner
+[29 / 29] SpecQRTests-test-runner
+Build complete! (2.08 secs)
+Test Suite 'All tests' started at 2026-10-03 15:59:59.579
+Test Suite 'Debug-linux-x86_64.xctest' started at 2026-10-03 15:59:59.582
+Test Suite 'CoreTests' started at 2026-10-03 15:59:59.582
+Test Case 'CoreTests.testAllVersionCapacitiesAndBlockLengths' started at 2026-10-03 15:59:59.582
+Test Case 'CoreTests.testAllVersionCapacitiesAndBlockLengths' passed (0.033 seconds)
+Test Case 'CoreTests.testAlphanumericGoldenCodewords' started at 2026-10-03 15:59:59.616
+Test Case 'CoreTests.testAlphanumericGoldenCodewords' passed (0.003 seconds)
+Test Case 'CoreTests.testControlConflictsAndOrdering' started at 2026-10-03 15:59:59.619
+Test Case 'CoreTests.testControlConflictsAndOrdering' passed (0.0 seconds)
+Test Case 'CoreTests.testECIDesignatorBoundaries' started at 2026-10-03 15:59:59.619
+Test Case 'CoreTests.testECIDesignatorBoundaries' passed (0.006 seconds)
+Test Case 'CoreTests.testEmptyAndBinaryInput' started at 2026-10-03 15:59:59.625
+Test Case 'CoreTests.testEmptyAndBinaryInput' passed (0.002 seconds)
+Test Case 'CoreTests.testExactCapacityAndOverflow' started at 2026-10-03 15:59:59.627
+Test Case 'CoreTests.testExactCapacityAndOverflow' passed (0.151 seconds)
+Test Case 'CoreTests.testFNC1AndStructuredAppendHeaderBits' started at 2026-10-03 15:59:59.779
+Test Case 'CoreTests.testFNC1AndStructuredAppendHeaderBits' passed (0.103 seconds)
+Test Case 'CoreTests.testFixedVersionRangeAndBoost' started at 2026-10-03 15:59:59.882
+Test Case 'CoreTests.testFixedVersionRangeAndBoost' passed (0.006 seconds)
+Test Case 'CoreTests.testGeneratedObjectsAreValueTypes' started at 2026-10-03 15:59:59.888
+Test Case 'CoreTests.testGeneratedObjectsAreValueTypes' passed (0.002 seconds)
+Test Case 'CoreTests.testHighLevelFNC1SecondAndManualOptionsPercentSafety' started at 2026-10-03 15:59:59.890
+Test Case 'CoreTests.testHighLevelFNC1SecondAndManualOptionsPercentSafety' passed (0.015 seconds)
+Test Case 'CoreTests.testHighLevelGS1PreservesLiteralPercent' started at 2026-10-03 15:59:59.905
+Test Case 'CoreTests.testHighLevelGS1PreservesLiteralPercent' passed (0.011 seconds)
+Test Case 'CoreTests.testInvalidModesAndBounds' started at 2026-10-03 15:59:59.916
+Test Case 'CoreTests.testInvalidModesAndBounds' passed (0.0 seconds)
+Test Case 'CoreTests.testKanjiGoldenAndMapping' started at 2026-10-03 15:59:59.916
+Test Case 'CoreTests.testKanjiGoldenAndMapping' passed (0.001 seconds)
+Test Case 'CoreTests.testMalformedHeaderDiagnosticsDoNotTrap' started at 2026-10-03 15:59:59.917
+Test Case 'CoreTests.testMalformedHeaderDiagnosticsDoNotTrap' passed (0.0 seconds)
+Test Case 'CoreTests.testNumericGoldenCodewords' started at 2026-10-03 15:59:59.917
+Test Case 'CoreTests.testNumericGoldenCodewords' passed (0.001 seconds)
+Test Case 'CoreTests.testOptimizedMixedGolden' started at 2026-10-03 15:59:59.918
+Test Case 'CoreTests.testOptimizedMixedGolden' passed (0.001 seconds)
+Test Case 'CoreTests.testOptimizerNeverWorseThanSingleMode' started at 2026-10-03 15:59:59.920
+Test Case 'CoreTests.testOptimizerNeverWorseThanSingleMode' passed (0.005 seconds)
+Test Case 'CoreTests.testReedSolomonFieldAndSyndromes' started at 2026-10-03 15:59:59.925
+Test Case 'CoreTests.testReedSolomonFieldAndSyndromes' passed (0.101 seconds)
+Test Case 'CoreTests.testUnicodeCountsAndCanonicalEncoding' started at 2026-10-03 16:00:00.026
+Test Case 'CoreTests.testUnicodeCountsAndCanonicalEncoding' passed (0.001 seconds)
+Test Suite 'CoreTests' passed at 2026-10-03 16:00:00.027
+	 Executed 19 tests, with 0 failures (0 unexpected) in 0.444 (0.444) seconds
+Test Suite 'DocumentationExamplesTests' started at 2026-10-03 16:00:00.027
+Test Case 'DocumentationExamplesTests.testReadmeGS1AndStructuredAppend' started at 2026-10-03 16:00:00.027
+Test Case 'DocumentationExamplesTests.testReadmeGS1AndStructuredAppend' passed (0.053 seconds)
+Test Case 'DocumentationExamplesTests.testReadmeGenerationAndPlanning' started at 2026-10-03 16:00:00.080
+Test Case 'DocumentationExamplesTests.testReadmeGenerationAndPlanning' passed (0.061 seconds)
+Test Suite 'DocumentationExamplesTests' passed at 2026-10-03 16:00:00.141
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.114 (0.114) seconds
+Test Suite 'GS1Tests' started at 2026-10-03 16:00:00.141
+Test Case 'GS1Tests.testAllCheckDigitLengthsAndLeadingZeros' started at 2026-10-03 16:00:00.141
+Test Case 'GS1Tests.testAllCheckDigitLengthsAndLeadingZeros' passed (0.0 seconds)
+Test Case 'GS1Tests.testCatalogHasBoundedSupportAndNoImplicitGLNCheckDigit' started at 2026-10-03 16:00:00.141
+Test Case 'GS1Tests.testCatalogHasBoundedSupportAndNoImplicitGLNCheckDigit' passed (0.0 seconds)
+Test Case 'GS1Tests.testDigitalLinkNormalizationPreservesRepeatedUnknowns' started at 2026-10-03 16:00:00.141
+Test Case 'GS1Tests.testDigitalLinkNormalizationPreservesRepeatedUnknowns' passed (0.001 seconds)
+Test Case 'GS1Tests.testDigitalLinkOrderingEscapesAndRoundTrip' started at 2026-10-03 16:00:00.142
+Test Case 'GS1Tests.testDigitalLinkOrderingEscapesAndRoundTrip' passed (0.001 seconds)
+Test Case 'GS1Tests.testHumanReadableRawRoundTripAndMetadata' started at 2026-10-03 16:00:00.143
+Test Case 'GS1Tests.testHumanReadableRawRoundTripAndMetadata' passed (0.0 seconds)
+Test Case 'GS1Tests.testMissingSeparatorHeuristicMatchesUpstream' started at 2026-10-03 16:00:00.144
+Test Case 'GS1Tests.testMissingSeparatorHeuristicMatchesUpstream' passed (0.0 seconds)
+Test Case 'GS1Tests.testOverflowingHexadecimalHostsCannotFallBackToDNS' started at 2026-10-03 16:00:00.144
+Test Case 'GS1Tests.testOverflowingHexadecimalHostsCannotFallBackToDNS' passed (0.002 seconds)
+Test Case 'GS1Tests.testPinnedUpstreamDifferentialFixtures' started at 2026-10-03 16:00:00.146
+Test Case 'GS1Tests.testPinnedUpstreamDifferentialFixtures' passed (0.263 seconds)
+Test Case 'GS1Tests.testStructuredValidationCollectsOrStops' started at 2026-10-03 16:00:00.409
+Test Case 'GS1Tests.testStructuredValidationCollectsOrStops' passed (0.0 seconds)
+Test Case 'GS1Tests.testTypedOptionsAndFoundationURLOverloads' started at 2026-10-03 16:00:00.410
+Test Case 'GS1Tests.testTypedOptionsAndFoundationURLOverloads' passed (0.001 seconds)
+Test Suite 'GS1Tests' passed at 2026-10-03 16:00:00.410
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.269 (0.269) seconds
+Test Suite 'MatrixTests' started at 2026-10-03 16:00:00.410
+Test Case 'MatrixTests.testAlignmentCentersIncludingVersion32Exception' started at 2026-10-03 16:00:00.410
+Test Case 'MatrixTests.testAlignmentCentersIncludingVersion32Exception' passed (0.015 seconds)
+Test Case 'MatrixTests.testAutomaticSelectionUsesLowestPenalty' started at 2026-10-03 16:00:00.425
+Test Case 'MatrixTests.testAutomaticSelectionUsesLowestPenalty' passed (0.001 seconds)
+Test Case 'MatrixTests.testFinderSeparatorsTimingAndDarkModuleRemainFixed' started at 2026-10-03 16:00:00.426
+Test Case 'MatrixTests.testFinderSeparatorsTimingAndDarkModuleRemainFixed' passed (0.002 seconds)
+Test Case 'MatrixTests.testFormatAndVersionBCHWords' started at 2026-10-03 16:00:00.429
+Test Case 'MatrixTests.testFormatAndVersionBCHWords' passed (0.002 seconds)
+Test Case 'MatrixTests.testPenaltyForUniformAndCheckerboardMatrices' started at 2026-10-03 16:00:00.431
+Test Case 'MatrixTests.testPenaltyForUniformAndCheckerboardMatrices' passed (0.0 seconds)
+Test Suite 'MatrixTests' passed at 2026-10-03 16:00:00.431
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.021 (0.021) seconds
+Test Suite 'RenderingTests' started at 2026-10-03 16:00:00.431
+Test Case 'RenderingTests.testPNGStructureCRCAndStoredDeflate' started at 2026-10-03 16:00:00.431
+Test Case 'RenderingTests.testPNGStructureCRCAndStoredDeflate' passed (0.009 seconds)
+Test Case 'RenderingTests.testPlanningWarningsWithoutMatrixAndOverflow' started at 2026-10-03 16:00:00.440
+Test Case 'RenderingTests.testPlanningWarningsWithoutMatrixAndOverflow' passed (0.001 seconds)
+Test Case 'RenderingTests.testRasterMatchesEveryModule' started at 2026-10-03 16:00:00.441
+Test Case 'RenderingTests.testRasterMatchesEveryModule' passed (0.18 seconds)
+Test Case 'RenderingTests.testResourceAndColorValidation' started at 2026-10-03 16:00:00.621
+Test Case 'RenderingTests.testResourceAndColorValidation' passed (0.003 seconds)
+Test Case 'RenderingTests.testSVGAndURLs' started at 2026-10-03 16:00:00.623
+Test Case 'RenderingTests.testSVGAndURLs' passed (0.084 seconds)
+Test Case 'RenderingTests.testScanWarningsAndCanvas' started at 2026-10-03 16:00:00.707
+Test Case 'RenderingTests.testScanWarningsAndCanvas' passed (0.102 seconds)
+Test Suite 'RenderingTests' passed at 2026-10-03 16:00:00.809
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.378 (0.378) seconds
+Test Suite 'StructuredAppendTests' started at 2026-10-03 16:00:00.809
+Test Case 'StructuredAppendTests.testCanonicalJSDifferentialFixtures' started at 2026-10-03 16:00:00.809
+Test Case 'StructuredAppendTests.testCanonicalJSDifferentialFixtures' passed (0.086 seconds)
+Test Case 'StructuredAppendTests.testCanonicalParity' started at 2026-10-03 16:00:00.894
+Test Case 'StructuredAppendTests.testCanonicalParity' passed (0.0 seconds)
+Test Case 'StructuredAppendTests.testDataSliceGenerationAndValueIsolation' started at 2026-10-03 16:00:00.895
+Test Case 'StructuredAppendTests.testDataSliceGenerationAndValueIsolation' passed (0.001 seconds)
+Test Case 'StructuredAppendTests.testGenerationRejectsUnsupportedOptionsAndSingleSymbol' started at 2026-10-03 16:00:00.896
+Test Case 'StructuredAppendTests.testGenerationRejectsUnsupportedOptionsAndSingleSymbol' passed (0.0 seconds)
+Test Case 'StructuredAppendTests.testIncrementalTrackerMatchesCoreOptimizerAcrossPrefixes' started at 2026-10-03 16:00:00.897
+Test Case 'StructuredAppendTests.testIncrementalTrackerMatchesCoreOptimizerAcrossPrefixes' passed (0.322 seconds)
+Test Case 'StructuredAppendTests.testLargeInputsFailCapacityPreflight' started at 2026-10-03 16:00:01.219
+Test Case 'StructuredAppendTests.testLargeInputsFailCapacityPreflight' passed (0.004 seconds)
+Test Case 'StructuredAppendTests.testManualSummaryAndFullDiagnosticsHaveIdenticalOutput' started at 2026-10-03 16:00:01.223
+Test Case 'StructuredAppendTests.testManualSummaryAndFullDiagnosticsHaveIdenticalOutput' passed (0.002 seconds)
+Test Case 'StructuredAppendTests.testMergeRejectsCorruptionAndInvalidMetadata' started at 2026-10-03 16:00:01.226
+Test Case 'StructuredAppendTests.testMergeRejectsCorruptionAndInvalidMetadata' passed (0.0 seconds)
+Test Case 'StructuredAppendTests.testMixedSingleAndTooLongVersionsRemainTooLong' started at 2026-10-03 16:00:01.226
+Test Case 'StructuredAppendTests.testMixedSingleAndTooLongVersionsRemainTooLong' passed (0.0 seconds)
+Test Case 'StructuredAppendTests.testTooLongErrorExplainsTheSplitConstraint' started at 2026-10-03 16:00:01.226
+Test Case 'StructuredAppendTests.testTooLongErrorExplainsTheSplitConstraint' passed (0.0 seconds)
+Test Case 'StructuredAppendTests.testUnicodeAndBinaryRoundTripThroughMerge' started at 2026-10-03 16:00:01.226
+Test Case 'StructuredAppendTests.testUnicodeAndBinaryRoundTripThroughMerge' passed (0.009 seconds)
+Test Suite 'StructuredAppendTests' passed at 2026-10-03 16:00:01.236
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.427 (0.427) seconds
+Test Suite 'Debug-linux-x86_64.xctest' passed at 2026-10-03 16:00:01.236
+	 Executed 53 tests, with 0 failures (0 unexpected) in 1.652 (1.652) seconds
+Test Suite 'All tests' passed at 2026-10-03 16:00:01.236
+	 Executed 53 tests, with 0 failures (0 unexpected) in 1.652 (1.652) seconds
+◇ Test run started.
+↳ Testing Library Version: 6.4 (efd8d65801f569d)
+↳ Target Platform: x86_64-unknown-linux-gnu
+◇ Suite ConcurrencyTests started.
+◇ Test testConcurrentDeterministicGenerationAndRendering() started.
+◇ Test testCopiedMatricesDoNotMutateResults() started.
+✔ Test testCopiedMatricesDoNotMutateResults() passed after 0.002 seconds.
+✔ Test testConcurrentDeterministicGenerationAndRendering() passed after 0.081 seconds.
+✔ Suite ConcurrencyTests passed after 0.081 seconds.
+✔ Test run with 2 tests in 1 suite passed after 0.081 seconds.
+Building for production...
+[Using on-disk description]
+[4 / 16] SpecQR
+[7 / 14] SpecQRTests-product
+[12 / 16] SpecQRTests-product
+[16 / 21] SpecQRTests-test-runner
+[19 / 19] SpecQRTests-test-runner
+Build complete! (17.69 secs)
+Test Suite 'All tests' started at 2026-10-03 16:00:19.600
+Test Suite 'Release-linux-x86_64.xctest' started at 2026-10-03 16:00:19.601
+Test Suite 'CoreTests' started at 2026-10-03 16:00:19.601
+Test Case 'CoreTests.testAllVersionCapacitiesAndBlockLengths' started at 2026-10-03 16:00:19.601
+Test Case 'CoreTests.testAllVersionCapacitiesAndBlockLengths' passed (0.002 seconds)
+Test Case 'CoreTests.testAlphanumericGoldenCodewords' started at 2026-10-03 16:00:19.604
+Test Case 'CoreTests.testAlphanumericGoldenCodewords' passed (0.001 seconds)
+Test Case 'CoreTests.testControlConflictsAndOrdering' started at 2026-10-03 16:00:19.604
+Test Case 'CoreTests.testControlConflictsAndOrdering' passed (0.0 seconds)
+Test Case 'CoreTests.testECIDesignatorBoundaries' started at 2026-10-03 16:00:19.605
+Test Case 'CoreTests.testECIDesignatorBoundaries' passed (0.001 seconds)
+Test Case 'CoreTests.testEmptyAndBinaryInput' started at 2026-10-03 16:00:19.605
+Test Case 'CoreTests.testEmptyAndBinaryInput' passed (0.0 seconds)
+Test Case 'CoreTests.testExactCapacityAndOverflow' started at 2026-10-03 16:00:19.606
+Test Case 'CoreTests.testExactCapacityAndOverflow' passed (0.013 seconds)
+Test Case 'CoreTests.testFNC1AndStructuredAppendHeaderBits' started at 2026-10-03 16:00:19.619
+Test Case 'CoreTests.testFNC1AndStructuredAppendHeaderBits' passed (0.0 seconds)
+Test Case 'CoreTests.testFixedVersionRangeAndBoost' started at 2026-10-03 16:00:19.619
+Test Case 'CoreTests.testFixedVersionRangeAndBoost' passed (0.001 seconds)
+Test Case 'CoreTests.testGeneratedObjectsAreValueTypes' started at 2026-10-03 16:00:19.620
+Test Case 'CoreTests.testGeneratedObjectsAreValueTypes' passed (0.0 seconds)
+Test Case 'CoreTests.testHighLevelFNC1SecondAndManualOptionsPercentSafety' started at 2026-10-03 16:00:19.620
+Test Case 'CoreTests.testHighLevelFNC1SecondAndManualOptionsPercentSafety' passed (0.001 seconds)
+Test Case 'CoreTests.testHighLevelGS1PreservesLiteralPercent' started at 2026-10-03 16:00:19.621
+Test Case 'CoreTests.testHighLevelGS1PreservesLiteralPercent' passed (0.101 seconds)
+Test Case 'CoreTests.testInvalidModesAndBounds' started at 2026-10-03 16:00:19.722
+Test Case 'CoreTests.testInvalidModesAndBounds' passed (0.0 seconds)
+Test Case 'CoreTests.testKanjiGoldenAndMapping' started at 2026-10-03 16:00:19.723
+Test Case 'CoreTests.testKanjiGoldenAndMapping' passed (0.0 seconds)
+Test Case 'CoreTests.testMalformedHeaderDiagnosticsDoNotTrap' started at 2026-10-03 16:00:19.723
+Test Case 'CoreTests.testMalformedHeaderDiagnosticsDoNotTrap' passed (0.0 seconds)
+Test Case 'CoreTests.testNumericGoldenCodewords' started at 2026-10-03 16:00:19.723
+Test Case 'CoreTests.testNumericGoldenCodewords' passed (0.0 seconds)
+Test Case 'CoreTests.testOptimizedMixedGolden' started at 2026-10-03 16:00:19.723
+Test Case 'CoreTests.testOptimizedMixedGolden' passed (0.0 seconds)
+Test Case 'CoreTests.testOptimizerNeverWorseThanSingleMode' started at 2026-10-03 16:00:19.723
+Test Case 'CoreTests.testOptimizerNeverWorseThanSingleMode' passed (0.0 seconds)
+Test Case 'CoreTests.testReedSolomonFieldAndSyndromes' started at 2026-10-03 16:00:19.724
+Test Case 'CoreTests.testReedSolomonFieldAndSyndromes' passed (0.0 seconds)
+Test Case 'CoreTests.testUnicodeCountsAndCanonicalEncoding' started at 2026-10-03 16:00:19.724
+Test Case 'CoreTests.testUnicodeCountsAndCanonicalEncoding' passed (0.0 seconds)
+Test Suite 'CoreTests' passed at 2026-10-03 16:00:19.724
+	 Executed 19 tests, with 0 failures (0 unexpected) in 0.123 (0.123) seconds
+Test Suite 'DocumentationExamplesTests' started at 2026-10-03 16:00:19.724
+Test Case 'DocumentationExamplesTests.testReadmeGS1AndStructuredAppend' started at 2026-10-03 16:00:19.724
+Test Case 'DocumentationExamplesTests.testReadmeGS1AndStructuredAppend' passed (0.006 seconds)
+Test Case 'DocumentationExamplesTests.testReadmeGenerationAndPlanning' started at 2026-10-03 16:00:19.730
+Test Case 'DocumentationExamplesTests.testReadmeGenerationAndPlanning' passed (0.004 seconds)
+Test Suite 'DocumentationExamplesTests' passed at 2026-10-03 16:00:19.734
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.01 (0.01) seconds
+Test Suite 'GS1Tests' started at 2026-10-03 16:00:19.734
+Test Case 'GS1Tests.testAllCheckDigitLengthsAndLeadingZeros' started at 2026-10-03 16:00:19.734
+Test Case 'GS1Tests.testAllCheckDigitLengthsAndLeadingZeros' passed (0.0 seconds)
+Test Case 'GS1Tests.testCatalogHasBoundedSupportAndNoImplicitGLNCheckDigit' started at 2026-10-03 16:00:19.735
+Test Case 'GS1Tests.testCatalogHasBoundedSupportAndNoImplicitGLNCheckDigit' passed (0.0 seconds)
+Test Case 'GS1Tests.testDigitalLinkNormalizationPreservesRepeatedUnknowns' started at 2026-10-03 16:00:19.735
+Test Case 'GS1Tests.testDigitalLinkNormalizationPreservesRepeatedUnknowns' passed (0.101 seconds)
+Test Case 'GS1Tests.testDigitalLinkOrderingEscapesAndRoundTrip' started at 2026-10-03 16:00:19.836
+Test Case 'GS1Tests.testDigitalLinkOrderingEscapesAndRoundTrip' passed (0.001 seconds)
+Test Case 'GS1Tests.testHumanReadableRawRoundTripAndMetadata' started at 2026-10-03 16:00:19.836
+Test Case 'GS1Tests.testHumanReadableRawRoundTripAndMetadata' passed (0.0 seconds)
+Test Case 'GS1Tests.testMissingSeparatorHeuristicMatchesUpstream' started at 2026-10-03 16:00:19.837
+Test Case 'GS1Tests.testMissingSeparatorHeuristicMatchesUpstream' passed (0.0 seconds)
+Test Case 'GS1Tests.testOverflowingHexadecimalHostsCannotFallBackToDNS' started at 2026-10-03 16:00:19.837
+Test Case 'GS1Tests.testOverflowingHexadecimalHostsCannotFallBackToDNS' passed (0.001 seconds)
+Test Case 'GS1Tests.testPinnedUpstreamDifferentialFixtures' started at 2026-10-03 16:00:19.837
+Test Case 'GS1Tests.testPinnedUpstreamDifferentialFixtures' passed (0.293 seconds)
+Test Case 'GS1Tests.testStructuredValidationCollectsOrStops' started at 2026-10-03 16:00:20.131
+Test Case 'GS1Tests.testStructuredValidationCollectsOrStops' passed (0.001 seconds)
+Test Case 'GS1Tests.testTypedOptionsAndFoundationURLOverloads' started at 2026-10-03 16:00:20.132
+Test Case 'GS1Tests.testTypedOptionsAndFoundationURLOverloads' passed (0.0 seconds)
+Test Suite 'GS1Tests' passed at 2026-10-03 16:00:20.132
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.398 (0.398) seconds
+Test Suite 'MatrixTests' started at 2026-10-03 16:00:20.132
+Test Case 'MatrixTests.testAlignmentCentersIncludingVersion32Exception' started at 2026-10-03 16:00:20.132
+Test Case 'MatrixTests.testAlignmentCentersIncludingVersion32Exception' passed (0.001 seconds)
+Test Case 'MatrixTests.testAutomaticSelectionUsesLowestPenalty' started at 2026-10-03 16:00:20.133
+Test Case 'MatrixTests.testAutomaticSelectionUsesLowestPenalty' passed (0.0 seconds)
+Test Case 'MatrixTests.testFinderSeparatorsTimingAndDarkModuleRemainFixed' started at 2026-10-03 16:00:20.133
+Test Case 'MatrixTests.testFinderSeparatorsTimingAndDarkModuleRemainFixed' passed (0.0 seconds)
+Test Case 'MatrixTests.testFormatAndVersionBCHWords' started at 2026-10-03 16:00:20.133
+Test Case 'MatrixTests.testFormatAndVersionBCHWords' passed (0.0 seconds)
+Test Case 'MatrixTests.testPenaltyForUniformAndCheckerboardMatrices' started at 2026-10-03 16:00:20.133
+Test Case 'MatrixTests.testPenaltyForUniformAndCheckerboardMatrices' passed (0.0 seconds)
+Test Suite 'MatrixTests' passed at 2026-10-03 16:00:20.133
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'RenderingTests' started at 2026-10-03 16:00:20.134
+Test Case 'RenderingTests.testPNGStructureCRCAndStoredDeflate' started at 2026-10-03 16:00:20.134
+Test Case 'RenderingTests.testPNGStructureCRCAndStoredDeflate' passed (0.001 seconds)
+Test Case 'RenderingTests.testPlanningWarningsWithoutMatrixAndOverflow' started at 2026-10-03 16:00:20.134
+Test Case 'RenderingTests.testPlanningWarningsWithoutMatrixAndOverflow' passed (0.0 seconds)
+Test Case 'RenderingTests.testRasterMatchesEveryModule' started at 2026-10-03 16:00:20.134
+Test Case 'RenderingTests.testRasterMatchesEveryModule' passed (0.015 seconds)
+Test Case 'RenderingTests.testResourceAndColorValidation' started at 2026-10-03 16:00:20.149
+Test Case 'RenderingTests.testResourceAndColorValidation' passed (0.002 seconds)
+Test Case 'RenderingTests.testSVGAndURLs' started at 2026-10-03 16:00:20.151
+Test Case 'RenderingTests.testSVGAndURLs' passed (0.006 seconds)
+Test Case 'RenderingTests.testScanWarningsAndCanvas' started at 2026-10-03 16:00:20.157
+Test Case 'RenderingTests.testScanWarningsAndCanvas' passed (0.0 seconds)
+Test Suite 'RenderingTests' passed at 2026-10-03 16:00:20.158
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.024 (0.024) seconds
+Test Suite 'StructuredAppendTests' started at 2026-10-03 16:00:20.158
+Test Case 'StructuredAppendTests.testCanonicalJSDifferentialFixtures' started at 2026-10-03 16:00:20.158
+Test Case 'StructuredAppendTests.testCanonicalJSDifferentialFixtures' passed (0.015 seconds)
+Test Case 'StructuredAppendTests.testCanonicalParity' started at 2026-10-03 16:00:20.172
+Test Case 'StructuredAppendTests.testCanonicalParity' passed (0.0 seconds)
+Test Case 'StructuredAppendTests.testDataSliceGenerationAndValueIsolation' started at 2026-10-03 16:00:20.173
+Test Case 'StructuredAppendTests.testDataSliceGenerationAndValueIsolation' passed (0.0 seconds)
+Test Case 'StructuredAppendTests.testGenerationRejectsUnsupportedOptionsAndSingleSymbol' started at 2026-10-03 16:00:20.173
+Test Case 'StructuredAppendTests.testGenerationRejectsUnsupportedOptionsAndSingleSymbol' passed (0.0 seconds)
+Test Case 'StructuredAppendTests.testIncrementalTrackerMatchesCoreOptimizerAcrossPrefixes' started at 2026-10-03 16:00:20.173
+Test Case 'StructuredAppendTests.testIncrementalTrackerMatchesCoreOptimizerAcrossPrefixes' passed (0.022 seconds)
+Test Case 'StructuredAppendTests.testLargeInputsFailCapacityPreflight' started at 2026-10-03 16:00:20.195
+Test Case 'StructuredAppendTests.testLargeInputsFailCapacityPreflight' passed (0.004 seconds)
+Test Case 'StructuredAppendTests.testManualSummaryAndFullDiagnosticsHaveIdenticalOutput' started at 2026-10-03 16:00:20.199
+Test Case 'StructuredAppendTests.testManualSummaryAndFullDiagnosticsHaveIdenticalOutput' passed (0.0 seconds)
+Test Case 'StructuredAppendTests.testMergeRejectsCorruptionAndInvalidMetadata' started at 2026-10-03 16:00:20.200
+Test Case 'StructuredAppendTests.testMergeRejectsCorruptionAndInvalidMetadata' passed (0.0 seconds)
+Test Case 'StructuredAppendTests.testMixedSingleAndTooLongVersionsRemainTooLong' started at 2026-10-03 16:00:20.200
+Test Case 'StructuredAppendTests.testMixedSingleAndTooLongVersionsRemainTooLong' passed (0.0 seconds)
+Test Case 'StructuredAppendTests.testTooLongErrorExplainsTheSplitConstraint' started at 2026-10-03 16:00:20.200
+Test Case 'StructuredAppendTests.testTooLongErrorExplainsTheSplitConstraint' passed (0.0 seconds)
+Test Case 'StructuredAppendTests.testUnicodeAndBinaryRoundTripThroughMerge' started at 2026-10-03 16:00:20.200
+Test Case 'StructuredAppendTests.testUnicodeAndBinaryRoundTripThroughMerge' passed (0.001 seconds)
+Test Suite 'StructuredAppendTests' passed at 2026-10-03 16:00:20.201
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.043 (0.043) seconds
+Test Suite 'Release-linux-x86_64.xctest' passed at 2026-10-03 16:00:20.201
+	 Executed 53 tests, with 0 failures (0 unexpected) in 0.598 (0.598) seconds
+Test Suite 'All tests' passed at 2026-10-03 16:00:20.201
+	 Executed 53 tests, with 0 failures (0 unexpected) in 0.598 (0.598) seconds
+◇ Test run started.
+↳ Testing Library Version: 6.4 (efd8d65801f569d)
+↳ Target Platform: x86_64-unknown-linux-gnu
+◇ Suite ConcurrencyTests started.
+◇ Test testConcurrentDeterministicGenerationAndRendering() started.
+◇ Test testCopiedMatricesDoNotMutateResults() started.
+✔ Test testCopiedMatricesDoNotMutateResults() passed after 0.001 seconds.
+✔ Test testConcurrentDeterministicGenerationAndRendering() passed after 0.005 seconds.
+✔ Suite ConcurrencyTests passed after 0.005 seconds.
+✔ Test run with 2 tests in 1 suite passed after 0.005 seconds.
+Building for production...
+[Pre-planning 1 / 124]
+[2 / 9] SpecQR_SpecQRTests
+[3 / 10] SpecQR
+[11 / 14] specqr-cli-product
+[15 / 15] specqr-cli-product
+Build complete! (13.95 secs)
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+added 5 packages in 19s
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+{
+  "sourceCommit": "15ad15e5c770ea0e39072f8f88b2733018f02ffd",
+  "fixed": 1280,
+  "auto": 136,
+  "planning": 288,
+  "negative": 15,
+  "render": 11,
+  "nayuki": 960,
+  "decoded": 12,
+  "intentionalSafetyDivergences": 16
+}
+{
+  "decoder": "ZXing Java core 3.5.4",
+  "swiftCLISHA256": "0ad362f22e30aba1df68ed76281ec7368e0785e58360f54cf604d70a4ac45899",
+  "decoderSHA256": "71de5d89341b5fcf5dd89da7f44e84d825d0e084cdf3ec77c9abe26b0f0ceb13",
+  "java": "openjdk 21.0.12.1 2026-08-18",
+  "lowLevelSymbols": 371,
+  "structuredAppendHeaders": 135,
+  "highLevelSets": 6,
+  "highLevelSymbols": 48,
+  "pngDetectionDecodes": 419,
+  "matrixDecodes": 419,
+  "damagedSymbolsCorrected": 32,
+  "errorsPerDamagedSymbol": 3,
+  "invalidSymbolsRejected": 1,
+  "assertionsPassed": true,
+  "limitations": [
+    "ZXing Java 3.5.4 does not consume the FNC1-second application indicator; that mode is not claimed as Java-decoder verified.",
+    "Arbitrary ECI assignments are not universally supported by decoders. Tested assignments: 3, 20, 26, 170.",
+    "Synthetic PNG detection and controlled data-module damage are not physical-camera, print, or general damage-tolerance tests."
+  ]
+}
+{
+  "decoder": "ZXing-C++ 3.1.1",
+  "swiftCLISHA256": "0ad362f22e30aba1df68ed76281ec7368e0785e58360f54cf604d70a4ac45899",
+  "requirementsSHA256": "c44d88445ebed50625951b7289af9b4acbf5aece869e6aafd03f9aba7bc99429",
+  "python": "3.12.14",
+  "applicationIndicators": 152,
+  "fnc1SecondSymbols": 608,
+  "fnc1SecondRoutes": [
+    "manual segments",
+    "options"
+  ],
+  "fnc1SecondModes": [
+    "low-level alphanumeric with GS and escaped percent",
+    "high-level literal-percent text",
+    "binary byte payload"
+  ],
+  "highLevelPercentAndSeparatorCases": 32,
+  "assertionsPassed": true,
+  "limitations": [
+    "ZXing-C++ returns the FNC1-second application indicator as a prefix of decoded data.",
+    "Explicit low-level FNC1 alphanumeric segments retain the standard single-percent separator and doubled-percent literal semantics; high-level text APIs preserve input percent bytes.",
+    "Synthetic matrix rasterization is not physical-camera or print validation."
+  ]
+}

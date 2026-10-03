@@ -1,0 +1,24 @@
+{
+  "decoder": "ZXing-C++ 3.1.1",
+  "swiftCLISHA256": "b22d93663113e7e0b6267e3d1f280291a23d0d4a35ee2850b277880435c43375",
+  "requirementsSHA256": "c44d88445ebed50625951b7289af9b4acbf5aece869e6aafd03f9aba7bc99429",
+  "python": "3.12.14",
+  "applicationIndicators": 152,
+  "fnc1SecondSymbols": 608,
+  "fnc1SecondRoutes": [
+    "manual segments",
+    "options"
+  ],
+  "fnc1SecondModes": [
+    "low-level alphanumeric with GS and escaped percent",
+    "high-level literal-percent text",
+    "binary byte payload"
+  ],
+  "highLevelPercentAndSeparatorCases": 32,
+  "assertionsPassed": true,
+  "limitations": [
+    "ZXing-C++ returns the FNC1-second application indicator as a prefix of decoded data.",
+    "Explicit low-level FNC1 alphanumeric segments retain the standard single-percent separator and doubled-percent literal semantics; high-level text APIs preserve input percent bytes.",
+    "Synthetic matrix rasterization is not physical-camera or print validation."
+  ]
+}

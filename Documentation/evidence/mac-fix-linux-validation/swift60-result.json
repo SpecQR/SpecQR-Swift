@@ -1,0 +1,48 @@
+{
+  "compiler": "Swift version 6.0.3 (swift-6.0.3-RELEASE)\nTarget: x86_64-unknown-linux-gnu",
+  "platform": "Linux x86_64",
+  "patch_sha256": "e48c06511f0e800279d7120874a62abf04f11fe29e85136ee6763142fb4ba667",
+  "changed_source_sha256": [
+    "a98f589fb40bf64b1183ea1bd16a376bf9835637185bda9f2d3e26a3b744f1d4  Examples/Basic/Package.swift",
+    "0fa4745d9cda2ef3fe8a7c69e23989d2853040f8ad95591656bb9a3a2a03b623  Sources/SpecQR/Render/Rendering.swift"
+  ],
+  "debug": {
+    "build": "passed",
+    "xctest": 53,
+    "swift_testing": 2,
+    "failures": 0
+  },
+  "release": {
+    "build": "passed",
+    "xctest": 53,
+    "swift_testing": 2,
+    "failures": 0
+  },
+  "consumer_release_build": "passed",
+  "consumer_release_run": "passed",
+  "compiler_warning_counts": {
+    "swift60-debug-build.log": 0,
+    "swift60-debug-test.log": 0,
+    "swift60-release-build.log": 0,
+    "swift60-release-test.log": 0,
+    "swift60-consumer-build.log": 0,
+    "swift60-consumer-run.log": 0
+  },
+  "source_hash_files_checked": 32,
+  "source_hashes_unchanged": true,
+  "excluded_gates": [
+    "Apple SDK/XCTest runtime validation",
+    "watchOS arm64_32 compilation",
+    "Apple platform runtime or deployment-minimum testing"
+  ],
+  "build_scratch_path": "/workspace/shared/specqr-swift-work/mac-fix-linux-validation/swift60-build",
+  "consumer_scratch_path": "/workspace/shared/specqr-swift-work/mac-fix-linux-validation/swift60-consumer-build",
+  "logs": [
+    "swift60-debug-build.log",
+    "swift60-debug-test.log",
+    "swift60-release-build.log",
+    "swift60-release-test.log",
+    "swift60-consumer-build.log",
+    "swift60-consumer-run.log"
+  ]
+}

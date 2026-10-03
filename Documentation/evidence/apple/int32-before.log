@@ -1,0 +1,6 @@
+Documentation/evidence/apple/probes/Int32Before.swift:2:17: error: integer literal '9007199254740991' overflows when stored into 'Int32'
+1 | func withinLimit(_ dimension: Int32) -> Bool {
+2 |    dimension <= 9_007_199_254_740_991
+  |                 `- error: integer literal '9007199254740991' overflows when stored into 'Int32'
+3 | }
+4 | 

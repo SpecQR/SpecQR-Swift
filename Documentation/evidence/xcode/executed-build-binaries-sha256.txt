@@ -1,0 +1,5 @@
+c0a5acdf667f32a0fa9b838ba1f756be7cd48552a249584c03c00977c7c66536  .build-xcode/out/Products/Debug/SpecQRTests.xctest/Contents/MacOS/SpecQRTests
+578600a0ab0b366c634f0c7227c5a6f696ad8e6ccefea7c75c385783b64d4394  .build-xcode/out/Products/Release/SpecQRTests.xctest/Contents/MacOS/SpecQRTests
+ae361fd1b790371c57202b8587aa597a160acc084638c858fc79036360a9b21e  .build-xcode-consumer/out/Products/Release/SpecQRDemo
+e519026e7a6e64bb5cd72995f0d0ca32e8aeee6f70d9aaaf9cd1b16782d4ca3c  .build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQRTests.xctest/SpecQRTests
+cf7fb3ea91d8bb4cab92bcc395458dcb99851f9a86e3a004ffbd646361f4c619  .build-xcode-simulator-release/Build/Products/Release-iphonesimulator/SpecQRTests.xctest/SpecQRTests

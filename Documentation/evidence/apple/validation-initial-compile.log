@@ -1,0 +1,79 @@
+Building for debugging...
+[Planning deferred tasks]
+[27 / 50]
+[28 / 51] SpecQR
+[34 / 116]
+[39 / 116]
+[42 / 116]
+[45 / 116]
+[48 / 116]
+[51 / 116]
+[54 / 116]
+[57 / 116]
+[59 / 116]
+[60 / 116]
+[63 / 116]
+[64 / 116]
+[68 / 116]
+[70 / 116]
+[72 / 116]
+[75 / 116]
+[77 / 116]
+[79 / 116]
+[81 / 116]
+[82 / 116]
+[85 / 116] SpecQR
+[93 / 116] SpecQR
+[94 / 116] SpecQR
+[95 / 116] SpecQR
+[96 / 116] SpecQR
+[98 / 116] SpecQR
+[99 / 116]
+[101 / 116] SpecQR
+$PACKAGE_ROOT/Package.swift: SpecQR: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/Library/Frameworks' not found
+[106 / 117] SpecQRAppleValidationTests-product
+[111 / 178]
+[114 / 178]
+[115 / 178]
+[117 / 178]
+[120 / 178]
+[124 / 178]
+[125 / 178]
+[128 / 178]
+[130 / 178]
+[132 / 178]
+[133 / 178]
+[135 / 178]
+[138 / 178]
+[141 / 178]
+[142 / 178]
+[144 / 178]
+[147 / 178]
+[150 / 178]
+[155 / 178]
+[156 / 178]
+[158 / 178]
+[161 / 178]
+[162 / 178]
+[163 / 178]
+[166 / 178] SpecQRAppleValidationTests-product
+error: SwiftCompile normal arm64 $PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/CorpusTests.swift failed with a nonzero exit code. Command line:     cd $PACKAGE_ROOT/Scripts
+    builtin-SwiftPerFileCompile CorpusTests.swift
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/CorpusTests.swift:243:8: error: 'QRStructuredAppendSplitUnit' initializer is inaccessible due to 'internal' protection level
+241 |    let byteLength: Int
+242 |    var unit: QRStructuredAppendSplitUnit {
+243 |       .init(
+    |        `- error: 'QRStructuredAppendSplitUnit' initializer is inaccessible due to 'internal' protection level
+244 |          sourceSegmentIndex: sourceSegmentIndex, mode: mode, unitStart: unitStart, unitLength: unitLength,
+245 |          byteStart: byteStart, byteLength: byteLength)
+
+SpecQR.QRStructuredAppendSplitUnit.init:2:10: note: 'init(sourceSegmentIndex:mode:unitStart:unitLength:byteStart:byteLength:)' declared here
+1 | struct QRStructuredAppendSplitUnit {
+2 | internal init(sourceSegmentIndex: Int, mode: SpecQR.QRMode, unitStart: Int, unitLength: Int, byteStart: Int, byteLength: Int)}
+  |          `- note: 'init(sourceSegmentIndex:mode:unitStart:unitLength:byteStart:byteLength:)' declared here
+3 | 
+Failed frontend command:
+/Library/Developer/CommandLineTools/usr/bin/swift-frontend -frontend -c $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/DerivedSources/test_entry_point.swift $PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift -primary-file $PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/CorpusTests.swift -emit-dependencies-path $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/CorpusTests.d -emit-const-values-path $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/CorpusTests.swiftconstvalues -emit-reference-dependencies-path $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/CorpusTests.swiftdeps -serialize-diagnostics-path $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/CorpusTests.dia -target arm64-apple-macos13.0 -module-can-import-version Testing 2078 0 -disable-cross-import-overlay-search -swift-module-cross-import Testing /Library/Developer/CommandLineTools/Library/Developer/Frameworks/Testing.framework/Modules/Testing.swiftcrossimport/AppKit.swiftoverlay -swift-module-cross-import Testing /Library/Developer/CommandLineTools/Library/Developer/Frameworks/Testing.framework/Modules/Testing.swiftcrossimport/CoreGraphics.swiftoverlay -swift-module-cross-import Testing /Library/Developer/CommandLineTools/Library/Developer/Frameworks/Testing.framework/Modules/Testing.swiftcrossimport/CoreImage.swiftoverlay -swift-module-cross-import Testing /Library/Developer/CommandLineTools/Library/Developer/Frameworks/Testing.framework/Modules/Testing.swiftcrossimport/CoreTransferable.swiftoverlay -swift-module-cross-import Testing /Library/Developer/CommandLineTools/Library/Developer/Frameworks/Testing.framework/Modules/Testing.swiftcrossimport/Foundation.swiftoverlay -swift-module-cross-import Vision /Library/Developer/CommandLineTools/SDKs/MacOSX27.0.sdk/System/Library/Frameworks/Vision.framework/Modules/Vision.swiftcrossimport/FoundationModels.swiftoverlay -load-resolved-plugin /Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/libObservationMacros.dylib\#\#ObservationMacros -load-resolved-plugin /Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#\#SwiftMacros -load-resolved-plugin /Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing/libTestingMacros.dylib\#/Library/Developer/CommandLineTools/usr/bin/swift-plugin-server\#TestingMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/SpecQRAppleValidationTests-dependencies-1.json -Xllvm -aarch64-use-tbi -enable-objc-interop -stack-check -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX27.0.sdk -I $PACKAGE_ROOT/.build-apple-validation/out/Products/Debug -Isystem /Library/Developer/CommandLineTools/Developer/usr/lib -F $PACKAGE_ROOT/.build-apple-validation/out/Products/Debug/PackageFrameworks -F $PACKAGE_ROOT/.build-apple-validation/out/Products/Debug -F /Library/Developer/CommandLineTools/Library/Developer/Frameworks -F /Library/Developer/CommandLineTools/Developer/Library/Frameworks -module-cache-path $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SwiftExplicitPrecompiledModules -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=4 -swift-version 6 -Onone -D SWIFT_PACKAGE -D DEBUG -D Xcode -serialize-debugging-options -enable-experimental-feature DebugDescriptionMacro -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file $PACKAGE_ROOT/.build-apple-validation/out/ModuleCache.noindex/Session.modulevalidation -disable-sandbox -Xcc -working-directory -Xcc $PACKAGE_ROOT/Scripts -enable-anonymous-context-mangled-names -file-compilation-dir $PACKAGE_ROOT/Scripts -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc $PACKAGE_ROOT/.build-apple-validation/out/SDKStatCaches.noindex/macosx27.0-26A5419a-1aa54e4a50e311dbd51de5aafe7eca3dffd68ff603bdaacc80b00cb8898de72d.sdkstatcache -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -Xcc -I$PACKAGE_ROOT/.build-apple-validation/out/Products/Debug/include -Xcc -I$PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/DerivedSources-normal/arm64 -Xcc -I$PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/DerivedSources/arm64 -Xcc -I$PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name SpecQRAppleValidationTests -package-name apple_validation -const-gather-protocols-file $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/SpecQRAppleValidationTests_const_extract_protocols.json -disable-clang-spi -clang-target arm64-apple-macos27.0 -target-sdk-version 27.0 -target-sdk-name macosx27.0 -in-process-plugin-server-path /Library/Developer/CommandLineTools/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -parse-as-library -o $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/CorpusTests.o -debug-module-path $PACKAGE_ROOT/.build-apple-validation/out/Intermediates.noindex/SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/SpecQRAppleValidationTests.swiftmodule -index-unit-output-path /SpecQRAppleValidation.build/Debug/SpecQRAppleValidationTests-p.build/Objects-normal/arm64/CorpusTests.o -index-store-path $PACKAGE_ROOT/.build-apple-validation/out -index-system-modules
+[167 / 178] SpecQRAppleValidationTests-product
+error: Build failed
+error: fatalError

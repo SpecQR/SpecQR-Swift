@@ -1,0 +1,26 @@
+Building for production...
+[Planning deferred tasks]
+[22 / 34]
+[23 / 35] SpecQR
+[31 / 71]
+[36 / 71]
+[41 / 71]
+[43 / 71]
+[47 / 71]
+[50 / 71]
+[55 / 71]
+[57 / 71]
+[58 / 71]
+[59 / 71]
+[60 / 71] SpecQR
+[67 / 72] SpecQRDemo-product
+[69 / 73] SpecQRDemo-product
+[71 / 73] SpecQRDemo-product
+[73 / 73] SpecQRDemo-product
+Build complete! (10.34秒)
+URL: version 2, mask 0, PNG 279136 bytes, SVG 5212 bytes
+Binary: 4 bytes, 44 bits
+GS1: byte mode safely preserves literal percent
+Digital Link: https://example.com/01/09501101530003/10/LOT%25123?17=271231
+Structured Append: 10 symbols, parity 0
+Planning: 128 capacity bits, 0 warnings

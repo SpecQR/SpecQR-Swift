@@ -1,0 +1,36 @@
+Building for production...
+[Planning deferred tasks]
+[22 / 34]
+[23 / 35] SpecQR
+[30 / 89]
+[35 / 89]
+[38 / 89]
+[42 / 89]
+[44 / 89]
+[46 / 89]
+[48 / 89]
+[51 / 89]
+[53 / 89]
+[55 / 89]
+[56 / 89]
+[59 / 89]
+[60 / 89]
+[63 / 89]
+[66 / 89]
+[67 / 89]
+[70 / 89]
+[72 / 89]
+[74 / 89]
+[76 / 89]
+[77 / 89]
+[78 / 89] SpecQR
+$PACKAGE_ROOT/Package.swift: SpecQR: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/Library/Frameworks' not found
+[85 / 90] SpecQRDemo-product
+[87 / 91] SpecQRDemo-product
+$PACKAGE_ROOT/Examples/Basic/Package.swift: SpecQRDemo-product: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/usr/lib' not found
+$PACKAGE_ROOT/Examples/Basic/Package.swift: SpecQRDemo-product: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/Library/Frameworks' not found
+[89 / 91] SpecQRDemo-product
+error: Operation not permitted
+error: GenerateDSYMFile $PACKAGE_ROOT/.build-apple-consumer/out/Products/Release/SpecQRDemo.dSYM $PACKAGE_ROOT/.build-apple-consumer/out/Products/Release/SpecQRDemo failed with a nonzero exit code. Command line:     cd $PACKAGE_ROOT/Examples/Basic
+    /Library/Developer/CommandLineTools/usr/bin/dsymutil $PACKAGE_ROOT/.build-apple-consumer/out/Products/Release/SpecQRDemo -o $PACKAGE_ROOT/.build-apple-consumer/out/Products/Release/SpecQRDemo.dSYM
+error: Build failed

@@ -1,0 +1,639 @@
+--- a/Examples/Basic/Package.swift
++++ b/Examples/Basic/Package.swift
+@@ -3,6 +3,7 @@
+ 
+ let package = Package(
+    name: "SpecQRDemo",
++   platforms: [.macOS(.v13)],
+    dependencies: [.package(name: "SpecQR", path: "../..")],
+    targets: [
+       .executableTarget(name: "SpecQRDemo", dependencies: [.product(name: "SpecQR", package: "SpecQR")])
+--- a/Scripts/apple-validation/Package.swift
++++ b/Scripts/apple-validation/Package.swift
+@@ -0,0 +1,13 @@
++// swift-tools-version: 6.0
++import PackageDescription
++
++let package = Package(
++   name: "SpecQRAppleValidation",
++   platforms: [.macOS(.v14)],
++   dependencies: [.package(name: "SpecQR", path: "../..")],
++   targets: [
++      .testTarget(
++         name: "SpecQRAppleValidationTests",
++         dependencies: [.product(name: "SpecQR", package: "SpecQR")])
++   ]
++)
+--- a/Scripts/apple-validation/README.md
++++ b/Scripts/apple-validation/README.md
+@@ -0,0 +1,39 @@
++# Independent macOS consumer validation
++
++This Swift Testing package depends on the root `SpecQR` library by a local path
++and uses public APIs only. It imports Core Graphics, ImageIO and Vision
++unconditionally; a missing framework fails the build instead of producing a
++skipped test reported as a pass. It installs no external dependencies.
++
++From the repository root:
++
++```sh
++./Scripts/verify-apple.sh
++# Or one configuration:
++./Scripts/verify-apple.sh release
++```
++
++The consumer tests exercise straight RGBA provider bytes, Core Graphics image
++metadata and storage lifetime, actual PNG decoding through ImageIO, Vision
++decoding from both CGImage and PNG, UTF-8 and GS1 literal percent/group separator
++preservation, invalid rendering and resource limits, both FNC1 forms, Structured
++Append headers/shuffled merging/parity rejection, and concurrent rendering.
++Two corpus tests replay all 1,411 GS1 and 22 Structured Append fixtures directly
++from the original root test resources.
++
++The script supplies installed Testing macro and runtime paths that some CLT
++releases omit, uses two build jobs, and keeps caches under `.build`. Optional
++`SPECQR_APPLE_BUILD_DIR` and `SPECQR_APPLE_CACHE_DIR` set absolute storage paths.
++The independent test runner targets macOS 14 because the installed Testing
++framework requires it; the library and Basic consumer still target macOS 13.
++
++This is additional macOS evidence. It does not execute or replace the original
++XCTest test suite. Apple's Command Line Tools can lack XCTest even when the
++compiler, macOS SDK, and Swift Testing are available. Record the original suite
++as blocked when that happens; this package is an independent consumer lane.
++
++No result from this package proves iOS/tvOS/watchOS SDK or simulator execution,
++deployment-minimum runtime behavior, physical-camera scanning, print quality,
++or barcode-standard certification. Vision expectations are explicit failures
++if the local decoder cannot preserve a tested payload; investigate and record
++that limitation rather than silently omitting the assertion.
+--- a/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift
++++ b/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift
+@@ -0,0 +1,246 @@
++import CoreGraphics
++import Foundation
++import ImageIO
++import SpecQR
++import Testing
++import Vision
++
++/// Independent public-API consumer checks. Framework imports are unconditional:
++/// an unavailable Apple framework is a build failure, never a silently skipped pass.
++@Suite(.serialized)
++struct AppleValidationTests {
++   @Test
++   func coreGraphicsPreservesStraightRGBAAndOwnsStorage() throws {
++      let options = QRRenderOptions(margin: 3, scale: 2, foreground: "#12345678", background: "#aBcDeF09")
++      let expected = try SpecQR.generate("storage lifetime 123").rgba(options: options)
++      let retained: CGImage = try autoreleasepool {
++         let transient = try SpecQR.generate("storage lifetime 123")
++         return try transient.cgImage(options: options)
++      }
++      #expect(retained.width == expected.width)
++      #expect(retained.height == expected.height)
++      #expect(retained.bitsPerComponent == 8)
++      #expect(retained.bitsPerPixel == 32)
++      #expect(retained.bytesPerRow == expected.width * 4)
++      #expect(retained.alphaInfo == .last)
++      #expect(retained.colorSpace?.model == .rgb)
++      #expect(!retained.shouldInterpolate)
++      let stored = try #require(retained.dataProvider?.data)
++      #expect(Array(stored as Data) == expected.pixels)
++      #expect(Array((stored as Data).prefix(4)) == [171, 205, 239, 9])
++      #expect(expected.pixels.contains(120))
++      // The QRCode, pixel array, temporary Data and autorelease pool have gone
++      // out of scope. Drawing also proves the provider's backing storage lives.
++      let raster = try renderedRGBA(retained)
++      #expect(raster.count == expected.width * expected.height * 4)
++      #expect(raster[3] == 9)
++   }
++
++   @Test
++   func imageIODecodesActualPNGToEveryOriginalPixel() throws {
++      let code = try SpecQR.generate("PNG reader: 0123456789 / RGB")
++      for margin in [0, 4] {
++         for scale in [1, 3] {
++            let options = QRRenderOptions(margin: margin, scale: scale, foreground: "#123456", background: "#abcdef")
++            let expected = try code.rgba(options: options)
++            let source = try #require(CGImageSourceCreateWithData(try code.png(options: options) as CFData, nil))
++            #expect(CGImageSourceGetCount(source) == 1)
++            #expect((CGImageSourceGetType(source) as String?) == "public.png")
++            let decoded = try #require(CGImageSourceCreateImageAtIndex(source, 0, nil))
++            #expect(decoded.width == expected.width)
++            #expect(decoded.height == expected.height)
++            #expect(try renderedRGBA(decoded) == expected.pixels)
++         }
++      }
++   }
++
++   @Test
++   func visionDecodesDirectCGImageAndPNGIncludingUTF8() throws {
++      let inputs = [
++         "SpecQR Apple validation 12345",
++         "https://example.com/path?x=1&text=percent%25",
++         "日本語 漢字 かな カナ",
++         "UTF-8: café 🙂 e\u{0301}",
++         String(repeating: "0123456789", count: 30),
++      ]
++      for text in inputs {
++         let code = try SpecQR.generate(text, options: .init(errorCorrectionLevel: .Q, eci: 26))
++         let direct = try decodedText(image: code.cgImage())
++         let png = try decodedText(png: code.png())
++         // UTF-8 bytes expose normalization changes that String equality hides.
++         #expect(Array(direct.utf8) == Array(text.utf8))
++         #expect(Array(png.utf8) == Array(text.utf8))
++      }
++   }
++
++   @Test
++   func visionPreservesGS1LiteralPercentAndSeparators() throws {
++      let inputs = [
++         "10ABC%DEF",
++         "10ABC%%DEF",
++         "010950110153000310LOT%123\u{1D}17271231",
++      ]
++      for text in inputs {
++         let code = try SpecQR.generate(text, options: .init(gs1: true))
++         #expect(code.segments.filter { !$0.isControl } == [.byteText(text)])
++         #expect(Array(try decodedText(image: code.cgImage()).utf8) == Array(text.utf8))
++         #expect(Array(try decodedText(png: code.png()).utf8) == Array(text.utf8))
++      }
++      let lowLevel = try SpecQR.generate(segments: [.fnc1, .alphanumeric("10ABC%%DEF")])
++      #expect(try decodedText(image: lowLevel.cgImage()) == "10ABC%DEF")
++   }
++
++   @Test
++   func coreGraphicsRejectsInvalidOptionsBeforeAllocation() throws {
++      let code = try SpecQR.generate("negative rendering")
++      let invalid: [QRRenderOptions] = [
++         .init(margin: -1), .init(scale: 0), .init(scale: -1),
++         .init(margin: Int.max), .init(scale: Int.max), .init(scale: 100),
++         .init(foreground: "not-a-color"), .init(background: "#gggggg"),
++         .init(printDPI: .infinity), .init(printDPI: .nan), .init(printDPI: 0),
++         .init(foreground: String(repeating: "a", count: 65_537)),
++      ]
++      for options in invalid {
++         #expect(throws: QRRenderError.self) { _ = try code.cgImage(options: options) }
++         #expect(throws: QRRenderError.self) { _ = try code.png(options: options) }
++      }
++      let v40 = try SpecQR.generate("version forty", options: .init(version: 40))
++      #expect(try v40.cgImage().width == (177 + 8) * 8)
++   }
++
++   @Test
++   func bothFNC1FormsPreservePercentSafetyAcrossPlanningAndGeneration() throws {
++      for secondPosition in [false, true] {
++         for optimize in [false, true] {
++            for text in ["10ABC%DEF", "10ABC%%DEF", "10ABC%DEF\u{1D}17271231"] {
++               let options = QROptions(
++                  errorCorrectionLevel: .Q, version: 4, maskPattern: 3,
++                  optimizeSegments: optimize, gs1: !secondPosition, fnc1Second: secondPosition ? "A" : nil)
++               let code = try SpecQR.generate(text, options: options)
++               let plan = try SpecQR.estimate(text, options: options)
++               let control: QRSegment = secondPosition ? .fnc1Second("A") : .fnc1
++               let reference = try SpecQR.generate(
++                  segments: [control, .byteText(text)],
++                  options: .init(errorCorrectionLevel: .Q, version: 4, maskPattern: 3))
++               #expect(plan.ok)
++               #expect(plan.segments == code.segments)
++               #expect(code.segments == [control, .byteText(text)])
++               #expect(code.matrix == reference.matrix)
++               var explicitByte = options
++               explicitByte.mode = .byte
++               #expect(try SpecQR.generate(text, options: explicitByte).matrix == code.matrix)
++               var unsafeAlpha = options
++               unsafeAlpha.mode = .alphanumeric
++               #expect(throws: QRError.self) { _ = try SpecQR.generate(text, options: unsafeAlpha) }
++               #expect(throws: QRError.self) { _ = try SpecQR.estimate(text, options: unsafeAlpha) }
++               #expect(throws: QRError.self) {
++                  _ = try SpecQR.generate(segments: [.alphanumeric("10ABC%DEF")], options: options)
++               }
++            }
++         }
++      }
++   }
++
++   @Test
++   func structuredAppendHeadersShuffledMergeAndCorruption() throws {
++      let bytes = Array(UInt8(0)...UInt8(120)) + [255, 128, 0]
++      let set = try SpecQR.generateStructuredAppend(
++         bytes,
++         options: .init(qrOptions: .init(errorCorrectionLevel: .L, version: 2, maskPattern: 5), diagnostics: true))
++      #expect((2...16).contains(set.total))
++      #expect(set.symbols.count == set.total)
++      #expect(set.parity == bytes.reduce(0, ^))
++      var parts: [QRStructuredAppendPart] = []
++      for (offset, symbol) in set.symbols.enumerated() {
++         let diagnostic = set.diagnostics.symbols[offset]
++         #expect(symbol.segments.first == .structuredAppend(index: offset + 1, total: set.total, parity: set.parity))
++         #expect(diagnostic.sequenceIndicator == (offset << 4) | (set.total - 1))
++         #expect(
++            symbol.segments.dropFirst().flatMap { $0.bytes ?? [] }
++               == Array(bytes[diagnostic.byteStart..<diagnostic.byteStart + diagnostic.byteLength]))
++         parts.append(
++            .init(
++               index: offset + 1, total: set.total, parity: set.parity,
++               bytes: Array(bytes[diagnostic.byteStart..<diagnostic.byteStart + diagnostic.byteLength])))
++         #expect(try symbol.cgImage().width == (symbol.size + 8) * 8)
++      }
++      let merged = try SpecQR.mergeStructuredAppendParts(Array(parts.reversed()))
++      #expect(merged.data == .bytes(bytes))
++      #expect(merged.diagnostics.parityCheck.matches)
++      #expect(merged.parts.map(\.index) == Array(1...set.total))
++      #expect(throws: QRError.self) { _ = try SpecQR.mergeStructuredAppendParts(Array(parts.dropLast())) }
++      #expect(throws: QRError.self) { _ = try SpecQR.mergeStructuredAppendParts(parts + [parts[0]]) }
++      var corrupt = parts
++      var changed = parts[0].data.canonicalBytes
++      changed[0] ^= 1
++      corrupt[0] = .init(index: 1, total: set.total, parity: set.parity, bytes: changed)
++      #expect(throws: QRError.self) { _ = try SpecQR.mergeStructuredAppendParts(corrupt) }
++      corrupt[0] = .init(index: 1, total: set.total, parity: set.parity ^ 1, bytes: parts[0].data.canonicalBytes)
++      #expect(throws: QRError.self) { _ = try SpecQR.mergeStructuredAppendParts(corrupt) }
++   }
++
++   @Test
++   func concurrentCoreGraphicsRenderingMaintainsValueIsolation() async throws {
++      let inputs = ["HELLO", "漢字123", "https://example.com", "🙂 e\u{0301}"]
++      let expected = try inputs.map { try SpecQR.generate($0) }
++      let options = QRRenderOptions(scale: 2, foreground: "#12345678", background: "#abcdef90")
++      let expectedPixels = try expected.map { try $0.rgba(options: options).pixels }
++      let outcomes = try await withThrowingTaskGroup(of: Bool.self, returning: [Bool].self) { group in
++         for task in 0..<32 {
++            group.addTask {
++               let index = task % inputs.count
++               let code = try SpecQR.generate(inputs[index])
++               var independent = code.matrix
++               independent[0][0].toggle()
++               let image = try code.cgImage(options: options)
++               guard let data = image.dataProvider?.data else { return false }
++               return code == expected[index] && independent != code.matrix
++                  && Array(data as Data) == expectedPixels[index]
++            }
++         }
++         var results: [Bool] = []
++         for try await result in group { results.append(result) }
++         return results
++      }
++      #expect(outcomes.count == 32)
++      #expect(outcomes.allSatisfy { $0 })
++   }
++}
++
++private func decodedText(image: CGImage) throws -> String {
++   let request = VNDetectBarcodesRequest()
++   request.symbologies = [.qr]
++   try VNImageRequestHandler(cgImage: image, options: [:]).perform([request])
++   let results = try #require(request.results)
++   #expect(results.count == 1)
++   let barcode = try #require(results.first)
++   #expect(barcode.symbology == .qr)
++   return try #require(barcode.payloadStringValue)
++}
++
++private func decodedText(png: Data) throws -> String {
++   let request = VNDetectBarcodesRequest()
++   request.symbologies = [.qr]
++   try VNImageRequestHandler(data: png, options: [:]).perform([request])
++   let results = try #require(request.results)
++   #expect(results.count == 1)
++   let barcode = try #require(results.first)
++   #expect(barcode.symbology == .qr)
++   return try #require(barcode.payloadStringValue)
++}
++
++private func renderedRGBA(_ image: CGImage) throws -> [UInt8] {
++   let space = try #require(image.colorSpace)
++   let info = CGBitmapInfo.byteOrder32Big.rawValue | CGImageAlphaInfo.premultipliedLast.rawValue
++   let context = try #require(
++      CGContext(
++         data: nil, width: image.width, height: image.height, bitsPerComponent: 8,
++         bytesPerRow: image.width * 4, space: space, bitmapInfo: info))
++   context.interpolationQuality = .none
++   context.setBlendMode(.copy)
++   context.draw(image, in: CGRect(x: 0, y: 0, width: image.width, height: image.height))
++   let data = try #require(context.data)
++   return Array(
++      UnsafeBufferPointer(
++         start: data.assumingMemoryBound(to: UInt8.self), count: image.width * image.height * 4))
++}
+--- a/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/CorpusTests.swift
++++ b/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/CorpusTests.swift
+@@ -0,0 +1,267 @@
++import Foundation
++import SpecQR
++import Testing
++
++// Independent public-API Swift Testing validation for Command Line Tools hosts.
++// These execute the original fixture corpus; they do not count as an XCTest run.
++@Suite("Pinned upstream fixture corpus")
++struct CorpusTests {
++   @Test("All 1,411 GS1 fixtures preserve canonical results and errors")
++   func gs1UpstreamCorpus() throws {
++      let url = fixtureURL("gs1-upstream.json")
++      let root = try #require(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
++      #expect(root["upstreamCommit"] as? String == "15ad15e5c770ea0e39072f8f88b2733018f02ffd")
++      let cases = try #require(root["cases"] as? [[String: Any]])
++      #expect(cases.count == 1_411)
++      for (index, fixture) in cases.enumerated() {
++         let actual = try evaluateGS1Fixture(fixture)
++         let expected = try #require(fixture["expected"])
++         #expect(
++            try canonicalGS1JSON(actual) == canonicalGS1JSON(expected),
++            "GS1 fixture \(index): \(fixture["op"] ?? "") \(fixture["input"] ?? fixture["elements"] ?? "") \(fixture["options"] ?? "")"
++         )
++      }
++   }
++
++   @Test("All 22 Structured Append fixtures preserve matrices and diagnostics")
++   func structuredAppendUpstreamCorpus() throws {
++      let url = fixtureURL("structured-append-differential.json")
++      let fixtures = try JSONDecoder().decode(FixtureFile.self, from: Data(contentsOf: url))
++      #expect(fixtures.upstreamCommit == "15ad15e5c770ea0e39072f8f88b2733018f02ffd")
++      #expect(fixtures.cases.count == 22)
++      for fixture in fixtures.cases {
++         let options = QRStructuredAppendOptions(
++            qrOptions: fixture.options.qr, maxSymbols: fixture.options.maxSymbols ?? 16,
++            diagnostics: true, splitUnits: fixture.type == "manual" ? .full : .summary)
++         let result: QRStructuredAppendResult
++         switch fixture.type {
++         case "manual":
++            result = try SpecQR.generateSegmentsStructuredAppend(
++               try #require(fixture.segments).map(\.segment), options: options)
++         case "binary": result = try SpecQR.generateStructuredAppend(try #require(fixture.bytes), options: options)
++         default: result = try SpecQR.generateStructuredAppend(try #require(fixture.text), options: options)
++         }
++         let expected = fixture.expected
++         #expect(result.total == expected.total, "\(fixture.id)")
++         #expect(result.parity == expected.parity, "\(fixture.id)")
++         #expect(result.inputLength == expected.inputLength, "\(fixture.id)")
++         #expect(result.byteLength == expected.byteLength, "\(fixture.id)")
++         #expect(result.diagnostics.version == expected.diagnostics.version, "\(fixture.id)")
++         #expect(result.diagnostics.versionSelection == expected.diagnostics.versionSelection, "\(fixture.id)")
++         #expect(
++            result.diagnostics.versionSelectionReason == expected.diagnostics.versionSelectionReason,
++            "\(fixture.id)")
++         #expect(result.diagnostics.splitStrategy == expected.diagnostics.splitStrategy, "\(fixture.id)")
++         #expect(result.diagnostics.splitUnitCount == expected.diagnostics.splitUnitCount, "\(fixture.id)")
++         #expect(result.diagnostics.segmentCount == expected.diagnostics.segmentCount, "\(fixture.id)")
++         #expect(result.diagnostics.warnings.map(\.code) == expected.diagnostics.warnings.map(\.code), "\(fixture.id)")
++         if let units = expected.diagnostics.splitUnits {
++            let actualUnits = try #require(result.diagnostics.splitUnits, "\(fixture.id)")
++            try #require(actualUnits.count == units.count, "\(fixture.id)")
++            for (actual, expected) in zip(actualUnits, units) {
++               #expect(actual.sourceSegmentIndex == expected.sourceSegmentIndex, "\(fixture.id)")
++               #expect(actual.mode == expected.mode, "\(fixture.id)")
++               #expect(actual.unitStart == expected.unitStart, "\(fixture.id)")
++               #expect(actual.unitLength == expected.unitLength, "\(fixture.id)")
++               #expect(actual.byteStart == expected.byteStart, "\(fixture.id)")
++               #expect(actual.byteLength == expected.byteLength, "\(fixture.id)")
++            }
++         } else {
++            #expect(result.diagnostics.splitUnits == nil, "\(fixture.id)")
++         }
++         // Require lengths before indexing so a mismatch reports a failure instead of trapping.
++         try #require(result.symbols.count == expected.matrices.count, "\(fixture.id)")
++         try #require(result.diagnostics.symbols.count == expected.diagnostics.symbols.count, "\(fixture.id)")
++         try #require(result.symbols.count == result.diagnostics.symbols.count, "\(fixture.id)")
++         for (index, code) in result.symbols.enumerated() {
++            #expect(
++               code.matrix.map { $0.map { $0 ? "1" : "0" }.joined() } == expected.matrices[index],
++               "\(fixture.id) symbol \(index + 1)")
++            let actual = result.diagnostics.symbols[index]
++            let expected = expected.diagnostics.symbols[index]
++            #expect(actual.index == expected.index, "\(fixture.id)")
++            #expect(actual.sequenceIndicator == expected.sequenceIndicator, "\(fixture.id)")
++            #expect(actual.inputStart == expected.inputStart, "\(fixture.id)")
++            #expect(actual.inputLength == expected.inputLength, "\(fixture.id)")
++            #expect(actual.byteStart == expected.byteStart, "\(fixture.id)")
++            #expect(actual.byteLength == expected.byteLength, "\(fixture.id)")
++            #expect(actual.sourceSegmentStart == expected.sourceSegmentStart, "\(fixture.id)")
++            #expect(actual.sourceSegmentEnd == expected.sourceSegmentEnd, "\(fixture.id)")
++            #expect(actual.splitUnitStart == expected.splitUnitStart, "\(fixture.id)")
++            #expect(actual.splitUnitLength == expected.splitUnitLength, "\(fixture.id)")
++            #expect(actual.dataBitLength == expected.dataBitLength, "\(fixture.id)")
++            #expect(actual.capacityBits == expected.capacityBits, "\(fixture.id)")
++            #expect(actual.remainingBits == expected.remainingBits, "\(fixture.id)")
++            #expect(actual.maskPattern == expected.maskPattern, "\(fixture.id)")
++            #expect(
++               code.segments.first == .structuredAppend(index: index + 1, total: result.total, parity: result.parity),
++               "\(fixture.id)")
++         }
++      }
++   }
++}
++
++private func fixtureURL(_ name: String) -> URL {
++   URL(fileURLWithPath: #filePath)
++      .deletingLastPathComponent()
++      .appendingPathComponent("../../../../Tests/SpecQRTests/Fixtures", isDirectory: true)
++      .appendingPathComponent(name)
++      .standardizedFileURL
++}
++
++private func canonicalGS1JSON(_ value: Any) throws -> String {
++   let data = try JSONSerialization.data(withJSONObject: value, options: [.sortedKeys, .fragmentsAllowed])
++   return String(decoding: data, as: UTF8.self)
++}
++
++private func evaluateGS1Fixture(_ fixture: [String: Any]) throws -> Any {
++   let op = fixture["op"] as! String
++   let input = fixture["input"] as? String ?? ""
++   let opts = fixture["options"] as? [String: Any] ?? [:]
++   let elements = (fixture["elements"] as? [[String: String]] ?? []).map {
++      GS1.Element(ai: $0["ai"]!, value: $0["value"]!)
++   }
++   let primary = (opts["primaryAi"] as? String).flatMap(GS1.PrimaryAI.init(rawValue:))
++   let unknown = (opts["unknownQuery"] as? String).flatMap(GS1.UnknownQueryPolicy.init(rawValue:)) ?? .preserve
++   let validation = GS1.ValidationOptions(
++      context: (opts["context"] as? String).flatMap(GS1.ValidationContext.init(rawValue:)) ?? .elementString,
++      allowUnsupportedAI: opts["allowUnsupportedAi"] as? Bool ?? false,
++      collectAllErrors: opts["collectAllErrors"] as? Bool ?? true)
++   func json<T: Encodable>(_ value: T) throws -> Any {
++      try JSONSerialization.jsonObject(with: JSONEncoder().encode(value), options: [.fragmentsAllowed])
++   }
++   do {
++      switch op {
++      case "dictionary": return try json(GS1.getSupportedAIs())
++      case "info": return try json(GS1.getAIInfo(input))
++      case "checkDigit": return try GS1.calculateCheckDigit(input)
++      case "validateCheckDigit": return try GS1.validateCheckDigit(input)
++      case "gtinDigit": return try GS1.calculateGTINCheckDigit(input)
++      case "gtinAppend": return try GS1.appendGTINCheckDigit(input)
++      case "gtinValidate": return try GS1.validateGTINCheckDigit(input)
++      case "ssccDigit": return try GS1.calculateSSCCCheckDigit(input)
++      case "ssccAppend": return try GS1.appendSSCCCheckDigit(input)
++      case "ssccValidate": return try GS1.validateSSCCCheckDigit(input)
++      case "human": return try json(GS1.parseHumanReadable(input))
++      case "raw": return try json(GS1.parseElementString(input))
++      case "create": return try GS1.createElementString(elements)
++      case "validateElements": return try json(GS1.validateElements(elements, options: validation))
++      case "validateRaw": return try json(GS1.validateElementString(input, options: validation))
++      case "linkCreate":
++         return try GS1.createDigitalLink(
++            elements,
++            options: .init(
++               baseURL: opts["baseUrl"] as? String ?? "", primaryAI: primary ?? .gtin,
++               pathAIs: opts["pathAis"] as? [String]))
++      case "linkParse":
++         return try json(GS1.parseDigitalLink(input, options: .init(primaryAI: primary, unknownQuery: unknown)))
++      case "linkValidate":
++         return try json(
++            GS1.validateDigitalLink(
++               input,
++               options: .init(primaryAI: primary, unknownQuery: unknown, normalize: opts["normalize"] as? Bool ?? false)
++            ))
++      case "linkNormalize":
++         return try GS1.normalizeDigitalLink(
++            input,
++            options: .init(
++               primaryAI: primary, unknownQuery: unknown, mode: opts["mode"] as? String ?? "specqr-deterministic"))
++      default:
++         throw NSError(
++            domain: "GS1Fixture", code: 1, userInfo: [NSLocalizedDescriptionKey: "Unknown GS1 fixture operation \(op)"])
++      }
++   } catch let error as GS1Error { return ["throws": ["code": error.code, "message": error.message]] }
++}
++
++private struct FixtureFile: Decodable {
++   let upstreamCommit: String
++   let cases: [Fixture]
++}
++private struct Fixture: Decodable {
++   let id: String
++   let type: String
++   let text: String?
++   let bytes: [UInt8]?
++   let segments: [FixtureSegment]?
++   let options: FixtureOptions
++   let expected: FixtureExpected
++}
++private struct FixtureOptions: Decodable {
++   let version: Int?
++   let minVersion: Int?
++   let maxVersion: Int?
++   let maskPattern: Int?
++   let errorCorrectionLevel: ErrorCorrectionLevel?
++   let mode: QRMode?
++   let optimizeSegments: Bool?
++   let maxSymbols: Int?
++   var qr: QROptions {
++      .init(
++         errorCorrectionLevel: errorCorrectionLevel ?? .M, version: version, minVersion: minVersion ?? 1,
++         maxVersion: maxVersion ?? 40, maskPattern: maskPattern, mode: mode ?? .auto,
++         optimizeSegments: optimizeSegments ?? true)
++   }
++}
++private struct FixtureSegment: Decodable {
++   let segment: QRSegment
++   enum CodingKeys: String, CodingKey { case mode, data }
++   init(from decoder: Decoder) throws {
++      let c = try decoder.container(keyedBy: CodingKeys.self)
++      let mode = try c.decode(QRMode.self, forKey: .mode)
++      if let bytes = try? c.decode([UInt8].self, forKey: .data) {
++         segment = .byte(bytes)
++         return
++      }
++      let text = try c.decode(String.self, forKey: .data)
++      switch mode {
++      case .numeric: segment = .numeric(text)
++      case .alphanumeric: segment = .alphanumeric(text)
++      case .kanji: segment = .kanji(text)
++      default: segment = .byteText(text)
++      }
++   }
++}
++private struct FixtureExpected: Decodable {
++   let total: Int
++   let parity: UInt8
++   let inputLength: Int
++   let byteLength: Int
++   let diagnostics: FixtureDiagnostics
++   let matrices: [[String]]
++}
++private struct FixtureDiagnostics: Decodable {
++   let version: Int
++   let versionSelection: String
++   let versionSelectionReason: String
++   let splitStrategy: String
++   let splitUnitCount: Int?
++   let segmentCount: Int?
++   let splitUnits: [FixtureUnit]?
++   let symbols: [FixtureSymbol]
++   let warnings: [FixtureWarning]
++}
++private struct FixtureWarning: Decodable { let code: String }
++private struct FixtureUnit: Decodable {
++   let sourceSegmentIndex: Int
++   let mode: QRMode
++   let unitStart: Int
++   let unitLength: Int
++   let byteStart: Int
++   let byteLength: Int
++}
++private struct FixtureSymbol: Decodable {
++   let index: Int
++   let sequenceIndicator: Int
++   let inputStart: Int?
++   let inputLength: Int?
++   let byteStart: Int
++   let byteLength: Int
++   let sourceSegmentStart: Int?
++   let sourceSegmentEnd: Int?
++   let splitUnitStart: Int?
++   let splitUnitLength: Int?
++   let dataBitLength: Int
++   let capacityBits: Int
++   let remainingBits: Int
++   let maskPattern: Int
++}
+--- a/Scripts/verify-apple.sh
++++ b/Scripts/verify-apple.sh
+@@ -0,0 +1,38 @@
++#!/usr/bin/env bash
++set -euo pipefail
++
++# Independent Swift Testing consumer lane; does not replace root XCTest tests.
++root="$(cd "$(dirname "$0")/.." && pwd)"
++developer="$(xcode-select -p)"
++compiler="$(xcrun --find swiftc)"
++plugins="$(dirname "$compiler")/../lib/swift/host/plugins/testing"
++scratch="${SPECQR_APPLE_BUILD_DIR:-$root/.build/apple-validation}"
++cache="${SPECQR_APPLE_CACHE_DIR:-$root/.build/apple-validation-support}"
++export CLANG_MODULE_CACHE_PATH="$cache/clang-cache"
++arguments=(--package-path "$root/Scripts/apple-validation" --scratch-path "$scratch"
++   --cache-path "$cache/cache" --config-path "$cache/config" --security-path "$cache/security"
++   --disable-sandbox --disable-xctest -j 2)
++
++# Some CLT distributions omit these bundled Testing paths from SwiftPM's defaults.
++if [[ -d "$plugins" ]]; then
++   arguments+=(-Xswiftc -plugin-path -Xswiftc "$plugins")
++fi
++if [[ -d "$developer/Library/Developer/Frameworks/Testing.framework" ]]; then
++   arguments+=(-Xlinker -rpath -Xlinker "$developer/Library/Developer/Frameworks")
++fi
++if [[ -f "$developer/Library/Developer/usr/lib/lib_TestingInterop.dylib" ]]; then
++   arguments+=(-Xlinker -rpath -Xlinker "$developer/Library/Developer/usr/lib")
++fi
++
++configurations=("$@")
++if [[ ${#configurations[@]} -eq 0 ]]; then
++   configurations=(debug release)
++fi
++for configuration in "${configurations[@]}"; do
++   if [[ "$configuration" != debug && "$configuration" != release ]]; then
++      echo "Usage: $0 [debug|release ...]" >&2
++      exit 2
++   fi
++   echo "Independent Apple Swift Testing consumer: $configuration"
++   swift test "${arguments[@]}" -c "$configuration"
++done
+--- a/Sources/SpecQR/Render/Rendering.swift
++++ b/Sources/SpecQR/Render/Rendering.swift
+@@ -199,7 +199,7 @@
+       let (margin, overflow1) = options.margin.multipliedReportingOverflow(by: 2)
+       let (span, overflow2) = margin.addingReportingOverflow(size)
+       let (dimension, overflow3) = span.multipliedReportingOverflow(by: options.scale)
+-      guard !overflow1, !overflow2, !overflow3, dimension > 0, dimension <= 9_007_199_254_740_991 else {
++      guard !overflow1, !overflow2, !overflow3, dimension > 0, Int64(dimension) <= 9_007_199_254_740_991 else {
+          throw QRRenderError.resourceLimit("Render geometry exceeds safe integer range")
+       }
+       return dimension

@@ -1,0 +1,14 @@
+[
+  {
+    "configuration": "Debug",
+    "exit": 0,
+    "svg_bytes": 3540,
+    "has_svg_and_path": true
+  },
+  {
+    "configuration": "Release",
+    "exit": 0,
+    "svg_bytes": 3540,
+    "has_svg_and_path": true
+  }
+]

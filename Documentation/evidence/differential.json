@@ -1,0 +1,11 @@
+{
+  "sourceCommit": "15ad15e5c770ea0e39072f8f88b2733018f02ffd",
+  "fixed": 1280,
+  "auto": 136,
+  "planning": 288,
+  "negative": 15,
+  "render": 11,
+  "nayuki": 960,
+  "decoded": 12,
+  "intentionalSafetyDivergences": 16
+}

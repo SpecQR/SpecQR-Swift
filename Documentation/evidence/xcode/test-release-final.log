@@ -1,0 +1,154 @@
+Building for production...
+[2 / 10]
+[3 / 11] SpecQR
+[5 / 12] SpecQR
+[8 / 12] SpecQRTests-product
+[9 / 13] SpecQRTests-product
+[12 / 13] SpecQRTests-product
+[16 / 18] SpecQRTests-product
+Build complete! (9.31秒)
+Test Suite 'All tests' started at 2026-10-03 18:20:15.512.
+Test Suite 'SpecQRTests.xctest' started at 2026-10-03 18:20:15.512.
+Test Suite 'ApplePlatformTests' started at 2026-10-03 18:20:15.512.
+Test Case '-[SpecQRTests.ApplePlatformTests testCoreGraphicsAndVisionDecode]' started.
+Test Case '-[SpecQRTests.ApplePlatformTests testCoreGraphicsAndVisionDecode]' passed (0.081 seconds).
+Test Suite 'ApplePlatformTests' passed at 2026-10-03 18:20:15.594.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.081 (0.081) seconds
+Test Suite 'CoreTests' started at 2026-10-03 18:20:15.594.
+Test Case '-[SpecQRTests.CoreTests testAllVersionCapacitiesAndBlockLengths]' started.
+Test Case '-[SpecQRTests.CoreTests testAllVersionCapacitiesAndBlockLengths]' passed (0.002 seconds).
+Test Case '-[SpecQRTests.CoreTests testAlphanumericGoldenCodewords]' started.
+Test Case '-[SpecQRTests.CoreTests testAlphanumericGoldenCodewords]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testControlConflictsAndOrdering]' started.
+Test Case '-[SpecQRTests.CoreTests testControlConflictsAndOrdering]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testECIDesignatorBoundaries]' started.
+Test Case '-[SpecQRTests.CoreTests testECIDesignatorBoundaries]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testEmptyAndBinaryInput]' started.
+Test Case '-[SpecQRTests.CoreTests testEmptyAndBinaryInput]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testExactCapacityAndOverflow]' started.
+Test Case '-[SpecQRTests.CoreTests testExactCapacityAndOverflow]' passed (0.009 seconds).
+Test Case '-[SpecQRTests.CoreTests testFixedVersionRangeAndBoost]' started.
+Test Case '-[SpecQRTests.CoreTests testFixedVersionRangeAndBoost]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testFNC1AndStructuredAppendHeaderBits]' started.
+Test Case '-[SpecQRTests.CoreTests testFNC1AndStructuredAppendHeaderBits]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testGeneratedObjectsAreValueTypes]' started.
+Test Case '-[SpecQRTests.CoreTests testGeneratedObjectsAreValueTypes]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testHighLevelFNC1SecondAndManualOptionsPercentSafety]' started.
+Test Case '-[SpecQRTests.CoreTests testHighLevelFNC1SecondAndManualOptionsPercentSafety]' passed (0.001 seconds).
+Test Case '-[SpecQRTests.CoreTests testHighLevelGS1PreservesLiteralPercent]' started.
+Test Case '-[SpecQRTests.CoreTests testHighLevelGS1PreservesLiteralPercent]' passed (0.001 seconds).
+Test Case '-[SpecQRTests.CoreTests testInvalidModesAndBounds]' started.
+Test Case '-[SpecQRTests.CoreTests testInvalidModesAndBounds]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testKanjiGoldenAndMapping]' started.
+Test Case '-[SpecQRTests.CoreTests testKanjiGoldenAndMapping]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testMalformedHeaderDiagnosticsDoNotTrap]' started.
+Test Case '-[SpecQRTests.CoreTests testMalformedHeaderDiagnosticsDoNotTrap]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testNumericGoldenCodewords]' started.
+Test Case '-[SpecQRTests.CoreTests testNumericGoldenCodewords]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testOptimizedMixedGolden]' started.
+Test Case '-[SpecQRTests.CoreTests testOptimizedMixedGolden]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testOptimizerNeverWorseThanSingleMode]' started.
+Test Case '-[SpecQRTests.CoreTests testOptimizerNeverWorseThanSingleMode]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testReedSolomonFieldAndSyndromes]' started.
+Test Case '-[SpecQRTests.CoreTests testReedSolomonFieldAndSyndromes]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.CoreTests testUnicodeCountsAndCanonicalEncoding]' started.
+Test Case '-[SpecQRTests.CoreTests testUnicodeCountsAndCanonicalEncoding]' passed (0.000 seconds).
+Test Suite 'CoreTests' passed at 2026-10-03 18:20:15.609.
+	 Executed 19 tests, with 0 failures (0 unexpected) in 0.015 (0.016) seconds
+Test Suite 'DocumentationExamplesTests' started at 2026-10-03 18:20:15.609.
+Test Case '-[SpecQRTests.DocumentationExamplesTests testReadmeGenerationAndPlanning]' started.
+Test Case '-[SpecQRTests.DocumentationExamplesTests testReadmeGenerationAndPlanning]' passed (0.003 seconds).
+Test Case '-[SpecQRTests.DocumentationExamplesTests testReadmeGS1AndStructuredAppend]' started.
+Test Case '-[SpecQRTests.DocumentationExamplesTests testReadmeGS1AndStructuredAppend]' passed (0.004 seconds).
+Test Suite 'DocumentationExamplesTests' passed at 2026-10-03 18:20:15.616.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'GS1Tests' started at 2026-10-03 18:20:15.616.
+Test Case '-[SpecQRTests.GS1Tests testAllCheckDigitLengthsAndLeadingZeros]' started.
+Test Case '-[SpecQRTests.GS1Tests testAllCheckDigitLengthsAndLeadingZeros]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.GS1Tests testCatalogHasBoundedSupportAndNoImplicitGLNCheckDigit]' started.
+Test Case '-[SpecQRTests.GS1Tests testCatalogHasBoundedSupportAndNoImplicitGLNCheckDigit]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.GS1Tests testDigitalLinkNormalizationPreservesRepeatedUnknowns]' started.
+Test Case '-[SpecQRTests.GS1Tests testDigitalLinkNormalizationPreservesRepeatedUnknowns]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.GS1Tests testDigitalLinkOrderingEscapesAndRoundTrip]' started.
+Test Case '-[SpecQRTests.GS1Tests testDigitalLinkOrderingEscapesAndRoundTrip]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.GS1Tests testHumanReadableRawRoundTripAndMetadata]' started.
+Test Case '-[SpecQRTests.GS1Tests testHumanReadableRawRoundTripAndMetadata]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.GS1Tests testMissingSeparatorHeuristicMatchesUpstream]' started.
+Test Case '-[SpecQRTests.GS1Tests testMissingSeparatorHeuristicMatchesUpstream]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.GS1Tests testOverflowingHexadecimalHostsCannotFallBackToDNS]' started.
+Test Case '-[SpecQRTests.GS1Tests testOverflowingHexadecimalHostsCannotFallBackToDNS]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.GS1Tests testPinnedUpstreamDifferentialFixtures]' started.
+Test Case '-[SpecQRTests.GS1Tests testPinnedUpstreamDifferentialFixtures]' passed (0.043 seconds).
+Test Case '-[SpecQRTests.GS1Tests testStructuredValidationCollectsOrStops]' started.
+Test Case '-[SpecQRTests.GS1Tests testStructuredValidationCollectsOrStops]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.GS1Tests testTypedOptionsAndFoundationURLOverloads]' started.
+Test Case '-[SpecQRTests.GS1Tests testTypedOptionsAndFoundationURLOverloads]' passed (0.000 seconds).
+Test Suite 'GS1Tests' passed at 2026-10-03 18:20:15.661.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.045 (0.046) seconds
+Test Suite 'MatrixTests' started at 2026-10-03 18:20:15.661.
+Test Case '-[SpecQRTests.MatrixTests testAlignmentCentersIncludingVersion32Exception]' started.
+Test Case '-[SpecQRTests.MatrixTests testAlignmentCentersIncludingVersion32Exception]' passed (0.001 seconds).
+Test Case '-[SpecQRTests.MatrixTests testAutomaticSelectionUsesLowestPenalty]' started.
+Test Case '-[SpecQRTests.MatrixTests testAutomaticSelectionUsesLowestPenalty]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.MatrixTests testFinderSeparatorsTimingAndDarkModuleRemainFixed]' started.
+Test Case '-[SpecQRTests.MatrixTests testFinderSeparatorsTimingAndDarkModuleRemainFixed]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.MatrixTests testFormatAndVersionBCHWords]' started.
+Test Case '-[SpecQRTests.MatrixTests testFormatAndVersionBCHWords]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.MatrixTests testPenaltyForUniformAndCheckerboardMatrices]' started.
+Test Case '-[SpecQRTests.MatrixTests testPenaltyForUniformAndCheckerboardMatrices]' passed (0.000 seconds).
+Test Suite 'MatrixTests' passed at 2026-10-03 18:20:15.663.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds
+Test Suite 'RenderingTests' started at 2026-10-03 18:20:15.663.
+Test Case '-[SpecQRTests.RenderingTests testPlanningWarningsWithoutMatrixAndOverflow]' started.
+Test Case '-[SpecQRTests.RenderingTests testPlanningWarningsWithoutMatrixAndOverflow]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.RenderingTests testPNGStructureCRCAndStoredDeflate]' started.
+Test Case '-[SpecQRTests.RenderingTests testPNGStructureCRCAndStoredDeflate]' passed (0.001 seconds).
+Test Case '-[SpecQRTests.RenderingTests testRasterMatchesEveryModule]' started.
+Test Case '-[SpecQRTests.RenderingTests testRasterMatchesEveryModule]' passed (0.053 seconds).
+Test Case '-[SpecQRTests.RenderingTests testResourceAndColorValidation]' started.
+Test Case '-[SpecQRTests.RenderingTests testResourceAndColorValidation]' passed (0.001 seconds).
+Test Case '-[SpecQRTests.RenderingTests testScanWarningsAndCanvas]' started.
+Test Case '-[SpecQRTests.RenderingTests testScanWarningsAndCanvas]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.RenderingTests testSVGAndURLs]' started.
+Test Case '-[SpecQRTests.RenderingTests testSVGAndURLs]' passed (0.004 seconds).
+Test Suite 'RenderingTests' passed at 2026-10-03 18:20:15.722.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.059 (0.059) seconds
+Test Suite 'StructuredAppendTests' started at 2026-10-03 18:20:15.722.
+Test Case '-[SpecQRTests.StructuredAppendTests testCanonicalJSDifferentialFixtures]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testCanonicalJSDifferentialFixtures]' passed (0.009 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testCanonicalParity]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testCanonicalParity]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testDataSliceGenerationAndValueIsolation]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testDataSliceGenerationAndValueIsolation]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testGenerationRejectsUnsupportedOptionsAndSingleSymbol]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testGenerationRejectsUnsupportedOptionsAndSingleSymbol]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testIncrementalTrackerMatchesCoreOptimizerAcrossPrefixes]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testIncrementalTrackerMatchesCoreOptimizerAcrossPrefixes]' passed (0.020 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testLargeInputsFailCapacityPreflight]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testLargeInputsFailCapacityPreflight]' passed (0.002 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testManualSummaryAndFullDiagnosticsHaveIdenticalOutput]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testManualSummaryAndFullDiagnosticsHaveIdenticalOutput]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testMergeRejectsCorruptionAndInvalidMetadata]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testMergeRejectsCorruptionAndInvalidMetadata]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testMixedSingleAndTooLongVersionsRemainTooLong]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testMixedSingleAndTooLongVersionsRemainTooLong]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testTooLongErrorExplainsTheSplitConstraint]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testTooLongErrorExplainsTheSplitConstraint]' passed (0.000 seconds).
+Test Case '-[SpecQRTests.StructuredAppendTests testUnicodeAndBinaryRoundTripThroughMerge]' started.
+Test Case '-[SpecQRTests.StructuredAppendTests testUnicodeAndBinaryRoundTripThroughMerge]' passed (0.001 seconds).
+Test Suite 'StructuredAppendTests' passed at 2026-10-03 18:20:15.756.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.033 (0.033) seconds
+Test Suite 'SpecQRTests.xctest' passed at 2026-10-03 18:20:15.756.
+	 Executed 54 tests, with 0 failures (0 unexpected) in 0.241 (0.244) seconds
+Test Suite 'All tests' passed at 2026-10-03 18:20:15.756.
+	 Executed 54 tests, with 0 failures (0 unexpected) in 0.241 (0.244) seconds
+◇ Test run started.
+↳ Testing Library Version: 2084
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite ConcurrencyTests started.
+◇ Test testCopiedMatricesDoNotMutateResults() started.
+◇ Test testConcurrentDeterministicGenerationAndRendering() started.
+✔ Test testCopiedMatricesDoNotMutateResults() passed after 0.001 seconds.
+✔ Test testConcurrentDeterministicGenerationAndRendering() passed after 0.003 seconds.
+✔ Suite ConcurrencyTests passed after 0.004 seconds.
+✔ Test run with 2 tests in 1 suite passed after 0.004 seconds.

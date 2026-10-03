@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-03",
+  "host": {
+    "os": "macOS 27.0",
+    "build": "26A428",
+    "architecture": "arm64",
+    "swift": "Apple Swift 6.4 (swiftlang-6.4.0.33.1 clang-2100.3.33.1)",
+    "clt": "27.0.0.0.1787197235",
+    "sdk": "macOS 27.0 (26A5419a)",
+    "swiftTesting": "2078"
+  },
+  "lanes": [
+    {
+      "name": "validation-debug",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "validation-release",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "build-debug",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "build-release",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "consumer-debug",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "consumer-release",
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "intel-cross",
+      "exit_code": 0,
+      "status": "passed"
+    }
+  ],
+  "independentSwiftTesting": {
+    "debug": {
+      "tests": 10,
+      "suites": 2,
+      "failures": 0
+    },
+    "release": {
+      "tests": 10,
+      "suites": 2,
+      "failures": 0
+    },
+    "perConfiguration": {
+      "gs1Fixtures": 1411,
+      "structuredAppendFixtures": 22,
+      "visionPayloadChecks": 17,
+      "imageIOFullPixelRoundtrips": 4,
+      "concurrentRenders": 32
+    },
+    "countsOverlap": true,
+    "originalXCTestReplacement": false
+  },
+  "blocked": [
+    "original macOS XCTest debug/release: XCTest unavailable",
+    "iOS/tvOS/watchOS SDK builds: SDKs unavailable",
+    "iOS simulator tests: simctl/runtimes unavailable",
+    "watchOS arm64_32 complete compile: SDK unavailable"
+  ],
+  "notExecuted": [
+    "deployment-minimum OS runs",
+    "Intel execution",
+    "physical camera or print checks",
+    "remote CI or publication"
+  ],
+  "linuxEvidence": {
+    "version": 0,
+    "sha256": "3cc34438aa674ea66877d0397b7f0c5e0987c94665581175f2adac775e603009",
+    "sourceManifestEntriesMatched": 31
+  },
+  "originalCandidate": {
+    "version": 0,
+    "sha256": "fab72787388854ac30a489593145bbf538358e4e4fdd21a1d4973957df7ff2cb"
+  },
+  "allAppleReleaseGatesComplete": false,
+  "publicationPerformed": false
+}

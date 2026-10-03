@@ -1,0 +1,3 @@
+Verified 31 Linux source-manifest entries against final Mac candidate. Both patched files are byte-identical.
+Library evidence: [private artifact ID omitted] version 0
+Archive SHA256: 3cc34438aa674ea66877d0397b7f0c5e0987c94665581175f2adac775e603009

@@ -1,0 +1,25 @@
+diff --git a/Examples/Basic/Package.swift b/Examples/Basic/Package.swift
+index 3e580d3..84cef11 100644
+--- a/Examples/Basic/Package.swift
++++ b/Examples/Basic/Package.swift
+@@ -3,6 +3,7 @@ import PackageDescription
+ 
+ let package = Package(
+    name: "SpecQRDemo",
++   platforms: [.macOS(.v13)],
+    dependencies: [.package(name: "SpecQR", path: "../..")],
+    targets: [
+       .executableTarget(name: "SpecQRDemo", dependencies: [.product(name: "SpecQR", package: "SpecQR")])
+diff --git a/Sources/SpecQR/Render/Rendering.swift b/Sources/SpecQR/Render/Rendering.swift
+index 845d84b..cc06383 100644
+--- a/Sources/SpecQR/Render/Rendering.swift
++++ b/Sources/SpecQR/Render/Rendering.swift
+@@ -199,7 +199,7 @@ internal enum RenderGeometry {
+       let (margin, overflow1) = options.margin.multipliedReportingOverflow(by: 2)
+       let (span, overflow2) = margin.addingReportingOverflow(size)
+       let (dimension, overflow3) = span.multipliedReportingOverflow(by: options.scale)
+-      guard !overflow1, !overflow2, !overflow3, dimension > 0, dimension <= 9_007_199_254_740_991 else {
++      guard !overflow1, !overflow2, !overflow3, dimension > 0, Int64(dimension) <= 9_007_199_254_740_991 else {
+          throw QRRenderError.resourceLimit("Render geometry exceeds safe integer range")
+       }
+       return dimension

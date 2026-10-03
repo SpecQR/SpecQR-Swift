@@ -1,0 +1,8 @@
+Building for production...
+[0/5] Write sources
+[2/5] Write swift-version--23BFA3BA4937D1DF.txt
+[4/6] Compiling SpecQR Matrix.swift
+[5/7] Compiling specqr_cli main.swift
+[5/7] Write Objects.LinkFileList
+[6/7] Linking specqr-cli
+Build complete! (14.80s)

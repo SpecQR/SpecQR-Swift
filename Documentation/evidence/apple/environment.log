@@ -1,0 +1,36 @@
+2026-10-03T07:27:37Z
+ProductName:		macOS
+ProductVersion:		27.0
+BuildVersion:		26A428
+arm64
+/Library/Developer/CommandLineTools
+swift-driver version: 1.168.6 Apple Swift version 6.4 (swiftlang-6.4.0.33.1 clang-2100.3.33.1)
+Target: arm64-apple-macosx27.0.0
+27.0
+26A5419a
+package-id: com.apple.pkg.CLTools_Executables
+version: 27.0.0.0.1787197235
+volume: /
+location: /
+[Host disk inventory omitted]
+MacOSX.sdk
+MacOSX26.5.sdk
+MacOSX26.sdk
+MacOSX27.0.sdk
+MacOSX27.sdk
+xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
+xcrun: error: unable to find utility "simctl", not a developer tool or in PATH
+xcrun: error: SDK "iphoneos" cannot be located
+xcrun: error: SDK "iphoneos" cannot be located
+xcrun: error: unable to lookup item 'Path' in SDK 'iphoneos'
+xcrun: error: SDK "iphonesimulator" cannot be located
+xcrun: error: SDK "iphonesimulator" cannot be located
+xcrun: error: Failed to open property list '$PACKAGE_ROOT/iphonesimulator/SDKSettings.plist'
+xcrun: error: SDK "iphonesimulator" cannot be located
+xcrun: error: unable to lookup item 'Path' in SDK 'iphonesimulator'
+xcrun: error: SDK "appletvos" cannot be located
+xcrun: error: SDK "appletvos" cannot be located
+xcrun: error: unable to lookup item 'Path' in SDK 'appletvos'
+xcrun: error: SDK "watchos" cannot be located
+xcrun: error: SDK "watchos" cannot be located
+xcrun: error: unable to lookup item 'Path' in SDK 'watchos'

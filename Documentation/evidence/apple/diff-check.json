@@ -1,0 +1,37 @@
+[
+  {
+    "file": "Sources/SpecQR/Render/Rendering.swift",
+    "exit": 1,
+    "diagnostics": ""
+  },
+  {
+    "file": "Examples/Basic/Package.swift",
+    "exit": 1,
+    "diagnostics": ""
+  },
+  {
+    "file": "Scripts/apple-validation/Package.swift",
+    "exit": 1,
+    "diagnostics": ""
+  },
+  {
+    "file": "Scripts/apple-validation/README.md",
+    "exit": 1,
+    "diagnostics": ""
+  },
+  {
+    "file": "Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift",
+    "exit": 1,
+    "diagnostics": ""
+  },
+  {
+    "file": "Scripts/apple-validation/Tests/SpecQRAppleValidationTests/CorpusTests.swift",
+    "exit": 1,
+    "diagnostics": ""
+  },
+  {
+    "file": "Scripts/verify-apple.sh",
+    "exit": 1,
+    "diagnostics": ""
+  }
+]

@@ -1,0 +1,88 @@
+{
+  "started_at": "2026-10-03T09:19:58.872899+00:00",
+  "test_file": "Tests/SpecQRTests/ApplePlatformTests.swift",
+  "test_sha256_before": "b65794b39fa499e58abf0be93189d34c3bb6ec9cd68bd0959fda44a043aa1317",
+  "runs": [
+    {
+      "configuration": "debug",
+      "command": [
+        "swift",
+        "test",
+        "--scratch-path",
+        ".build-xcode",
+        "--cache-path",
+        ".build-xcode-support/cache",
+        "--config-path",
+        ".build-xcode-support/config",
+        "--security-path",
+        ".build-xcode-support/security",
+        "--disable-sandbox",
+        "-j",
+        "2"
+      ],
+      "exit_status": 0,
+      "duration_seconds": 6.638,
+      "log": "Documentation/evidence/xcode/test-debug-final.log",
+      "summary_lines": [
+        "\t Executed 1 test, with 0 failures (0 unexpected) in 0.863 (0.864) seconds",
+        "\t Executed 19 tests, with 0 failures (0 unexpected) in 0.313 (0.314) seconds",
+        "\t Executed 2 tests, with 0 failures (0 unexpected) in 0.411 (0.411) seconds",
+        "\t Executed 10 tests, with 0 failures (0 unexpected) in 0.066 (0.066) seconds",
+        "\t Executed 5 tests, with 0 failures (0 unexpected) in 0.039 (0.040) seconds",
+        "\t Executed 6 tests, with 0 failures (0 unexpected) in 0.536 (0.536) seconds",
+        "\t Executed 11 tests, with 0 failures (0 unexpected) in 0.356 (0.357) seconds",
+        "\t Executed 54 tests, with 0 failures (0 unexpected) in 2.584 (2.588) seconds",
+        "\t Executed 54 tests, with 0 failures (0 unexpected) in 2.584 (2.589) seconds",
+        "✔ Test run with 2 tests in 1 suite passed after 0.308 seconds."
+      ]
+    },
+    {
+      "configuration": "release",
+      "command": [
+        "swift",
+        "test",
+        "--scratch-path",
+        ".build-xcode",
+        "--cache-path",
+        ".build-xcode-support/cache",
+        "--config-path",
+        ".build-xcode-support/config",
+        "--security-path",
+        ".build-xcode-support/security",
+        "--disable-sandbox",
+        "-j",
+        "2",
+        "-c",
+        "release"
+      ],
+      "exit_status": 0,
+      "duration_seconds": 10.3,
+      "log": "Documentation/evidence/xcode/test-release-final.log",
+      "summary_lines": [
+        "\t Executed 1 test, with 0 failures (0 unexpected) in 0.081 (0.081) seconds",
+        "\t Executed 19 tests, with 0 failures (0 unexpected) in 0.015 (0.016) seconds",
+        "\t Executed 2 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds",
+        "\t Executed 10 tests, with 0 failures (0 unexpected) in 0.045 (0.046) seconds",
+        "\t Executed 5 tests, with 0 failures (0 unexpected) in 0.002 (0.002) seconds",
+        "\t Executed 6 tests, with 0 failures (0 unexpected) in 0.059 (0.059) seconds",
+        "\t Executed 11 tests, with 0 failures (0 unexpected) in 0.033 (0.033) seconds",
+        "\t Executed 54 tests, with 0 failures (0 unexpected) in 0.241 (0.244) seconds",
+        "\t Executed 54 tests, with 0 failures (0 unexpected) in 0.241 (0.244) seconds",
+        "✔ Test run with 2 tests in 1 suite passed after 0.004 seconds."
+      ]
+    }
+  ],
+  "format_lint": {
+    "command": [
+      "xcrun",
+      "swift-format",
+      "lint",
+      "--strict",
+      "Tests/SpecQRTests/ApplePlatformTests.swift"
+    ],
+    "exit_status": 0,
+    "log": "Documentation/evidence/xcode/test-format-final.log"
+  },
+  "test_sha256_after": "b65794b39fa499e58abf0be93189d34c3bb6ec9cd68bd0959fda44a043aa1317",
+  "finished_at": "2026-10-03T09:20:15.850407+00:00"
+}

@@ -1,0 +1,7 @@
+Compile (exit0):
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk xcrun --sdk iphonesimulator swiftc -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.0.sdk -target arm64-apple-ios17.0-simulator -profile-generate -profile-coverage-mapping -I .build-xcode-simulator/Build/Products/Debug-iphonesimulator -module-cache-path .build-xcode-vision-probe/module-cache Documentation/evidence/xcode/vision-probe/VisionProbe.swift .build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQR.o -o .build-xcode-vision-probe/VisionProbe
+
+Run (exit0, diagnostic outputs contain20 empty results and1 error):
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer SIMCTL_CHILD_LLVM_PROFILE_FILE=/tmp/specqr-vision-probe-%p.profraw xcrun simctl spawn [ephemeral identifier omitted] $PACKAGE_ROOT/.build-xcode-vision-probe/VisionProbe
+
+Reproducer sends disposable profile output to /dev/null instead.

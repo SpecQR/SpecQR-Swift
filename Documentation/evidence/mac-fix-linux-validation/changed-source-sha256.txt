@@ -1,0 +1,2 @@
+a98f589fb40bf64b1183ea1bd16a376bf9835637185bda9f2d3e26a3b744f1d4  Examples/Basic/Package.swift
+0fa4745d9cda2ef3fe8a7c69e23989d2853040f8ad95591656bb9a3a2a03b623  Sources/SpecQR/Render/Rendering.swift

@@ -1,0 +1,36 @@
+Building for production...
+[Planning deferred tasks]
+[3 / 16]
+[4 / 17] SpecQR
+[11 / 71]
+[17 / 71]
+[20 / 71]
+[23 / 71]
+[25 / 71]
+[28 / 71]
+[31 / 71]
+[34 / 71]
+[36 / 71]
+[38 / 71]
+[40 / 71]
+[41 / 71]
+[43 / 71]
+[45 / 71]
+[48 / 71]
+[50 / 71]
+[52 / 71]
+[53 / 71]
+[55 / 71]
+[57 / 71]
+[58 / 71]
+[59 / 71] SpecQR
+$PACKAGE_ROOT/Package.swift: SpecQR: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/Library/Frameworks' not found
+[66 / 71] specqr-cli-product
+[68 / 72] specqr-cli-product
+$PACKAGE_ROOT/Package.swift: specqr-cli-product: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/usr/lib' not found
+$PACKAGE_ROOT/Package.swift: specqr-cli-product: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/Library/Frameworks' not found
+[70 / 72] specqr-cli-product
+error: Operation not permitted
+error: GenerateDSYMFile $PACKAGE_ROOT/.build-apple/out/Products/Release/specqr-cli.dSYM $PACKAGE_ROOT/.build-apple/out/Products/Release/specqr-cli failed with a nonzero exit code. Command line:     cd $PACKAGE_ROOT
+    /Library/Developer/CommandLineTools/usr/bin/dsymutil $PACKAGE_ROOT/.build-apple/out/Products/Release/specqr-cli -o $PACKAGE_ROOT/.build-apple/out/Products/Release/specqr-cli.dSYM
+error: Build failed

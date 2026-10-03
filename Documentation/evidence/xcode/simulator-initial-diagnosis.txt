@@ -1,0 +1,37 @@
+Read-only diagnosis of initial simulator test startup timeout — 2026-10-03
+
+The initial test run executed no test methods. The completed xcresult reports
+one worker-initialization failure, not a failed library assertion:
+  Timed out while preparing execution worker.
+  com.apple.dt.XCTest.XCTFuture Code=1000
+  XCTHTestOperationCoordinatorErrorDomain Code=12
+
+While running, xctest79164 used 1.11 seconds cumulative CPU after three minutes.
+All169 samples in the two-second process sample blocked at:
+  XCTestDriver._loadTestBundleFromURL -> NSBundle.loadAndReturnError
+  -> CFBundleCreate -> _CFIterateDirectory -> __opendir2 -> __open_nocancel
+This established a filesystem-open stall before tests, not Vision inference.
+
+The completed session adds decisive evidence (local +09:00 timestamps):
+  17:41:19.115 Loading test bundle .../SpecQRTests.xctest/
+  18:03:50.121 Finished loading test bundle
+  18:03:54.373 Finished loading test suite, took4.179s
+  18:03:54.377 preparing execution worker waiter budget: -755.87s
+  18:03:54.379 Timed out while preparing execution worker
+
+No explicit denial of xctest, SpecQR or Documents access was found. Host unified
+TCC/sandboxd logs scoped to xctest/79164/SpecQR from17:40–18:05 had no matches.
+Simulator TCC logged an internal cache-create failure at17:40:32 for
+/private/var/mobile/Library/ManagedAppPrivacy (POSIX13 Permission denied), before
+xctest launch; it was not an access decision identifying our bundle. This alone
+does not explain the stall. Bundle loading later succeeded at the original path.
+Thus folder privacy was an unconfirmed hypothesis, not an established denial.
+
+The completed root log separately records diagnostic collection failing because
+an xcrun child could not locate simctl (exit72). This happened after the worker
+timeout and does not establish a library or QR rendering defect.
+
+Sources: the public initial-result-summary.json and simulator-debug-initial-timeout.log,
+plus privately retained session/process diagnostics. Raw personal diagnostics
+are intentionally excluded from this public evidence copy.
+No source, device state, settings or processes changed during this inspection.

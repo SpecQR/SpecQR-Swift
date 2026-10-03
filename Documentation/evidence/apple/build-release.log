@@ -1,0 +1,12 @@
+Building for production...
+[Planning deferred tasks]
+[2 / 12]
+[3 / 13] SpecQR
+[5 / 14] SpecQR
+$PACKAGE_ROOT/Package.swift: SpecQR: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/Library/Frameworks' not found
+[11 / 16] specqr-cli-product
+[13 / 17] specqr-cli-product
+$PACKAGE_ROOT/Package.swift: specqr-cli-product: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/usr/lib' not found
+$PACKAGE_ROOT/Package.swift: specqr-cli-product: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/Library/Frameworks' not found
+[15 / 17] specqr-cli-product
+Build complete! (10.13秒)

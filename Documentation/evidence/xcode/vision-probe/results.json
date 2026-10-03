@@ -1,0 +1,934 @@
+{
+  "records": [
+    {
+      "currentRevision": 4,
+      "defaultRevision": 4,
+      "event": "environment",
+      "os": "Version 27.0 (Build 24A434)",
+      "payload": "SpecQR Apple validation 12345",
+      "supportedRevisions": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "alphaInfo": 3,
+      "bitmapInfo": 3,
+      "bitsPerPixel": 32,
+      "colorSpace": "Optional(<CGColorSpace 0x1054cacc0> (kCGColorSpaceDeviceRGB))",
+      "event": "image",
+      "height": 296,
+      "name": "SpecQR-original-default",
+      "width": 296
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "default",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 1,
+      "seconds": 0.025885939598083496,
+      "source": "SpecQR-original-default",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "supported-CPU",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 1,
+      "seconds": 0.005384922027587891,
+      "source": "SpecQR-original-default",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "error": {
+        "code": 9,
+        "description": "Could not create inference context",
+        "domain": "com.apple.Vision",
+        "userInfo": "[\"NSLocalizedDescription\": Could not create inference context]"
+      },
+      "event": "result",
+      "mode": "default",
+      "revision": 2,
+      "seconds": 0.012031078338623047,
+      "source": "SpecQR-original-default",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "supported-CPU",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 2,
+      "seconds": 0.01208198070526123,
+      "source": "SpecQR-original-default",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "default",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 3,
+      "seconds": 0.07725691795349121,
+      "source": "SpecQR-original-default",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "supported-CPU",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 3,
+      "seconds": 0.06092500686645508,
+      "source": "SpecQR-original-default",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "default",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 4,
+      "seconds": 0.06074202060699463,
+      "source": "SpecQR-original-default",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "supported-CPU",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 4,
+      "seconds": 0.06214404106140137,
+      "source": "SpecQR-original-default",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "alphaInfo": 3,
+      "bitmapInfo": 3,
+      "bitsPerPixel": 32,
+      "colorSpace": "Optional(<CGColorSpace 0x1054cacc0> (kCGColorSpaceDeviceRGB))",
+      "event": "image",
+      "height": 410,
+      "name": "SpecQR-direct",
+      "width": 410
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "default",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 1,
+      "seconds": 0.008999943733215332,
+      "source": "SpecQR-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "supported-CPU",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 1,
+      "seconds": 0.007030010223388672,
+      "source": "SpecQR-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "default",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 2,
+      "seconds": 0.007000923156738281,
+      "source": "SpecQR-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "supported-CPU",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 2,
+      "seconds": 0.006829977035522461,
+      "source": "SpecQR-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "default",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 3,
+      "seconds": 0.05926406383514404,
+      "source": "SpecQR-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "supported-CPU",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 3,
+      "seconds": 0.060468077659606934,
+      "source": "SpecQR-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "default",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 4,
+      "seconds": 0.061724066734313965,
+      "source": "SpecQR-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "supported-CPU",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 4,
+      "seconds": 0.06097102165222168,
+      "source": "SpecQR-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "alphaInfo": 1,
+      "bitmapInfo": 16385,
+      "bitsPerPixel": 32,
+      "colorSpace": "Optional(<CGColorSpace 0x1054cacc0> (kCGColorSpaceDeviceRGB))",
+      "event": "image",
+      "height": 410,
+      "name": "SpecQR-normalized",
+      "width": 410
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "default",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 1,
+      "seconds": 0.008471012115478516,
+      "source": "SpecQR-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "supported-CPU",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 1,
+      "seconds": 0.006852984428405762,
+      "source": "SpecQR-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "default",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 2,
+      "seconds": 0.007369041442871094,
+      "source": "SpecQR-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "supported-CPU",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 2,
+      "seconds": 0.007440924644470215,
+      "source": "SpecQR-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "default",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 3,
+      "seconds": 0.060220956802368164,
+      "source": "SpecQR-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "supported-CPU",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 3,
+      "seconds": 0.06402897834777832,
+      "source": "SpecQR-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "default",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 4,
+      "seconds": 0.06405699253082275,
+      "source": "SpecQR-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "supported-CPU",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 4,
+      "seconds": 0.062417030334472656,
+      "source": "SpecQR-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "alphaInfo": 1,
+      "bitmapInfo": 1,
+      "bitsPerPixel": 32,
+      "colorSpace": "Optional(<CGColorSpace 0x1054cacc0> (kCGColorSpaceDeviceRGB))",
+      "event": "image",
+      "height": 430,
+      "name": "Apple-CoreImage-direct",
+      "width": 430
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "default",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 1,
+      "seconds": 0.007858991622924805,
+      "source": "Apple-CoreImage-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "supported-CPU",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 1,
+      "seconds": 0.0069190263748168945,
+      "source": "Apple-CoreImage-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "default",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 2,
+      "seconds": 0.006072998046875,
+      "source": "Apple-CoreImage-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "supported-CPU",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 2,
+      "seconds": 0.005859017372131348,
+      "source": "Apple-CoreImage-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "default",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 3,
+      "seconds": 0.060575008392333984,
+      "source": "Apple-CoreImage-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "supported-CPU",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 3,
+      "seconds": 0.06177198886871338,
+      "source": "Apple-CoreImage-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "default",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 4,
+      "seconds": 0.06154191493988037,
+      "source": "Apple-CoreImage-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "supported-CPU",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 4,
+      "seconds": 0.06140398979187012,
+      "source": "Apple-CoreImage-direct",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "alphaInfo": 1,
+      "bitmapInfo": 16385,
+      "bitsPerPixel": 32,
+      "colorSpace": "Optional(<CGColorSpace 0x1054cacc0> (kCGColorSpaceDeviceRGB))",
+      "event": "image",
+      "height": 430,
+      "name": "Apple-CoreImage-normalized",
+      "width": 430
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "default",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 1,
+      "seconds": 0.00840294361114502,
+      "source": "Apple-CoreImage-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "supported-CPU",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 1,
+      "seconds": 0.006826996803283691,
+      "source": "Apple-CoreImage-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "default",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 2,
+      "seconds": 0.006585955619812012,
+      "source": "Apple-CoreImage-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 1,
+      "event": "result",
+      "exactPayloadMatch": true,
+      "mode": "supported-CPU",
+      "observations": [
+        {
+          "confidence": 1,
+          "symbology": "VNBarcodeSymbologyQR"
+        }
+      ],
+      "payloads": [
+        "SpecQR Apple validation 12345"
+      ],
+      "resultsIsNil": false,
+      "revision": 2,
+      "seconds": 0.00639498233795166,
+      "source": "Apple-CoreImage-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "default",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 3,
+      "seconds": 0.05900096893310547,
+      "source": "Apple-CoreImage-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "supported-CPU",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 3,
+      "seconds": 0.061966896057128906,
+      "source": "Apple-CoreImage-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "default",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 4,
+      "seconds": 0.06253302097320557,
+      "source": "Apple-CoreImage-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    },
+    {
+      "count": 0,
+      "event": "result",
+      "exactPayloadMatch": false,
+      "mode": "supported-CPU",
+      "observations": [],
+      "payloads": [],
+      "resultsIsNil": false,
+      "revision": 4,
+      "seconds": 0.06139194965362549,
+      "source": "Apple-CoreImage-normalized",
+      "supportedStageDevices": {
+        "VNComputeStageMain": [
+          "<MLGPUComputeDevice: 0x1061642d0> Apple iOS simulator GPU",
+          "<MLCPUComputeDevice: 0x1061642f0>"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "request_cases": 40,
+    "exact_payload_matches": 19,
+    "zero_observations": 20,
+    "errors": 1,
+    "library_sources_unchanged": true
+  },
+  "sha256": {
+    "Documentation/evidence/xcode/vision-probe/VisionProbe.swift": "8977e2035469093e1b0d86601a8a2afeb961d4a162fbd135832b523a2b5527dc",
+    ".build-xcode-vision-probe/VisionProbe": "cc7ec4c358d743a04b5cedcd3ced1f3c9f5f9d584566e41f8725180f809c3150",
+    ".build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQR.o": "311b95b6d00741b7505dda2d0f8e69b25376b341330b97e08ceb81f3c0f0bbd3",
+    ".build-xcode-simulator/Build/Products/Debug-iphonesimulator/SpecQR.swiftmodule/arm64-apple-ios-simulator.swiftmodule": "67c69a89216e2a8643475e198414c59305edaeaafc275cf0422938d6e98c9651"
+  },
+  "library_source_sha256": {
+    "Sources/SpecQR/Core/Matrix.swift": "dc5d24c8b36578324bb69cda316baf195a6cf73c99bf78fedb09a8da4e5e4faa",
+    "Sources/SpecQR/Core/ReedSolomon.swift": "93fd506950e5701b38ccad09c2e5ce8ecf2cdffda7b5bd02bd8e096f473809a0",
+    "Sources/SpecQR/Core/SpecQR.swift": "7ab0c1ccfb786e0aa0d11d26f7ed6a6f83895b0782237d00233b22dbf62f8ce0",
+    "Sources/SpecQR/Core/Tables.swift": "b09c2387bcb0887585bf709e7fe284d9dbf5ce03bf0e79bfeaa35eece50d37bb",
+    "Sources/SpecQR/Core/Types.swift": "858c55c53fa20f4c76f56126b881f9676f23cedc63501a179d4d7ac1722e5a77",
+    "Sources/SpecQR/Encoding/KanjiMap.swift": "d9f5f6cbd12c638ce1a3dffb4f6662cdfde3441532e55c3ce5339f253777ea3d",
+    "Sources/SpecQR/Encoding/Optimizer.swift": "88cec4049ba154609bb5ae2b7319a024717be2b010dc6af0d5e354216127a7c7",
+    "Sources/SpecQR/Encoding/Segments.swift": "8978a733ffadfc9c9aa0a7b164574383f3581dc6194e0aaf0f22c4869b078406",
+    "Sources/SpecQR/GS1/GS1Dictionary.swift": "013fc054a7912714899d9a6569258265c8f8d21c0e56385b5f223e4455b12555",
+    "Sources/SpecQR/GS1/GS1DigitalLink.swift": "0e01eeb75fed4f6c7cb328fc0b07781c931738070c6699d966897cf5a211a046",
+    "Sources/SpecQR/GS1/GS1Elements.swift": "88ecfa01709f897f14fc24e5b5a070069f2ac3855cbcbf609e64d556d26860b9",
+    "Sources/SpecQR/GS1/GS1Types.swift": "1d07131bbd2a9cefd76d3d71f65cef900152ebda97bc68305e38c7543e4d7d2a",
+    "Sources/SpecQR/Render/AppleGraphics.swift": "fc09e6654dd4f25d5433d9c5dc23b142fdb423d07fd89b33cf6ad3d44de09fb2",
+    "Sources/SpecQR/Render/Rendering.swift": "0fa4745d9cda2ef3fe8a7c69e23989d2853040f8ad95591656bb9a3a2a03b623",
+    "Sources/SpecQR/Render/ScanDiagnostics.swift": "b420bbe8eca8a19add3b102fdaf187049fa4e7a1bf491d158aa0398efd34420d",
+    "Sources/SpecQR/StructuredAppend/StructuredAppendGeneration.swift": "5aed148a07c5aecae1e7afc90e940740394c998ad0fb94034bc8907119126df7",
+    "Sources/SpecQR/StructuredAppend/StructuredAppendMerge.swift": "49902b9d7e2d7d6ab1cbbdec5578374e5c529d668f0369836d2885f155bac828",
+    "Sources/SpecQR/StructuredAppend/StructuredAppendTypes.swift": "434a2a1ca996266ec4e76ff3ae59599f60201b31f5c6f82c6f5d60728dd81ab4"
+  }
+}

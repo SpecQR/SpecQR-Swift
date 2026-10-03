@@ -1,0 +1,50 @@
+Building for debugging...
+[0/7] $PACKAGE_ROOT/.build-apple-validation/arm64-apple-macosx/debug/SpecQRAppleValidationPackageTests.derived/runner.swift
+[1/7] Write sources
+[4/7] Write swift-version--1AB21518FC5DEDBE.txt
+[6/17] Compiling SpecQR Matrix.swift
+[7/17] Compiling SpecQR ReedSolomon.swift
+[8/17] Compiling SpecQR SpecQR.swift
+[9/17] Compiling SpecQR Tables.swift
+[10/17] Compiling SpecQR Types.swift
+[11/17] Compiling SpecQR KanjiMap.swift
+[12/17] Compiling SpecQR Optimizer.swift
+[13/17] Compiling SpecQR Segments.swift
+[14/17] Compiling SpecQR GS1Dictionary.swift
+[15/17] Emitting module SpecQR
+[16/26] Compiling SpecQR GS1DigitalLink.swift
+[17/26] Compiling SpecQR GS1Elements.swift
+[18/26] Compiling SpecQR GS1Types.swift
+[19/26] Compiling SpecQR AppleGraphics.swift
+[20/26] Compiling SpecQR Rendering.swift
+[21/26] Compiling SpecQR ScanDiagnostics.swift
+[22/26] Compiling SpecQR StructuredAppendGeneration.swift
+[23/26] Compiling SpecQR StructuredAppendMerge.swift
+[24/26] Compiling SpecQR StructuredAppendTypes.swift
+error: emit-module command failed with exit code 1 (use -v to see invocation)
+[25/28] Emitting module SpecQRAppleValidationTests
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift:5:8: error: no such module 'Testing'
+  3 | import ImageIO
+  4 | import SpecQR
+  5 | import Testing
+    |        `- error: no such module 'Testing'
+  6 | import Vision
+  7 | 
+[26/28] Compiling SpecQRAppleValidationTests AppleValidationTests.swift
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift:5:8: error: no such module 'Testing'
+  3 | import ImageIO
+  4 | import SpecQR
+  5 | import Testing
+    |        `- error: no such module 'Testing'
+  6 | import Vision
+  7 | 
+[27/29] Compiling SpecQRAppleValidationTests CorpusTests.swift
+$PACKAGE_ROOT/Scripts/apple-validation/Tests/SpecQRAppleValidationTests/AppleValidationTests.swift:5:8: error: no such module 'Testing'
+  3 | import ImageIO
+  4 | import SpecQR
+  5 | import Testing
+    |        `- error: no such module 'Testing'
+  6 | import Vision
+  7 | 
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+error: fatalError

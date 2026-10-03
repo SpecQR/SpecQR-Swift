@@ -1,0 +1,10 @@
+{
+  "workspace": {
+    "name": "SpecQR",
+    "schemes": [
+      "SpecQR",
+      "specqr-cli",
+      "SpecQR-Package"
+    ]
+  }
+}

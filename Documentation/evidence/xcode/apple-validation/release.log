@@ -1,0 +1,87 @@
+$ bash -x Scripts/verify-apple.sh release
++ set -euo pipefail
++++ dirname Scripts/verify-apple.sh
+++ cd Scripts/..
+++ pwd
++ root=$PACKAGE_ROOT
+++ xcode-select -p
++ developer=/Applications/Xcode.app/Contents/Developer
+++ xcrun --find swiftc
++ compiler=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc
+++ dirname /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc
++ plugins=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/swift/host/plugins/testing
++ scratch=$PACKAGE_ROOT/.build-xcode-apple-validation
++ cache=$PACKAGE_ROOT/.build-xcode-apple-validation-support
++ export CLANG_MODULE_CACHE_PATH=$PACKAGE_ROOT/.build-xcode-apple-validation-support/clang-cache
++ CLANG_MODULE_CACHE_PATH=$PACKAGE_ROOT/.build-xcode-apple-validation-support/clang-cache
++ arguments=(--package-path "$root/Scripts/apple-validation" --scratch-path "$scratch" --cache-path "$cache/cache" --config-path "$cache/config" --security-path "$cache/security" --disable-sandbox --disable-xctest -j 2)
++ [[ -d /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/swift/host/plugins/testing ]]
++ arguments+=(-Xswiftc -plugin-path -Xswiftc "$plugins")
++ [[ -d /Applications/Xcode.app/Contents/Developer/Library/Developer/Frameworks/Testing.framework ]]
++ [[ -f /Applications/Xcode.app/Contents/Developer/Library/Developer/usr/lib/lib_TestingInterop.dylib ]]
++ configurations=("$@")
++ [[ 1 -eq 0 ]]
++ for configuration in '"${configurations[@]}"'
++ [[ release != debug ]]
++ [[ release != release ]]
++ echo 'Independent Apple Swift Testing consumer: release'
+Independent Apple Swift Testing consumer: release
++ swift test --package-path $PACKAGE_ROOT/Scripts/apple-validation --scratch-path $PACKAGE_ROOT/.build-xcode-apple-validation --cache-path $PACKAGE_ROOT/.build-xcode-apple-validation-support/cache --config-path $PACKAGE_ROOT/.build-xcode-apple-validation-support/config --security-path $PACKAGE_ROOT/.build-xcode-apple-validation-support/security --disable-sandbox --disable-xctest -j 2 -Xswiftc -plugin-path -Xswiftc /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/swift/host/plugins/testing -c release
+Building for production...
+[Planning deferred tasks]
+[18 / 37]
+[19 / 38] SpecQR
+[27 / 74]
+[30 / 74]
+[37 / 74]
+[39 / 74]
+[43 / 74]
+[46 / 74]
+[50 / 74]
+[51 / 74]
+[54 / 74]
+[55 / 74]
+[56 / 74] SpecQR
+[65 / 75] SpecQRAppleValidationTests-product
+[71 / 111]
+[76 / 111]
+[80 / 111]
+[82 / 111]
+[86 / 111]
+[89 / 111]
+[92 / 111]
+[95 / 111]
+[97 / 111]
+[100 / 111]
+[102 / 111] SpecQRAppleValidationTests-product
+[107 / 111] SpecQRAppleValidationTests-product
+[109 / 111] SpecQRAppleValidationTests-product
+Build complete! (14.11秒)
+◇ Test run started.
+↳ Testing Library Version: 2084
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite "Pinned upstream fixture corpus" started.
+◇ Suite AppleValidationTests started.
+◇ Test "All 1,411 GS1 fixtures preserve canonical results and errors" started.
+◇ Test "All 22 Structured Append fixtures preserve matrices and diagnostics" started.
+◇ Test coreGraphicsPreservesStraightRGBAAndOwnsStorage() started.
+✔ Test coreGraphicsPreservesStraightRGBAAndOwnsStorage() passed after 0.003 seconds.
+◇ Test imageIODecodesActualPNGToEveryOriginalPixel() started.
+✔ Test imageIODecodesActualPNGToEveryOriginalPixel() passed after 0.003 seconds.
+◇ Test visionDecodesDirectCGImageAndPNGIncludingUTF8() started.
+✔ Test "All 22 Structured Append fixtures preserve matrices and diagnostics" passed after 0.011 seconds.
+✔ Test "All 1,411 GS1 fixtures preserve canonical results and errors" passed after 0.051 seconds.
+✔ Suite "Pinned upstream fixture corpus" passed after 0.051 seconds.
+✔ Test visionDecodesDirectCGImageAndPNGIncludingUTF8() passed after 0.166 seconds.
+◇ Test visionPreservesGS1LiteralPercentAndSeparators() started.
+✔ Test visionPreservesGS1LiteralPercentAndSeparators() passed after 0.049 seconds.
+◇ Test coreGraphicsRejectsInvalidOptionsBeforeAllocation() started.
+✔ Test coreGraphicsRejectsInvalidOptionsBeforeAllocation() passed after 0.009 seconds.
+◇ Test bothFNC1FormsPreservePercentSafetyAcrossPlanningAndGeneration() started.
+✔ Test bothFNC1FormsPreservePercentSafetyAcrossPlanningAndGeneration() passed after 0.001 seconds.
+◇ Test structuredAppendHeadersShuffledMergeAndCorruption() started.
+✔ Test structuredAppendHeadersShuffledMergeAndCorruption() passed after 0.001 seconds.
+◇ Test concurrentCoreGraphicsRenderingMaintainsValueIsolation() started.
+✔ Test concurrentCoreGraphicsRenderingMaintainsValueIsolation() passed after 0.001 seconds.
+✔ Suite AppleValidationTests passed after 0.236 seconds.
+✔ Test run with 10 tests in 2 suites passed after 0.236 seconds.

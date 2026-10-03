@@ -1,0 +1,39 @@
+name: Swift conformance
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    container: swift:6.0-bookworm
+    steps:
+      - uses: actions/checkout@v4
+      - name: Debug and release tests
+        run: swift test && swift test -c release
+  macos:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Swift and Core Graphics tests
+        run: swift --version && swift test && swift test -c release
+  differential:
+    runs-on: ubuntu-latest
+    container: swift:6.0-bookworm
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Python for the Debian validation container
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends python3 python3-pip
+          python3 --version
+      - name: Pinned upstream and independent references
+        run: ./Scripts/verify-all.sh

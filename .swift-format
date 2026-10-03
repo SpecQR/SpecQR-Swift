@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "indentation": {
+    "spaces": 3
+  },
+  "lineLength": 120,
+  "rules": {
+    "AlwaysUseLowerCamelCase": false,
+    "OneCasePerLine": false
+  }
+}

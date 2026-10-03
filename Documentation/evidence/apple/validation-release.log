@@ -1,0 +1,100 @@
+Independent Apple Swift Testing consumer: release
+Building for production...
+[Planning deferred tasks]
+[18 / 37]
+[19 / 38] SpecQR
+[26 / 92]
+[31 / 92]
+[35 / 92]
+[38 / 92]
+[40 / 92]
+[43 / 92]
+[46 / 92]
+[49 / 92]
+[50 / 92]
+[52 / 92]
+[54 / 92]
+[55 / 92]
+[56 / 92]
+[60 / 92]
+[62 / 92]
+[63 / 92]
+[67 / 92]
+[68 / 92]
+[70 / 92]
+[72 / 92]
+[73 / 92]
+[74 / 92] SpecQR
+$PACKAGE_ROOT/Package.swift: SpecQR: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/Library/Frameworks' not found
+[83 / 93] SpecQRAppleValidationTests-product
+[88 / 169]
+[90 / 169]
+[92 / 169]
+[95 / 169]
+[98 / 169]
+[101 / 169]
+[103 / 169]
+[105 / 169]
+[107 / 169]
+[110 / 169]
+[111 / 169]
+[112 / 169]
+[115 / 169]
+[116 / 169]
+[117 / 169]
+[120 / 169]
+[123 / 169]
+[124 / 169]
+[125 / 169]
+[127 / 169]
+[129 / 169]
+[131 / 169]
+[133 / 169]
+[134 / 169]
+[135 / 169]
+[136 / 169]
+[137 / 169]
+[140 / 169]
+[142 / 169]
+[145 / 169]
+[148 / 169]
+[152 / 169]
+[153 / 169]
+[156 / 169]
+[157 / 169]
+[158 / 169]
+[159 / 169]
+[160 / 169] SpecQRAppleValidationTests-product
+$PACKAGE_ROOT/Scripts/apple-validation/Package.swift: SpecQRAppleValidationTests-product: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/usr/lib' not found
+$PACKAGE_ROOT/Scripts/apple-validation/Package.swift: SpecQRAppleValidationTests-product: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/Library/Frameworks' not found
+[165 / 169] SpecQRAppleValidationTests-product
+[167 / 169] SpecQRAppleValidationTests-product
+Build complete! (43.63秒)
+◇ Test run started.
+↳ Testing Library Version: 2078
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite "Pinned upstream fixture corpus" started.
+◇ Suite AppleValidationTests started.
+◇ Test "All 1,411 GS1 fixtures preserve canonical results and errors" started.
+◇ Test "All 22 Structured Append fixtures preserve matrices and diagnostics" started.
+◇ Test coreGraphicsPreservesStraightRGBAAndOwnsStorage() started.
+✔ Test coreGraphicsPreservesStraightRGBAAndOwnsStorage() passed after 0.007 seconds.
+◇ Test imageIODecodesActualPNGToEveryOriginalPixel() started.
+✔ Test imageIODecodesActualPNGToEveryOriginalPixel() passed after 0.004 seconds.
+◇ Test visionDecodesDirectCGImageAndPNGIncludingUTF8() started.
+✔ Test "All 22 Structured Append fixtures preserve matrices and diagnostics" passed after 0.021 seconds.
+✔ Test "All 1,411 GS1 fixtures preserve canonical results and errors" passed after 0.062 seconds.
+✔ Suite "Pinned upstream fixture corpus" passed after 0.063 seconds.
+✔ Test visionDecodesDirectCGImageAndPNGIncludingUTF8() passed after 0.198 seconds.
+◇ Test visionPreservesGS1LiteralPercentAndSeparators() started.
+✔ Test visionPreservesGS1LiteralPercentAndSeparators() passed after 0.057 seconds.
+◇ Test coreGraphicsRejectsInvalidOptionsBeforeAllocation() started.
+✔ Test coreGraphicsRejectsInvalidOptionsBeforeAllocation() passed after 0.008 seconds.
+◇ Test bothFNC1FormsPreservePercentSafetyAcrossPlanningAndGeneration() started.
+✔ Test bothFNC1FormsPreservePercentSafetyAcrossPlanningAndGeneration() passed after 0.001 seconds.
+◇ Test structuredAppendHeadersShuffledMergeAndCorruption() started.
+✔ Test structuredAppendHeadersShuffledMergeAndCorruption() passed after 0.001 seconds.
+◇ Test concurrentCoreGraphicsRenderingMaintainsValueIsolation() started.
+✔ Test concurrentCoreGraphicsRenderingMaintainsValueIsolation() passed after 0.001 seconds.
+✔ Suite AppleValidationTests passed after 0.280 seconds.
+✔ Test run with 10 tests in 2 suites passed after 0.280 seconds.

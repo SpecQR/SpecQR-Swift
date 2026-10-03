@@ -1,0 +1,52 @@
+{
+  "devicesAndConfigurations": [
+    {
+      "device": {
+        "architecture": "arm64",
+        "deviceId": "[ephemeral identifier omitted]",
+        "deviceName": "SpecQR-Validation",
+        "modelName": "iPhone 17",
+        "osBuildNumber": "24A434",
+        "osVersion": "27.0",
+        "platform": "iOS Simulator"
+      },
+      "expectedFailures": 0,
+      "failedTests": 1,
+      "passedTests": 55,
+      "skippedTests": 0,
+      "testPlanConfiguration": {
+        "configurationId": "1",
+        "configurationName": "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription": "SpecQR-Package · Built with macOS 27.0",
+  "expectedFailures": 0,
+  "failedTests": 1,
+  "finishTime": 1791018602.534,
+  "passedTests": 55,
+  "result": "Failed",
+  "runtimeWarnings": [],
+  "skippedTests": 0,
+  "startTime": 1791018600.937,
+  "statistics": [],
+  "testFailures": [
+    {
+      "failureText": "failed: caught error: \"Error Domain=com.apple.Vision Code=9 \"Could not create inference context\" UserInfo={NSLocalizedDescription=Could not create inference context}\"",
+      "targetName": "SpecQRTests",
+      "testIdentifier": 1,
+      "testIdentifierString": "ApplePlatformTests/testCoreGraphicsAndVisionDecode()",
+      "testIdentifierURL": "test://com.apple.xcode/SpecQR/SpecQRTests/ApplePlatformTests/testCoreGraphicsAndVisionDecode",
+      "testName": "testCoreGraphicsAndVisionDecode()"
+    }
+  ],
+  "title": "Test - SpecQR-Package",
+  "topInsights": [
+    {
+      "category": "Longest Test Runs",
+      "impact": "32% of duration",
+      "text": "1 longest test run with outlier durations exceeding 0.06s (three standard deviations)"
+    }
+  ],
+  "totalTestCount": 56
+}

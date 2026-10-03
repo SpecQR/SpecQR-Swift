@@ -1,0 +1,4 @@
+Building for production...
+[Planning deferred tasks]
+error: The package product 'SpecQR-product' requires minimum platform version 13.0 for the macOS platform, but this target supports 12.0
+error: Build failed

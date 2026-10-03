@@ -1,0 +1,49 @@
+Building for debugging...
+[Pre-planning 1 / 154]
+[Planning deferred tasks]
+[47 / 79]
+[48 / 80] SpecQR
+[53 / 145]
+[59 / 145]
+[61 / 145]
+[64 / 145]
+[67 / 145]
+[68 / 145]
+[72 / 145]
+[74 / 145]
+[77 / 145]
+[79 / 145]
+[80 / 145]
+[82 / 145]
+[83 / 145]
+[84 / 145]
+[87 / 145]
+[90 / 145]
+[92 / 145]
+[95 / 145]
+[96 / 145]
+[97 / 145]
+[99 / 145]
+[101 / 145]
+[102 / 145]
+[104 / 145] SpecQR
+[105 / 145] SpecQR
+[114 / 145] SpecQR
+[115 / 145] SpecQR
+[116 / 145] SpecQR
+[118 / 145] SpecQR
+[119 / 145] SpecQR
+[124 / 146]
+[126 / 146] specqr-cli-product
+$PACKAGE_ROOT/Package.swift: SpecQR: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/Library/Frameworks' not found
+[129 / 148]
+[134 / 149] SpecQRTests-product
+$PACKAGE_ROOT/Package.swift: specqr-cli-product: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/usr/lib' not found
+$PACKAGE_ROOT/Package.swift: specqr-cli-product: ld: warning: search path '/Library/Developer/CommandLineTools/Developer/Library/Frameworks' not found
+[136 / 149]
+error: $PACKAGE_ROOT/Tests/SpecQRTests/ApplePlatformTests.swift:2:11 unable to resolve module dependency: 'XCTest'
+[138 / 149] SpecQRTests-product
+error: SwiftDriver SpecQRTests normal arm64 com.apple.xcode.tools.swift.compiler failed with a nonzero exit code. Command line:     cd $TASK_ROOT/candidate
+    builtin-SwiftDriver -- /Library/Developer/CommandLineTools/usr/bin/swiftc -parse-as-library -module-name SpecQRTests -Onone @$PACKAGE_ROOT/.build-apple/out/Intermediates.noindex/SpecQR.build/Debug/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE -DXcode -plugin-path /Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX27.0.sdk -target arm64-apple-macos13.0 -g -module-cache-path $PACKAGE_ROOT/.build-apple/out/ModuleCache.noindex -Xfrontend -serialize-debugging-options -disable-sandbox -enable-testing -index-store-path $PACKAGE_ROOT/.build-apple/out -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I $PACKAGE_ROOT/.build-apple/out/Products/Debug -Isystem /Library/Developer/CommandLineTools/Developer/usr/lib -F $PACKAGE_ROOT/.build-apple/out/Products/Debug/PackageFrameworks -F $PACKAGE_ROOT/.build-apple/out/Products/Debug -F /Library/Developer/CommandLineTools/Library/Developer/Frameworks -F /Library/Developer/CommandLineTools/Developer/Library/Frameworks -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc $PACKAGE_ROOT/.build-apple/out/SDKStatCaches.noindex/macosx27.0-26A5419a-1aa54e4a50e311dbd51de5aafe7eca3dffd68ff603bdaacc80b00cb8898de72d.sdkstatcache -output-file-map $PACKAGE_ROOT/.build-apple/out/Intermediates.noindex/SpecQR.build/Debug/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path $PACKAGE_ROOT/.build-apple/out/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path $PACKAGE_ROOT/.build-apple/out/ModuleCache.noindex -sdk-module-cache-path $PACKAGE_ROOT/.build-apple/out/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path $PACKAGE_ROOT/.build-apple/out/Intermediates.noindex/SpecQR.build/Debug/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path $PACKAGE_ROOT/.build-apple/out/Intermediates.noindex/SpecQR.build/Debug/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file $PACKAGE_ROOT/.build-apple/out/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -package-name specqr_swift -emit-const-values -const-gather-protocols-list $PACKAGE_ROOT/.build-apple/out/Intermediates.noindex/SpecQR.build/Debug/SpecQRTests-p.build/Objects-normal/arm64/SpecQRTests_const_extract_protocols.json -Xcc -I$PACKAGE_ROOT/.build-apple/out/Products/Debug/include -Xcc -I$PACKAGE_ROOT/.build-apple/out/Intermediates.noindex/SpecQR.build/Debug/SpecQRTests-p.build/DerivedSources-normal/arm64 -Xcc -I$PACKAGE_ROOT/.build-apple/out/Intermediates.noindex/SpecQR.build/Debug/SpecQRTests-p.build/DerivedSources/arm64 -Xcc -I$PACKAGE_ROOT/.build-apple/out/Intermediates.noindex/SpecQR.build/Debug/SpecQRTests-p.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory $TASK_ROOT/candidate -experimental-emit-module-separately -disable-cmo
+error: Build failed
+error: fatalError

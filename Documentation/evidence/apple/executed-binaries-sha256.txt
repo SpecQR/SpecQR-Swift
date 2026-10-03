@@ -1,0 +1,6 @@
+543823bc8e35480f21481c30ade00ec57329b1b245bfbde336b2e8e699fe5819  .build-apple/out/Products/Debug/specqr-cli
+596b0799ec176c05f2e74212f96d5a7c34558af1ccd939e404edf32d65e53dea  .build-apple/out/Products/Release/specqr-cli
+72c939078f7a25a7478e37baf12364356847bbd5b8e2c1fbc5f234c9ccba4957  .build-apple-consumer/out/Products/Debug/SpecQRDemo
+87972243c0eea4e6c70e60055ad885b1fbb0eac43b8779f1761a067734d2eb3a  .build-apple-consumer/out/Products/Release/SpecQRDemo
+982390a1cf0ab4ccd2407e7a66e7534281a11e24ce74e063b6f79f65f4b86346  .build-apple-validation/out/Products/Debug/SpecQRAppleValidationTests.xctest/Contents/MacOS/SpecQRAppleValidationTests
+e1192033ad08c26eb79e87b1dc4a57d70a454fc7a64f5ddd2ec91917f3306c5d  .build-apple-validation/out/Products/Release/SpecQRAppleValidationTests.xctest/Contents/MacOS/SpecQRAppleValidationTests
