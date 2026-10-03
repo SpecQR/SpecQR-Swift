@@ -121,7 +121,7 @@ auto は byte mode に切り替え、明示 alphanumeric は guidance付きで�
 - iOS / tvOS / watchOS のdevice実行、link / deploy / signing。SDK compile成功とは区別する
 - 宣言 deployment minimum の実 OS、Intel / その他CPU上の実行
 - Swift6.0系列は6.0.3で検証。6.0.0 binaryそのものは未使用
-- GitHub Actions workflow は用意しただけで、remote実行はしていない
+- 保存済みのローカル検証 evidence には remote CI 実行結果を含めない。公開後の各 commit の結果は [GitHub Actions](https://github.com/SpecQR/SpecQR-Swift/actions) を参照
 - physical camera、印刷物、全ての damage patterns、全scanner metadata実装
 - ISO / GS1 の適合認証、完全な GS1 AI catalog、暦としての日付検証
 - 以前作成された Swift archives は取得できず、この実装では使用していない
