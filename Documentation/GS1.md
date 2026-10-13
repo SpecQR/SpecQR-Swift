@@ -2,11 +2,11 @@
 
 GS1 helper は代表 50 AI の解析・検証・check digit・Digital Link を提供します。
 全 GS1 規格の認証機能ではありません。高レベル QR 生成では literal `%` を保持する
-[安全上の互換差分](COMPATIBILITY.md)があります。以下は型名と厳密な挙動の参照です。
+[安全上の互換差分](COMPATIBILITY.md) があります。以下は型名と厳密な挙動の参照です。
 
-`GS1` is a dependency-free public namespace using Foundation for URL authority and IDNA handling. Its element parsing, AI catalog, check digits, Digital Link placement, and validation behavior follow upstream SpecQR **3.0.0-rc.2**, commit `15ad15e5c770ea0e39072f8f88b2733018f02ffd`. It deliberately does **not** claim complete GS1 standards coverage.
+`GS1` は依存パッケージのない公開 namespace で、URL authority と IDNA の処理に Foundation を使用します。要素の解析、AI catalog、check digit、Digital Link の配置、検証の挙動は、upstream SpecQR **3.0.0-rc.2**、commit `15ad15e5c770ea0e39072f8f88b2733018f02ffd` に従います。GS1 規格の完全な網羅は、意図的に**主張していません**。
 
-All public input/output value types are `Sendable`. Elements and dictionary metadata are immutable, `Equatable`, and `Codable`. Elements retain leading zeroes because both AI and value are strings.
+公開する入出力の value types はすべて `Sendable` です。要素と dictionary metadata は変更不能で、`Equatable` と `Codable` に準拠します。AI と値はどちらも文字列なので、要素の先頭のゼロは維持されます。
 
 ## Parse, generate, and validate
 
@@ -31,11 +31,11 @@ if !checked.ok {
 }
 ```
 
-`createElementString` inserts `GS1.fnc1Separator` (ASCII GS, U+001D) after a variable-length element only when another element follows. `parseHumanReadable` expects consecutive `(AI)value` pairs, with no leading or inter-element formatting whitespace beyond the actual value. The raw parser rejects human-readable parentheses, unsupported AIs, invalid values, leading/trailing/unnecessary separators, and ambiguous final variable-length values.
+`createElementString` は、後続の要素がある場合に限り、可変長要素の後へ `GS1.fnc1Separator`（ASCII GS、U+001D）を挿入します。`parseHumanReadable` は連続する `(AI)value` の組を受け取り、実際の値に含まれるもの以外に、先頭や要素間の整形用空白がないことを前提とします。raw parser は、human-readable 形式の括弧、未対応の AI、不正な値、先頭・末尾・不要な separator、曖昧な末尾の可変長値を拒否します。
 
-The raw parser intentionally retains upstream's conservative ambiguity heuristic: a final variable-length value whose suffix looks like a complete fixed-length element is rejected with `GS1_MISSING_SEPARATOR`. This can reject a literal batch/serial containing such a suffix. It does not validate that candidate suffix's content or check digit before declaring ambiguity.
+raw parser は upstream の保守的な曖昧性判定を意図的に維持しています。末尾の可変長値の接尾部が完全な固定長要素に見える場合、`GS1_MISSING_SEPARATOR` で拒否します。このため、そのような接尾部を含む literal な batch/serial も拒否されることがあります。曖昧と判定する前に、候補の接尾部の内容や check digit は検証しません。
 
-Throwing helpers use `GS1Error`, whose `code` is `"INVALID_GS1"` and whose `message` identifies the problem. `validateElements`, `validateElementString`, and `validateDigitalLink` return structured, nonthrowing results. On failure, results contain errors and no successful parsed elements/result. Error fields include `code`, `message`, `reason`, and applicable `ai`, `value`, `offset`, `elementIndex`, `key`, and `expected`. Offsets count UTF-16 code units, as in the upstream JavaScript API. Validation results conform to `Encodable` with upstream-compatible success/failure JSON shapes.
+throw する helper は `GS1Error` を使用し、その `code` は `"INVALID_GS1"`、`message` は問題の内容を示します。`validateElements`、`validateElementString`、`validateDigitalLink` は、throw せずに構造化した結果を返します。失敗時の結果には error が含まれ、正常に解析された要素や結果は含まれません。error の field には `code`、`message`、`reason` と、該当する場合の `ai`、`value`、`offset`、`elementIndex`、`key`、`expected` があります。offset は upstream JavaScript API と同じく UTF-16 code units で数えます。検証結果は `Encodable` に準拠し、成功時・失敗時の JSON shape は upstream と互換です。
 
 ```swift
 let checked = GS1.validateElements(elements, options: .init(
@@ -44,10 +44,10 @@ let checked = GS1.validateElements(elements, options: .init(
 ))
 ```
 
-- `context: .digitalLink` on **element-array** validation requires at least one primary AI (`00`, `01`, or `414`). It does not check duplicate AIs or all URI path-placement rules; use the Digital Link helpers for those checks.
-- As upstream does, **raw-string** validation accepts these options but does not apply the Digital Link context check. It stops at the first parser error.
-- Setting `allowUnsupportedAI: true` produces an invalid-options issue. Unknown AIs are never accepted.
-- Strongly typed Swift enums rule out JavaScript-only invalid option types/context strings.
+- **要素配列**の検証で `context: .digitalLink` を指定すると、少なくとも一つの primary AI（`00`、`01`、`414` のいずれか）が必要になります。AI の重複や URI の path 配置規則のすべては検証しません。それらの検証には Digital Link helper を使用してください。
+- **raw string** の検証は、upstream と同じくこれらの option を受け取りますが、Digital Link context の検証は適用しません。最初の parser error で停止します。
+- `allowUnsupportedAI: true` を指定すると、option が不正であることを示す issue を返します。未知の AI を受け入れることはありません。
+- Swift の厳密な enum 型により、JavaScript でのみ指定できる不正な option の型や context 文字列は排除されます。
 
 ## Supported AI metadata
 
@@ -57,11 +57,11 @@ let batch = GS1.getAIInfo("10")
 let unsupported = GS1.getAIInfo("3106") // nil
 ```
 
-Exact AIs: `00`, `01`, `02`, `10`, `11`, `12`, `13`, `15`, `16`, `17`, `20`, `21`, `22`, `30`, `37`, `240`, `241`, `400`, `410`, `411`, `412`, `413`, `414`, `415`, `420`, `422`, `424`, `425`, `426`.
+個別の AI: `00`、`01`、`02`、`10`、`11`、`12`、`13`、`15`、`16`、`17`、`20`、`21`、`22`、`30`、`37`、`240`、`241`、`400`、`410`、`411`、`412`、`413`、`414`、`415`、`420`、`422`、`424`、`425`、`426`。
 
-Expanded families: `3100`–`3105`, `3200`–`3205`, `91`–`99`.
+展開する AI family: `3100`–`3105`、`3200`–`3205`、`91`–`99`。
 
-`AIInfo` includes the label, fixed or variable `length`, `valueKind`, `checkDigitRule`, `digitalLinkRole`, allowed qualifier-primary relationships, and separator requirement. All values must be nonempty printable ASCII, without parentheses or GS separators. Numeric AIs require ASCII decimal digits. Dates are six numeric characters, **not calendar-validated**. GLN fields, including primary AI `414`, do **not** receive a check-digit check in this upstream catalog. The port does not silently add those restrictions.
+`AIInfo` には label、固定長または可変長の `length`、`valueKind`、`checkDigitRule`、`digitalLinkRole`、許可される qualifier と primary の関係、separator の要否が含まれます。値はすべて空でない印字可能な ASCII とし、括弧や GS separator を含めてはいけません。数字用の AI には ASCII の十進数字が必要です。日付は数字 6 文字で、**暦としての有効性は検証しません**。primary AI `414` を含む GLN field は、この upstream catalog では check digit の検証を**受けません**。この移植版でも、それらの制約を暗黙には追加しません。
 
 ## Check digits
 
@@ -76,7 +76,7 @@ try GS1.appendSSCCCheckDigit("12345678901234567")  // "123456789012345675"
 try GS1.validateSSCCCheckDigit("123456789012345675") // true
 ```
 
-GTIN bodies accept 7, 11, 12, or 13 digits; complete GTINs accept 8, 12, 13, or 14. SSCC bodies require 17 digits and complete SSCCs require 18. A correctly shaped value with an incorrect check digit returns false; malformed input throws. The generic calculator accepts any nonempty ASCII numeric body; the generic validator requires a body and one check digit.
+GTIN の本体は 7、11、12、13 桁、check digit を含む完全な GTIN は 8、12、13、14 桁を受け入れます。SSCC の本体は 17 桁、完全な SSCC は 18 桁が必要です。形式が正しく check digit が不正な値には false を返し、形式が不正な入力では throw します。汎用の計算 helper は、空でない任意の ASCII 数字の本体を受け入れます。汎用の検証 helper には、本体と一つの check digit が必要です。
 
 ## GS1 Digital Link
 
@@ -91,17 +91,17 @@ let validLink = GS1.validateDigitalLink(uri)
 let normalized = try GS1.normalizeDigitalLink(uri)
 ```
 
-The builder accepts `[GS1.Element]`, `ElementStringParseResult`, or `DigitalLinkParseResult`. The latter does not implicitly re-add unknown query parameters; normalization explicitly preserves them. The explicit `baseURL` can be a string or Foundation `URL`; parsing, validation, and normalization also accept either representation.
+builder は `[GS1.Element]`、`ElementStringParseResult`、`DigitalLinkParseResult` を受け入れます。最後の型から未知の query parameter を暗黙に再追加することはありません。正規化では、それらを明示的に保持します。明示する `baseURL` には文字列または Foundation `URL` を指定でき、解析・検証・正規化も両方の表現を受け入れます。
 
 `DigitalLinkOptions`:
 
-- `baseURL`: required, absolute HTTP or HTTPS, with no nonempty query or fragment
-- `primaryAI`: `.gtin` (`01`, default), `.sscc` (`00`), or `.gln` (`414`)
-- `pathAIs`: nil selects eligible qualifiers automatically; `[]` places every non-primary element in the query; an explicit array chooses permitted qualifiers
+- `baseURL`: 必須。絶対 HTTP または HTTPS URL とし、空でない query や fragment を含めてはいけません。
+- `primaryAI`: `.gtin`（`01`、既定値）、`.sscc`（`00`）、または `.gln`（`414`）。
+- `pathAIs`: nil では対象となる qualifier を自動選択します。`[]` では primary 以外の全要素を query に配置します。明示した配列では、許可された qualifier を選択します。
 
-Only AIs `10`, `21`, and `22` are supported path qualifiers, and only after primary `01`. Eligible qualifiers retain input order. Query AIs sort lexicographically. Every AI must be unique across the path and GS1 query. Other primary AIs can appear as query attributes if not selected as the path primary, matching upstream.
+path qualifier に対応するのは AI `10`、`21`、`22` だけで、primary `01` の後に限ります。対象となる qualifier は入力順を維持します。query の AI は辞書順に並べます。path と GS1 query を通して、すべての AI は一意である必要があります。ほかの primary AI は、path の primary として選択されていなければ、upstream と同じく query attribute に使用できます。
 
-Parsing discovers the first primary AI segment, preserving a preceding stem. A `primaryAI` parse option restricts the search to that primary. Query values use form decoding (`+` means space), while path values use URI component decoding (`+` remains plus). Duplicate unknown query keys and their order are preserved in `unknownQuery`. The default policy is `.preserve`; `.reject` rejects any non-AI query key.
+解析では最初の primary AI segment を探し、その前の stem を保持します。解析 option の `primaryAI` は、探索対象をその primary に限定します。query の値には form decoding（`+` は空白）を使い、path の値には URI component decoding（`+` はプラスのまま）を使います。重複した未知の query key とその順序は `unknownQuery` に保持します。既定の方針は `.preserve` です。`.reject` では AI 以外の query key をすべて拒否します。
 
 ```swift
 let parsed = try GS1.parseDigitalLink(uri, options: .init(
@@ -110,21 +110,21 @@ let parsed = try GS1.parseDigitalLink(uri, options: .init(
 ))
 ```
 
-Nonthrowing URI validation reports HTTP use and preserved unknown query parameters as warnings. It rejects syntactically invalid percent escapes before parsing. Path decoding is strict UTF-8; unknown query values follow upstream's forgiving form-decoding behavior. Empty `?`/`#` components behave like upstream; a nonempty fragment is rejected.
+throw しない URI 検証では、HTTP の使用と、保持した未知の query parameter を警告として報告します。構文が不正な percent escape は解析前に拒否します。path の decode は厳密な UTF-8 で行い、未知の query の値は upstream の寛容な form decoding に従います。空の `?`/`#` component は upstream と同じ挙動です。空でない fragment は拒否します。
 
-`normalizeDigitalLink` performs **SpecQR deterministic normalization**, not complete GS1 canonicalization. It moves eligible GS1 qualifiers from query to path, retains path qualifier order, sorts remaining GS1 query parameters, and appends unknown parameters in their original relative order. It is idempotent for valid builder output. The only accepted normalization `mode` is `"specqr-deterministic"`. Passing `normalize: true` to `DigitalLinkValidationOptions` returns the upstream unsupported-option issue; invoke the normalizer instead.
+`normalizeDigitalLink` は **SpecQR の決定的な正規化**を行い、GS1 の完全な canonicalization は行いません。対象となる GS1 qualifier を query から path へ移し、path qualifier の順序を維持し、残る GS1 query parameter を並べ替え、未知の parameter を元の相対順序で末尾に追加します。正しい builder 出力に対しては冪等です。受け入れる正規化の `mode` は `"specqr-deterministic"` だけです。`normalize: true` を `DigitalLinkValidationOptions` に渡すと、upstream の未対応 option の issue を返します。代わりに normalizer を呼び出してください。
 
-URL handling includes percent preservation and normalization, IDNA, default ports, abbreviated/hex/octal IPv4 forms, IPv6 compression, dot segments, and the special-scheme syntax accepted by upstream's WHATWG URL operations. This is a focused Digital Link URL adapter, not a general-purpose replacement for a browser URL implementation.
+URL 処理には、percent の保持と正規化、IDNA、既定 port、省略形・十六進・八進の IPv4 表記、IPv6 圧縮、dot segment、upstream の WHATWG URL 処理が受け入れる special-scheme 構文が含まれます。これは Digital Link に用途を絞った URL adapter であり、ブラウザーの URL 実装を汎用的に置き換えるものではありません。
 
 ## Differential tests
 
-`GS1Tests` compares complete values and structured failures against generated fixtures from the pinned upstream JavaScript implementation. Cases cover the entire catalog, all check-digit helpers, malformed values and separators, option behavior, path/query roles, qualifier order, escaping, unknown query preservation, URI normalization, numeric hosts, IPv6, IDNA, invalid UTF-8, and oversized ports.
+`GS1Tests` は、固定した upstream JavaScript 実装から生成した fixture と、値全体および構造化した失敗結果を比較します。対象は catalog 全体、すべての check digit helper、不正な値と separator、option の挙動、path/query の役割、qualifier の順序、escape、未知の query の保持、URI の正規化、数字の host、IPv6、IDNA、不正な UTF-8、範囲を超える port です。
 
-From the package root, with the pinned checkout at `../upstream`:
+固定した checkout を `../upstream` に配置し、package の root で実行します。
 
 ```sh
 node Scripts/generate-gs1-fixtures.mjs ../upstream
 swift test --filter GS1Tests
 ```
 
-The fixture generator accepts a different upstream checkout as its first argument. It writes the portable checked-in `Tests/SpecQRTests/Fixtures/gs1-upstream.json` resource; normal Swift tests do not require Node or the upstream checkout.
+fixture generator は、第 1 引数に別の upstream checkout を指定できます。移植可能で repository に収録した `Tests/SpecQRTests/Fixtures/gs1-upstream.json` resource を書き出します。通常の Swift tests に Node や upstream checkout は不要です。

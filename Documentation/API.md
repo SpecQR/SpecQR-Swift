@@ -30,7 +30,7 @@ UTF-8 以外への text transcoding は行いません。
 `.byte([UInt8])`、`.byte(String)` / `.byteText(String)`、`.eci(Int)`、`.fnc1`、
 `.fnc1Second(String)`、`.structuredAppend(index:total:parity:)`。
 
-[FNC1 literal-percent の安全上の差分](COMPATIBILITY.md)を除き、
+[FNC1 literal-percent の安全上の差分](COMPATIBILITY.md) を除き、
 Version/ECC/mask/tie-break decisions、data codewords、interleaved codewords、matrices、
 segments と bit counts は pinned upstream と差分検証しています。文字数は Unicode
 scalar 数であり、Swift の grapheme cluster count と異なります。Kanji segment の
@@ -74,7 +74,7 @@ margin は matrix の外側に追加されます。matrix の内容・寸法自�
 
 [GS1 API](GS1.md) を参照してください。helper 名は Swift の略語慣習に合わせた
 GTIN / SSCC / AI / URL 表記です。GS1Error は code `INVALID_GS1`。
-非throwing validators は typed errors/warnings を返します。
+非 throwing validators は typed errors/warnings を返します。
 
 ## Structured Append
 

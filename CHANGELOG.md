@@ -12,11 +12,11 @@
 - pinned JS、Nayuki、jsQR、ZXing Java/C++ による差分・独立 decode 検証を追加
 - high-level FNC1 raw text の literal `%` を byte mode で保護する安全な差分を採用
 - Apple Core Graphics / Vision tests と CI workflow を追加
-- macOS上で独立Swift Testing、Core Graphics / ImageIO / Visionのdebug/release実行証跡を追加
-- Basic consumerにmacOS13 minimumを明示し、render上限比較の32-bit Int literal overflowを修正
-- Xcodeで元のmacOS suite、iOS/tvOS/watchOSの8 SDK compile lanes、iOS27.0 simulatorのdebug/release検証を実施
-- iOS simulatorのVision testに対応revision2 + CPU構成を追加。default revisionの制限とApple CoreImage対照probeを記録
+- macOS 上で独立 Swift Testing、Core Graphics / ImageIO / Vision の debug/release 実行証跡を追加
+- Basic consumer に macOS 13 minimum を明示し、render 上限比較の 32-bit Int literal overflow を修正
+- Xcode で元の macOS suite、iOS/tvOS/watchOS の 8 SDK compile lanes、iOS 27.0 simulator の debug/release 検証を実施
+- iOS simulator の Vision test に対応 revision 2 + CPU 構成を追加。default revision の制限と Apple CoreImage 対照 probe を記録
 
 ローカル実行証跡と未実施項目は [検証結果](Documentation/VERIFICATION.md)、
-公開 commit の CI 状態は [GitHub Actions](https://github.com/SpecQR/SpecQR-Swift/actions)を参照してください。
+公開 commit の CI 状態は [GitHub Actions](https://github.com/SpecQR/SpecQR-Swift/actions) を参照してください。
 この記録は CI 成功や stable release の宣言ではありません。
