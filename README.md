@@ -10,7 +10,7 @@ SpecQR の Swift 実装です。QR ライブラリ、OS の QR 生成器、JavaS
 初回のソース公開段階で、`main` branch を利用できます。安定版の version tag と
 GitHub Release はまだありません。実行済みの検証と制限は
 [検証結果](Documentation/VERIFICATION.md)、公開 commit の CI 状態は
-[GitHub Actions](https://github.com/SpecQR/SpecQR-Swift/actions)を参照してください。
+[GitHub Actions](https://github.com/SpecQR/SpecQR-Swift/actions) を参照してください。
 
 ## Swift Package
 
@@ -92,7 +92,7 @@ let validation = GS1.validateElements(elements)
 byte mode を選び、元の文字を保持します。明示的 alphanumeric mode は安全のため
 拒否します。これは pinned JavaScript の文字化けを修正する、限定的な互換差分です。
 低レベルの FNC1 segments では標準の `%` / `%%` escape semantics が適用されます。
-詳細は [互換性と安全性](Documentation/COMPATIBILITY.md)を参照してください。
+詳細は [互換性と安全性](Documentation/COMPATIBILITY.md) を参照してください。
 
 全 GS1 規格の適合を認証する API ではありません。日付は upstream と同じく
 文字種・桁数を検証し、暦としての有効性までは検証しません。
@@ -149,4 +149,4 @@ debug/release tests を実施しています。iOS simulator の Vision test は
 明示しています。この runtime の default revision 4 は inference error、revision 3/4 は
 SpecQR と Apple CoreImage の対照 QR の両方で decode 不成立でした。default revision の
 成功や physical camera・印刷物・最低 deployment OS での実行を示す結果ではありません。
-詳細は [検証結果](Documentation/VERIFICATION.md)を参照してください。
+詳細は [検証結果](Documentation/VERIFICATION.md) を参照してください。

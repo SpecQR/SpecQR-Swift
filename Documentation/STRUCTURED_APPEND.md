@@ -5,7 +5,7 @@ text は Unicode scalar 境界、binary は byte 境界を保持します。manu
 alphanumeric / Kanji segments は分割せず、byte segments だけを分割します。
 概要は README、以下は public API と厳密な分割規則の参照です。
 
-The high-level Structured Append API partitions one payload into **2–16 QR Model 2 symbols** with a shared version, error correction level, and parity. Its split decisions, canonical bytes, matrices, and diagnostics follow SpecQR JavaScript **3.0.0-rc.2**, commit `15ad15e5c770ea0e39072f8f88b2733018f02ffd`.
+高レベル Structured Append API は、一つの payload を、version、error correction level、parity を共有する **2–16 個の QR Code Model 2 symbol** に分割します。分割の判断、canonical bytes、matrix、diagnostics は、SpecQR JavaScript **3.0.0-rc.2**、commit `15ad15e5c770ea0e39072f8f88b2733018f02ffd` に従います。
 
 ## Generate a text or binary set
 
@@ -30,13 +30,13 @@ assert(set.diagnostics.symbols.map(\.inputLength) == [21, 10])
 let firstSymbol: QRCode = set.symbols[0]
 ```
 
-`generateStructuredAppend` also accepts `[UInt8]` and Foundation `Data`, including slices with nonzero starting indices. Binary input requires `.auto` or `.byte` mode. Text is UTF-8 when encoded in byte mode.
+`generateStructuredAppend` は、開始 index がゼロでない slice を含め、`[UInt8]` と Foundation `Data` も受け入れます。binary 入力には `.auto` または `.byte` mode が必要です。text を byte mode で符号化するときは UTF-8 を使います。
 
-With an explicit version, every symbol uses that version. With `version: nil`, the algorithm tries `minVersion...maxVersion` in ascending order and chooses the **smallest version that produces a valid set** within `maxSymbols`. It does not minimize the number of symbols or balance their lengths. Each part receives the largest fitting prefix, accounting for the 20-bit Structured Append header.
+version を明示すると、すべての symbol がその version を使います。`version: nil` の場合、`minVersion...maxVersion` を昇順に試し、`maxSymbols` 以内で**有効な集合を生成できる最小の version** を選びます。symbol 数の最小化や、各 symbol の長さの均等化は行いません。各 part には、20-bit Structured Append header を考慮し、収容できる最長の prefix を割り当てます。
 
-The high-level API rejects input that fits in one header-bearing symbol in the selected range. Use normal `generate` for a single symbol, or supply `QROptions.structuredAppend` when externally managing a set.
+高レベル API は、選択した範囲内で header 付きの一つの symbol に収まる入力を拒否します。単一 symbol には通常の `generate` を使い、集合を外部で管理する場合は `QROptions.structuredAppend` を指定してください。
 
-Text splits occur at **Unicode scalar boundaries**, matching JavaScript code-point iteration. An emoji scalar is never divided into partial UTF-8 bytes. Combining sequences and multi-scalar grapheme clusters may cross part boundaries. `inputStart` and `inputLength` count scalars; `byteStart` and `byteLength` count canonical UTF-8 bytes. All offsets are zero-based.
+text は、JavaScript の code point 単位の反復と同じ **Unicode scalar 境界**で分割します。絵文字の scalar を UTF-8 byte の途中で分割することはありません。結合文字列や複数の scalar からなる grapheme cluster は、part の境界をまたぐ場合があります。`inputStart` と `inputLength` は scalar 数、`byteStart` と `byteLength` は canonical UTF-8 byte 数を数えます。すべての offset はゼロ始まりです。
 
 ## Preserve manual segment boundaries
 
@@ -56,15 +56,15 @@ let set = try SpecQR.generateSegmentsStructuredAppend(
 )
 ```
 
-Manual splitting preserves caller segmentation:
+manual 分割は、caller が指定した segment の区切りを維持します。
 
-- Numeric, alphanumeric, and Kanji segments are indivisible, even if splitting one would otherwise allow the payload to fit.
-- Binary `.byte([UInt8])` segments split per byte.
-- `.byteText(String)`, also constructed using `.byte(String)`, splits per Unicode scalar.
-- Adjacent segments remain separate. Their individual mode/count overhead is retained.
-- Empty segments and all control segments are rejected.
+- numeric、alphanumeric、Kanji segment は、分割すれば payload が収まる場合でも分割しません。
+- binary の `.byte([UInt8])` segment は byte 単位で分割します。
+- `.byteText(String)` は Unicode scalar 単位で分割します。この segment は `.byte(String)` でも構築できます。
+- 隣接する segment は別々のまま維持し、それぞれの mode/count overhead を保持します。
+- 空の segment と、すべての control segment を拒否します。
 
-For manual input, `inputLength` and `segmentCount` are the source segment count. `sourceSegmentStart..<sourceSegmentEnd` identifies source segments contributing to one output symbol; the end is exclusive. `splitUnitStart` and `splitUnitLength` identify the range in the logical split-unit sequence.
+manual 入力の `inputLength` と `segmentCount` は、元の segment 数です。`sourceSegmentStart..<sourceSegmentEnd` は、一つの出力 symbol に寄与する元の segment の範囲を示し、終端は含みません。`splitUnitStart` と `splitUnitLength` は、論理的な split-unit 列内の範囲を示します。
 
 ## Parity and merging
 
@@ -78,58 +78,58 @@ let merged = try SpecQR.mergeStructuredAppendParts(parts)
 assert(merged.data == .text("AB"))
 ```
 
-`calculateStructuredAppendParity` accepts `String`, `[UInt8]`, and `Data`. Empty input has parity zero. `calculateStructuredAppendSegmentsParity` accepts validated nonempty manual data segments.
+`calculateStructuredAppendParity` は `String`、`[UInt8]`、`Data` を受け入れます。空の入力の parity はゼロです。`calculateStructuredAppendSegmentsParity` は、検証済みで空でない manual data segment を受け入れます。
 
-Parity is XOR over the **original canonical bytes**. Numeric/alphanumeric text contributes ASCII bytes; byte text and Kanji contribute UTF-8 bytes; binary contributes its raw bytes. Kanji parity deliberately uses UTF-8 even though QR Kanji-mode encoding uses the Shift-JIS-derived 13-bit representation.
+parity は、**元の canonical bytes** 全体の XOR です。numeric/alphanumeric text には ASCII bytes、byte text と Kanji には UTF-8 bytes、binary にはその raw bytes を使います。QR の Kanji mode は Shift-JIS 由来の 13-bit 表現で符号化しますが、Kanji の parity には意図的に UTF-8 を使います。
 
-`mergeStructuredAppendParts` accepts already decoded parts, sorts by one-based index, and verifies:
+`mergeStructuredAppendParts` は decode 済みの part を受け取り、1 始まりの index 順に並べ、次の項目を検証します。
 
-1. Index range 1–16, total range 2–16, and index not greater than total
-2. Consistent total and parity across every part
-3. One consistent text or binary payload kind
-4. Every expected index exactly once
-5. Matching XOR parity after canonical concatenation
+1. index は 1–16、total は 2–16 の範囲であり、index が total を超えないこと。
+2. すべての part で total と parity が一致すること。
+3. payload の種類が text または binary のどちらかに揃っていること。
+4. 期待するすべての index が、それぞれ正確に一度だけ現れること。
+5. canonical な連結後の XOR parity が一致すること。
 
-Successful merges return `.text(String)` or `.bytes([UInt8])`, sorted metadata, and parity-check diagnostics. Consistent empty decoded chunks are permitted, matching the JavaScript utility. The helper does not scan or decode QR images. XOR parity is not cryptographic integrity or authentication and cannot detect every possible corruption.
+再結合に成功すると、`.text(String)` または `.bytes([UInt8])`、整列した metadata、parity 検証の diagnostics を返します。整合する空の decode 済み chunk は、JavaScript utility と同じく許可します。この helper は QR 画像の scan や decode を行いません。XOR parity は暗号学的な整合性保証や認証ではなく、考えられるすべての破損を検出できるわけではありません。
 
 ## Diagnostics and Swift adaptations
 
-Results, parts, options, warnings, and diagnostic records are immutable `Sendable` value types. Every symbol is a normal `QRCode`, so its full core diagnostics are always accessible. Swift does not reproduce JavaScript's output-dependent union of matrices, rendered outputs, and diagnostic wrappers. Render each `QRCode` using the normal rendering API.
+result、part、option、warning、diagnostic record は、変更不能な `Sendable` の value types です。各 symbol は通常の `QRCode` なので、core diagnostics 全体を常に参照できます。Swift では、output に応じて matrix、描画結果、diagnostic wrapper が切り替わる JavaScript の union を再現しません。各 `QRCode` は通常の描画 API で描画してください。
 
-`QRStructuredAppendOptions` contains:
+`QRStructuredAppendOptions` には、次の項目があります。
 
-- `qrOptions: QROptions`, defaulting to normal core options
-- `maxSymbols: Int`, default 16, valid range 2–16
-- `diagnostics: Bool`, default false; enables the decoder-compatibility warning
-- `splitUnits: QRStructuredAppendSplitUnitsDetail`, default `.summary`
+- `qrOptions: QROptions`: 既定値は通常の core options です。
+- `maxSymbols: Int`: 既定値は 16、有効範囲は 2–16 です。
+- `diagnostics: Bool`: 既定値は false。decoder 互換性の警告を有効にします。
+- `splitUnits: QRStructuredAppendSplitUnitsDetail`: 既定値は `.summary` です。
 
-Every result includes summary diagnostics and per-symbol ranges/bit accounting regardless of `diagnostics`. Manual `.summary` includes the split-unit count but leaves `splitUnits` nil. Manual `.full` expands every split unit into metadata. Full detail on text/binary high-level generation is rejected because that contract applies to manual segments.
+すべての結果は、`diagnostics` にかかわらず summary diagnostics と symbol ごとの範囲・bit の計算結果を含みます。manual の `.summary` は split-unit 数を含みますが、`splitUnits` は nil のままです。manual の `.full` は、すべての split unit を metadata に展開します。この contract は manual segment に適用するため、高レベルの text/binary 生成に対する full detail の指定は拒否します。
 
-The result warns when it uses exactly `maxSymbols`. Decoder metadata support varies, so `diagnostics: true` also emits `STRUCTURED_APPEND_DECODER_SUPPORT_VARIES`.
+使用数がちょうど `maxSymbols` に達すると、結果に警告が含まれます。decoder の metadata 対応状況には違いがあるため、`diagnostics: true` では `STRUCTURED_APPEND_DECODER_SUPPORT_VARIES` も出力します。
 
-The high-level API rejects ECI, GS1/FNC1, user-supplied Structured Append headers, and error-correction boosting. Manual generation additionally requires `qrOptions.mode == .auto` and `optimizeSegments == true`; these normalized defaults preserve supplied segments and do not run text optimization on them. Swift value types do not track whether a caller explicitly wrote a default-valued option, unlike JavaScript's property-presence validation. Unsupported JavaScript aliases, parity overrides, and arbitrary option keys have no typed Swift equivalents. `UInt8` makes invalid byte/parity ranges unrepresentable.
+高レベル API は、ECI、GS1/FNC1、利用者が指定した Structured Append header、error-correction boosting を拒否します。manual 生成では、さらに `qrOptions.mode == .auto` と `optimizeSegments == true` が必要です。これらの正規化済みの既定値は、渡された segment を保持し、その segment に text 最適化を実行しません。Swift の value types は、JavaScript の property 存在検証と異なり、caller が既定値と同じ option を明示したかどうかを追跡しません。未対応の JavaScript alias、parity の上書き、任意の option key に相当する Swift の型付き表現はありません。`UInt8` により、不正な byte/parity の範囲は表現できません。
 
-Split capacity failures use `QRError.structuredAppendTooLong` with code `DATA_TOO_LONG` and a message explaining the selected versions, error correction, and symbol limit. This separate case avoids misleading per-symbol bit counts when the actual constraint is an indivisible manual segment or the set's symbol limit.
+分割時の容量不足には `QRError.structuredAppendTooLong` を使用し、code は `DATA_TOO_LONG`、message は選択した version、error correction、symbol 上限を説明します。この専用 case により、実際の制約が分割不能な manual segment や集合の symbol 上限である場合に、誤解を招く symbol ごとの bit 数を示すことを避けます。
 
 ## Resource behavior
 
-Capacity lower bounds reject obviously oversized input before text indexing or split-unit expansion. Text indexing stores Unicode scalars and canonical byte offsets, using O(n) memory. This is a Swift representation choice rather than a copy of the JavaScript sparse UTF-16 index.
+容量の lower bound により、text の index 作成や split-unit の展開より前に、明らかに大きすぎる入力を拒否します。text の index は Unicode scalar と canonical byte offset を保存し、O(n) の memory を使用します。これは Swift で選択した表現であり、JavaScript の sparse UTF-16 index をコピーしたものではありません。
 
-Pure numeric, nondigit alphanumeric, Kanji, and byte-only inputs use exact direct bit counting where a single mode is provably optimal. Mixed automatic text splitting uses a seven-state incremental cost tracker. It retains only current bit costs and stops at the first nonfitting prefix; it does not repeatedly construct full optimizer histories. Final symbols use the normal core optimizer for segment reconstruction and tie-breaking.
+数字のみ、数字以外の alphanumeric、Kanji、byte のみの入力では、単一 mode が最適だと証明できる場合に、直接かつ正確に bit 数を数えます。混在した text の自動分割には、七つの状態を持つ incremental cost tracker を使用します。現在の bit cost だけを保持し、最初に収まらなくなった prefix で停止します。optimizer の履歴全体を繰り返し構築することはありません。最終 symbol では、通常の core optimizer を使って segment の復元と tie-break を行います。
 
-Manual descriptors retain source segment boundaries. Full per-byte/per-scalar split-unit records are created only for `.full` diagnostics. Normal results hold at most 16 symbol matrices, with normal QR version limits. There is no arbitrary payload-size cutoff separate from QR capacity limits. No JavaScript, Node, network service, or third-party QR encoder is used at runtime.
+manual descriptor は、元の segment の境界を保持します。byte/scalar ごとの完全な split-unit record を作るのは、`.full` diagnostics の場合だけです。通常の結果は、通常の QR version 上限の下で、最大 16 個の symbol matrix を保持します。QR の容量上限とは別の、恣意的な payload size の打切りはありません。実行時に JavaScript、Node、network service、第三者の QR encoder は使用しません。
 
 ## Verification and fixture regeneration
 
-`StructuredAppendTests` covers 22 pinned JavaScript differential cases, checking **every matrix module** and the split metadata. Cases include all four ECC levels, fixed/automatic versions, count-width bands at versions 10 and 27, Unicode scalars, optimized/unoptimized automatic modes, manual atomic segments, binary chunks, and a full 16-part set.
+`StructuredAppendTests` は、固定した JavaScript との差分検証 22 ケースで、**すべての matrix module** と分割 metadata を確認します。四つの ECC level 全部、固定・自動 version、version 10 と 27 での count-width band、Unicode scalar、最適化あり・なしの auto mode、manual の分割不能な segment、binary chunk、全 16 part の集合を対象とします。
 
-Additional tests cover parity, corrupted and incomplete merges, unsupported options, empty/single inputs, indivisible-segment overflow, large-input preflight, data slices, value isolation, error messages, and incremental-tracker agreement with the core across 2,720 deterministic randomized prefixes.
+追加テストでは、parity、破損した part や不完全な集合の再結合、未対応の option、空・単一の入力、分割不能な segment の overflow、大きな入力の preflight、data slice、値の独立性、error message、および決定的な乱数で作った 2,720 個の prefix で incremental tracker と core が一致することを確認します。
 
-Fixture regeneration is developer-only and requires Node plus a clean checkout of the pinned upstream commit:
+fixture の再生成は開発者向けの操作で、Node と、固定した upstream commit の変更のない checkout が必要です。
 
 ```sh
 node Scripts/generate-structured-append-fixtures.mjs /path/to/SpecQR-JS
 swift test --filter StructuredAppendTests
 ```
 
-The generator verifies the upstream package version, commit, and tracked source/fixture cleanliness before writing the fixture file. Tests and the Swift package require no Node installation.
+generator は、fixture file を書き出す前に、upstream の package version と commit、および追跡対象の source/fixture に変更がないことを検証します。テストと Swift package に Node のインストールは不要です。
